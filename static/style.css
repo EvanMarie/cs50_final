@@ -1,0 +1,1172 @@
+/* GLOBAL STYLINGS */
+:root {
+    --red: #C9414D;
+    --orange: #EC7F37;
+    --yellow: #E7C335;
+    --green: #4FA757;
+    --blue: #1C9ACF;
+    --purple: #5A00A3;
+    --font-size: 1.3rem;
+    --font-family: 'Roboto', sans-serif;
+    --font-family: 'Ubuntu Mono', monospace;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Global styles all pages  */
+body {
+    background: rgb(201, 65, 77);
+    background: linear-gradient(90deg, rgba(201, 65, 77, 1) 0%, rgba(231, 195, 53, 1) 50%, rgba(28, 154, 207, 1) 100%);
+    padding: 0;
+    margin: 0;
+    color: black;
+    font-size: var(--font-size);
+    font-family: monospace;
+}
+
+h3,
+h4 {
+    margin-bottom: 0.75rem;
+}
+
+a {
+    color: var(--yellow);
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+#home_box {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1%;
+    width: 97%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-evenly;
+    align-content: center;
+    background: rgb(51, 227, 66);
+    background: linear-gradient(90deg, rgba(51, 227, 66, 1) 0%, rgba(79, 167, 87, 1) 49%, rgba(0, 255, 44, 0.4023810207676821) 100%);
+    background-image: url('/static/images/kandinsky_1500.jpg');
+    padding: 0.75rem 0.5rem 0.75rem 0.5;
+    color: black;
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.welcome {
+    flex-basis: 97%;
+    background: rgb(236, 127, 55);
+    background: radial-gradient(circle, rgba(236, 127, 55, 1) 0%, rgba(201, 65, 77, 1) 42%, rgba(231, 195, 53, 0.6852941860337884) 100%);
+    color: black;
+    border-radius: 5px;
+    font-family: monospace;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    max-width: 1200px;
+    padding: 1rem;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.welcome img {
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 auto;
+    width: 300px;
+}
+
+nav ul {
+    list-style-type: None;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+nav li {
+    flex-basis: 48%;
+    margin-bottom: 0.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+    background-color: var(--blue);
+    display: block;
+    border-radius: 5px;
+    text-align: center;
+}
+
+nav li:first-child a {
+    background-color: transparent;
+}
+
+nav a:hover {
+    background-color: var(--yellow);
+    color: var(--color5);
+}
+
+.mininav {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.mininav ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: space-between;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.mininav a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: black;
+    width: 100%;
+}
+
+.mininav a:hover {
+    color: white;
+}
+
+.section_large {
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 97%;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background: rgb(231, 195, 53);
+    background: rgb(79, 167, 87);
+    background: radial-gradient(circle, rgba(79, 167, 87, 0.979411833092612) 0%, rgba(231, 195, 53, 1) 42%, rgba(79, 167, 87, 0.8057423653054971) 100%);
+    /* background: rgb(236, 127, 55);
+    background: radial-gradient(circle, rgba(236, 127, 55, 1) 0%, rgba(201, 65, 77, 1) 42%, rgba(231, 195, 53, 0.6852941860337884) 100%); */
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    color: black;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.section_large a {
+    text-decoration: none;
+    color: var(--red)
+}
+
+.section_large a:hover {
+    text-decoration: none;
+    color: var(--blue)
+}
+
+.section_medium {
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 95%;
+    justify-content: center;
+    align-content: space-between;
+    background-color: var(--blue);
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    color: black;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.table_lable {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    text-align: center;
+    padding: 1 1.5em 1 1.5em;
+    font-family: monospace;
+    justify-content: center;
+}
+
+table table-sm {
+    justify-content: flex-start;
+    align-content: top;
+    font-family: sans-serif;
+}
+
+.today_table {
+    table-layout: auto;
+    width: 100%;
+    display: flex;
+    text-align: left;
+    font-family: sans-serif;
+    padding: 0 1rem 1rem 1rem;
+}
+
+/* This part, I still need to figure out how to center ONE column in a table
+.today_table:nth-child(3){
+    text-align: center:
+}*/
+
+
+.teacher_portal_link a {
+    color: black;
+}
+
+.teacher_portal_link a:hover {
+    color: white;
+}
+
+.section_medium_teacher {
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 95%;
+    justify-content: center;
+    background-color: var(--blue);
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    color: black;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.student_table_search {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    align-content: space-between;
+}
+
+.student_table_top {
+    align-content: center;
+    width: 100%;
+    
+}
+
+.students_table {
+    width: 100%;
+    flex-grow: 1;
+    font-family: sans-serif;
+    font-weight: normal;
+    text-align: left;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.search_students {
+    display: flex;
+    align-self: flex-end;
+    background-color: var(--orange);
+    padding: 0.25em 0.25em 0.5em 0.25em;
+    color: black;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.search_students input {
+    width: 270px;
+    margin: 0.5rem 0.5rem 0rem 0.5rem;
+}
+
+.section_small_one {
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 95%;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--yellow);
+    padding: 0.25em 0.25em 0.25em 0.25em;
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.section_small_one input,
+.section_small_two input,
+.section_small_one textarea {
+    width: 350px;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.upcoming_table {
+    table-layout: auto;
+    width: 100%;
+    display: flex;
+    font-size: 15px;
+    align-items: flex-start;
+    font-family: sans-serif;
+    font-weight: normal;
+    flex-direction: row;
+    flex-basis: 100%;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 1rem 1rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.section_small_two {
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 95%;
+    justify-content: center;
+    background-color: var(--red);
+    color: black;
+    font-family: sans-serif;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    padding: 0.25em 0.25em 0.25em 0.25em;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    align-items: flex-start;
+    align-content: top;
+}
+
+.link_add,
+.upcoming_add {
+    font-family: sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    width: 100%;
+    height: 87%;
+    font-size: 15px;
+}
+
+.assignment_links {
+    font-size: 15px;
+}
+
+.link_add input,
+.upcoming_add input,
+.upcoming_add textarea {
+    width: 355px;
+}
+
+.today_table,
+.students_table,
+.messages_table
+{
+font-size: 15px;
+}
+
+.links_table {
+    table-layout: auto;
+    width: 100%;
+    display: flex;
+    font-size: 15px;
+    text-align: left;
+    font-family: sans-serif;
+    font-weight: normal;
+    align-content: top;
+    padding: 0 1rem 1rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.other_box {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1%;
+    width: 90%;
+    height: 95vh;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    background-image: url('/static/images/kandinsky_1500.jpg');
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    color: black;
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.other_box_over {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1%;
+    width: 100%;
+    height: 75vh;
+    margin: 0;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    background: rgb(231, 195, 53);
+    background: rgb(79, 167, 87);
+    background: radial-gradient(circle, rgba(79, 167, 87, 0.979411833092612) 0%, rgba(231, 195, 53, 1) 42%, rgba(79, 167, 87, 0.8057423653054971) 100%);
+    padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+    color: black;
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.other_box_over2 {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1%;
+    width: 100%;
+    height: 70vh;
+    margin: 0;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    background: rgb(231, 195, 53);
+    background: rgb(79, 167, 87);
+    background: radial-gradient(circle, rgba(79, 167, 87, 0.979411833092612) 0%, rgba(231, 195, 53, 1) 42%, rgba(79, 167, 87, 0.8057423653054971) 100%);
+    padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+    color: black;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+
+.note_form_head {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0.5rem 1.5rem 0.5rem;
+    flex-basis: 90%;
+    background-color: var(--green);
+    padding: 0.5em 0.25em 0.25em 0.25em;
+    color: black;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.note_form {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 15px;
+
+}
+
+.note_form input,
+.note_form textarea {
+    width: 325px;
+    font-size: 15px;
+}
+
+.note_form textarea {
+    height: 200px;
+}
+
+.messages_table {
+    table-layout: auto;
+    width: 98%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 1rem 1rem;
+}
+
+.messages_buttons {
+    display: flex;
+    flex-basis: 97%;
+    background: rgb(227, 111, 51);
+    background: radial-gradient(circle, rgba(227, 111, 51, 0.4780112728685224) 0%, rgba(201, 65, 77, 1) 49%, rgba(251, 255, 0, 0.7301121132046569) 100%);
+    color: black;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    background-color: var(--red);
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+    text-align: center;
+    align-self: flex-end;
+}
+
+.messages_buttons input[type=submit] {
+    margin-top: 05.rem;
+}
+
+.text_area {
+    display: flex;
+    flex-flow: nowrap;
+    width: 550px;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--red);
+    padding: 0.25em 0.25em 0.25em 0.25em;
+    color: black;
+    font-size: 125%;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.notes {
+    width: 100%;
+    font-size: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.assignment_links {
+    display: flex;
+    margin: 0 auto;
+    align-self: center;
+    text-align: center;
+    width: 375px;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.assignment_links a {
+    width: 48%;
+    background-color:rgba(201, 65, 77, 1);
+    line-height: 2;
+    border-radius: 5px;
+    margin: 0.5rem;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    color: black;
+}
+
+.assignment_links a:hover {
+    color: white;
+}
+
+.assignment_form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-content: center;
+    width: 350px;
+    background-color: #1C9ACF;
+    border-radius: 5px;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    text-align: center;
+}
+
+.assignment_form input,
+.assignment_form textarea {
+    width: 325px;
+    font-size: 15px;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.assignments_nav {
+    padding: 0;
+    margin: 0 auto;
+    font-weight: bold;
+    justify-content: space-around;
+    align-content: center;
+    text-align: center;
+}
+
+.assignments_nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: space-between;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.assignments_nav li {
+    width: 200px;
+}
+
+.assignments_nav a {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: black;
+}
+
+.assignments_nav a:hover {
+    color: white;
+}
+
+.lookup_form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+    width: 350px;
+    background-color: #1C9ACF;
+    border-radius: 5px;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    text-align: center;
+}
+
+.lookup_form input {
+    width: 325px;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.lookup_table {
+    width: 95%;
+    background-color: var(--orange);
+    font-size: 10px;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.messages_buttons {
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
+}
+
+.messages_buttons input {
+    width: 110px;
+    font-size: 11px;
+}
+
+.notes_table {
+    font-size: 12px;
+    width: 95%;
+}
+
+.note_form_head,
+.note_form {
+font-size: 15px;
+}
+
+/* *************************************************** */
+@media (min-width: 600px) {
+
+    h1 {
+        text-align: center;
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    .welcome img {
+        width: 300px;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 1.2em;
+        flex-flow: row wrap;
+    }
+
+    nav li {
+        flex-basis: auto;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        background-color: var(--blue);
+        display: block;
+        width: 110px;
+        height: 100%;
+        padding: 0.5rem;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    nav li:first-child a {
+        background-color: transparent;
+        width: 100%;
+    }
+
+    nav a:hover {
+        background-color: var(--yellow);
+        color: var(--color5);
+    }
+
+    .assignment_form {
+        width: 450px;
+    }
+
+    .assignment_form input {
+        width: 400px;
+    }
+
+    .assignment_form textarea {
+        width: 400px;
+        height: 200px;
+    }
+}
+
+/* ******************************************************************* */
+
+@media (min-width: 800px) {
+
+    .welcome img {
+        width: 228px;
+    }
+
+    nav ul {
+        flex-flow: row wrap;
+    }
+
+    .assignment_form {
+        width: 450px;
+    }
+
+    .assignment_form input {
+        width: 400px;
+    }
+
+    .assignment_form textarea {
+        width: 400px;
+        height: 200px;
+    }
+
+    .lookup_form {
+        width: 95%;
+    }
+
+    .lookup_form input {
+        width: 250px;
+
+    }
+
+    .messages_buttons input {
+        width: 175px;
+        font-size: 16px;
+    }
+
+    .notes_table {
+        font-size: 16px;
+    }
+
+    .mininav a {
+        font-size: 1.5rem;
+    }
+
+    .link_add,
+    .upcoming_add {
+        font-size: 18px;
+    }
+
+    .assignment_links {
+        width: 600px;
+    }
+
+    .assignment_links a{
+        font-size: 18px;
+        font-weight: 550;
+    }
+
+    .link_add input,
+    .upcoming_add input,
+    .upcoming_add textarea {
+        width: 450px;
+    }
+
+    .today_table,
+    .students_table,
+    .upcoming_table,
+    .links_table,
+    .messages_table {
+        font-size: 18px;
+    }
+
+.note_form_head {
+    font-weight: 400;
+    flex-basis: 500px;
+    width: 500px;
+}
+
+    .note_form {
+        font-size: 18px;
+    }
+    .note_form input,
+    .note_form textarea {
+        width: 500px;
+        font-size: 18px;
+    }
+    
+    .note_form textarea {
+        height: 300px;
+    }
+
+    .other_box {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1%;
+        width: 90%;
+        height: 95vh;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-evenly;
+        align-content: flex-start;
+        background-image: url('/static/images/kandinsky_1500.jpg');
+        padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+        color: black;
+        font-weight: bold;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+    
+    .other_box_over {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1%;
+        width: 100%;
+        height: 75vh;
+        margin: 0;
+        justify-content: space-evenly;
+        align-content: flex-start;
+        background: rgb(231, 195, 53);
+        background: rgb(79, 167, 87);
+        background: radial-gradient(circle, rgba(79, 167, 87, 0.979411833092612) 0%, rgba(231, 195, 53, 1) 42%, rgba(79, 167, 87, 0.8057423653054971) 100%);
+        padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+        color: black;
+        font-weight: bold;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+    
+    .other_box_over2 {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1%;
+        width: 100%;
+        height: 70vh;
+        margin: 0;
+        justify-content: space-evenly;
+        align-content: flex-start;
+        background: rgb(231, 195, 53);
+        background: rgb(79, 167, 87);
+        background: radial-gradient(circle, rgba(79, 167, 87, 0.979411833092612) 0%, rgba(231, 195, 53, 1) 42%, rgba(79, 167, 87, 0.8057423653054971) 100%);
+        padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+        color: black;
+        padding: 1rem 1rem 1rem 1rem;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+    
+}
+
+
+
+
+/* ******************************************************************* */
+
+@media (min-width: 1000px) {
+
+    .welcome img {
+        width: 300px;
+    }
+
+    nav ul {
+        flex-flow: nowrap;
+        align-items: flex-end;
+    }
+
+    nav li:first-child {
+        flex-basis: auto;
+        margin: 0 auto;
+        order: 2;
+    }
+
+    nav li:nth-child(2),
+    nav li:nth-child(3) {
+        order: 1;
+    }
+
+    nav li:nth-child(4),
+    nav li:nth-child(5) {
+        order: 3;
+    }
+
+    .lookup_table {
+        font-size: 14px;
+    }
+
+    .note_form_head h3 {
+        font-size: 150%;
+        font-weight: bold;
+    }
+
+    .note_form_head h3 {
+        font-size: 150%;
+        font-weight: bold;
+    }
+
+    .note_form_head h4 {
+        font-size: 150%;
+        font-weight: bold;
+    }
+
+
+/* ******************************************************************** */
+@media (min-width: 1150px) {
+
+    h1 {
+        text-align: center;
+        margin: 0 auto;
+        width: 800px;
+    }
+
+    .welcome img {
+        width: 325x;
+    }
+
+    nav ul {
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }
+
+    nav li:first-child {
+        flex-basis: auto;
+        margin: 0 auto;
+        order: 2;
+    }
+
+    nav li:nth-child(2),
+    nav li:nth-child(3) {
+        order: 1;
+    }
+
+    nav li:nth-child(4),
+    nav li:nth-child(5) {
+        order: 3;
+    }
+
+    nav a {
+        text-decoration: none;
+        font-size: 100%;
+        background-color: var(--blue);
+        display: block;
+        width: 115px;
+        height: 100%;
+        padding: 0.5rem;
+        border-radius: 5px;
+        text-align: center;
+        flex-flow: nowrap;
+    }
+
+    nav li:first-child a {
+        background-color: transparent;
+        width: 100%;
+    }
+
+    nav a:hover {
+        background-color: var(--yellow);
+        color: var(--color5);
+    }
+
+    .section_large {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        grid-template-rows: 1fr 1fr 0.15fr;
+    }
+
+    .teacher_portal_link {
+        grid-column: 1 / 6;
+        grid-row-start: 3;
+        margin: 0 auto;
+        align-content: flex-start;
+    }
+
+    .teacher_portal_link a {
+        color: black;
+    }
+
+    .section_medium {
+        grid-column: 1 / 4;
+        grid-row-start: span 2;
+        margin-bottom: 0.5rem;
+        align-content: flex-start;
+    }
+
+    .section_medium_teacher {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        background-color: var(--blue);
+        padding: 0.5em 0.5em 0.5em 0.5em;
+        color: black;
+        grid-column: 1 / 4;
+        grid-row-start: span 2;
+        margin-bottom: 0.5rem;
+        align-content: space-between;
+    }
+
+
+    .student_table_top {
+        display: flex;
+        width: 100%;
+        align-content: flex-start;
+        flex-direction: row;
+        flex-flow: row wrap;
+    }
+
+    .section_small_one {
+        grid-column: 4 / 6;
+        grid-row: 1 / 2;
+        margin-bottom: 0;
+        align-content: flex-start;
+    }
+
+    .section_small_two {
+        grid-column: 4 / 6;
+        grid-row: 2 / 3;
+        margin-bottom: 0.5rem;
+        align-content: flex-start;
+    }
+
+    .assignments_nav {
+        padding: 0;
+        margin: 0 auto;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .assignments_nav ul {
+        list-style-type: none;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: space-between;
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .assignments_nav li {
+        width: 70px;
+        text-align: center;
+        margin: 0.25rem 1rem 0.25rem 1rem;
+    }
+
+    .assignments_nav a {
+        text-decoration: none;
+        font-size: 1.25rem;
+        color: black;
+    }
+
+    .assignments_nav a:hover {
+        color: white;
+    }
+
+    .assignment_form {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 2rem;
+        width: 650px;
+        height: 450px;
+        background-color: #1C9ACF;
+        border-radius: 5px;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        text-align: center;
+    }
+
+    .assignment_form input,
+    .assignment_form textarea {
+        width: 500px;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        font-size: 18px;
+    }
+
+    .assignment_form textarea {
+        height: 150px;
+    }
+
+    .lookup_form {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 1rem;
+        width: 95%;
+        height: 120px;
+        background-color: #1C9ACF;
+        border-radius: 5px;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        text-align: center;
+    }
+
+    .lookup_form input {
+        width: 250px;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+
+    .lookup_table,
+    .notes_table {
+        font-size: 18px;
+    }
+
+    .mininav a {
+        font-size: 1.6rem;
+    }
+
+
+    .link_add input,
+    .upcoming_add input,
+    .upcoming_add textarea {
+        width: 375px;
+    }
+}
+
+
+    /* ******************************************************************** */
+
+
+    @media (min-width: 1300px) {
+
+
+        nav ul {
+            flex-flow: nowrap;
+        }
+    }

@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+{% endblock %}
+Homeschool Planner - Home!
+{% block main %}
+
+<body>
+    <section id="home_box">
+        <div class="welcome">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href={{ url_for('home') }}><img src="/static/images/homeschool_logo_sized.png" alt
+                                    text="Homeschool!"></a></li>
+                        <li>
+                            <a href={{ url_for('messages') }}>Mail</a>
+                        </li>
+                        <li>
+                            <a href='{{ url_for('notes') }}'>Notes</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for_security('change_password') }}>Password</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for_security('logout') }}>Logout</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="section_large">
+            <!-- GRID CONTAINER -->
+            <div class="section_medium">
+                <!-- TODAY / TASKS -->
+                <div class="table_lable">
+                    <h3> Today is day number {{day_number}}.
+                </div>
+                </h3>
+
+                <div class="today_table">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">Class</th>
+                                <th scope="col">Assignment</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for assignment in day_assignments %}
+                            <tr>
+                                <td>{{assignment.subject}}</td>
+                                <td>{{assignment.content | convert_links | safe}} </td>
+                                <td>{{assignment.completed}}</td>
+                                <td>Note</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div class="section_small_one">
+                <!-- UPCOMING -->
+                <div class="table_lable">
+                    <h4>Upcoming:</h4>
+                </div>
+                <div class="upcoming_table">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">School Day</th>
+                                <th scope="col">Class</th>
+                                <th scope="col">Task / Assignment</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>text</td>
+                                <td>text</td>
+                                <td>text</td>
+                            </tr>
+                            <tr>
+                                <td>text</td>
+                                <td>text</td>
+                                <td>text</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section_small_two">
+                <!-- MY LINKS -->
+                <div class="table_lable">
+                    <h4>My Links:</h4>
+                </div>
+                <div class="links_table">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">Link</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>text</td>
+                                <td>text</td>
+                            </tr>
+                            <tr>
+                                <td>text</td>
+                                <td>text</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="teacher_portal_link">
+                <a href='{{ url_for('teacher_portal') }}'>Teacher Portal (Teachers Only) </a>
+            </div>
+        </div>
+    </section>
+</body>
+{% endblock %}

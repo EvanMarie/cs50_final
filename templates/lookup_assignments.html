@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Write a new note!
+{% endblock %}
+
+{% block main %}
+
+<body>
+    <div class="other_box">
+        
+        <div class="welcome">
+            <header>
+                <div class="assignments_nav">
+                    <ul>
+                        <li>
+                            <a href={{ url_for('teacher_portal') }}>Teacher Portal</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for('home') }}>Student Portal</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for('lookup_assignments') }}>Lookup Assignments</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for('add_assignments') }}>Add Assignments</a>
+                        </li>
+                       
+                        <li>
+                            <a href={{ url_for('messages') }}>User Mail</a>
+                        </li>
+                        
+                        <li>
+                            <a href={{ url_for_security('change_password') }}>Assignment Notes</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for_security('logout') }}>User Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </header>
+
+            <div class = "other_box_over2">
+                <div class = "table_lable">
+                    <div class="lookup_form">
+                        <form action="/lookup_assignments.html" id="lookup_assignments" method="POST">
+                            <input name="lookup_student" id="lookup_student" placeholder="Student" type="text">
+                            <input name="lookup_day" id="lookup_day" placeholder="School Day Number" type="text">
+                            
+                            <input name="lookup_class" id="lookup_class" placeholder="Class Name" type="text">
+                            <input name="lookup_keyword" id="lookup_keyword" placeholder="Keyword" type="text">
+                            
+                            <input type="submit" value="Search Assignments">
+                        </form>
+                    </div>
+                    </div>
+                    <div class = "lookup_table">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">School Day</th>
+                                    <th scope="col">Student</th>
+                                    <th scope="col">Class</th>
+                                    <th scope="col">Task / Assignment</th>
+                                    <th scope="col">Update</th>
+                                    <th scope="col">Delete</th>
+                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for assignment in assignment_query %}
+                                <tr>
+                                   <td>{{assignment.day}}</td>
+                                   <td>{{assignment.student}}</td>
+                                   <td>{{assignment.subject}}</td>
+                                   <td>{{assignment.content | convert_links | safe}}</td>
+                                   <td> UPDATE </td>
+                                   <td>ADD NOTE</td>
+                                   <td>delete link</td>
+                                   {% endfor %} 
+
+
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    
+                    </div>
+                    </div>
+                
+        </div>
+    </div>
+    </div>
+    </body>
+{% endblock %}

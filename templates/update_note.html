@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Write a new note!
+{% endblock %}
+
+{% block main %}
+<body>
+    <body>
+        <div class = "other_box">
+            <div class="welcome">
+                <header>
+                    <div class = "mininav">
+                        <ul>
+                            <li>
+                                <a href={{ url_for('home') }}>Home</a>&emsp;&emsp;
+                            </li>
+                            <li>
+                                <a href={{ url_for('messages') }}>Mail</a>&emsp;&emsp;
+                            </li>
+                            <li>
+                                <a href={{ url_for('notes') }}>Notes</a>&emsp;&emsp;
+                            </li>
+                            <li>
+                                <a href={{ url_for_security('change_password') }}>Password</a>&emsp;&emsp;
+                            </li>
+                            <li>
+                                <a href={{ url_for_security('logout') }}>Logout</a>&emsp;&emsp;
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+            </div>
+
+                <div class = "note_form_head">
+              <h4>Edit note regarding assignment - (Jinja for assignment)
+                <br> from day (Jinja for day number).</h4> </div>
+
+          <div class = "text_area">
+            <form action="notes.html" id="note" method = "POST" >
+      Type your note here: <br> <br><textarea name="textarea"
+       width="300px" height="300px" font-size = "12px"> </textarea><br>
+      <input type="submit" value = "Submit">
+    </form>
+            </div></div>
+    </body>
+
+{% endblock %}

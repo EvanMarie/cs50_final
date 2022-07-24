@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Write a new note!
+{% endblock %}
+
+{% block main %}
+
+<body>
+    <div class="other_box">
+        <div class="welcome">
+            <header>
+                <div class="assignments_nav">
+                    <ul>
+                        <li>
+                            <a href={{ url_for('teacher_portal') }}>Teacher Portal</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for('add_assignments') }}>Add Assignments</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for('lookup_assignments') }}>Lookup Assignments</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for('messages') }}>Mail</a>
+                        </li>
+
+                        <li>
+                            <a href={{ url_for('home') }}>Student Portal</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for_security('change_password') }}>Notes</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for_security('logout') }}>Logout</a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        </header>
+    </div>
+
+    <div class="update_student">
+        <form action="/teacher_portal.html" id="update_student" method="POST">
+            <input name="student_firstname" id="student_firstname" placeholder="Student First Name" type="text">
+            <br>
+            <input name="student_lastname" id="student_lastname" placeholder="Student Last Name" type="text">
+        
+            <br>
+            Student Note: <br><textarea name="update_student_note" width="400px" height="500px"
+                font-size="12px"> </textarea><br>
+            <input type="submit" value="Update Student">
+        </form>
+    </div>
+    </div>
+    </div>
+</body>
+{% endblock %}

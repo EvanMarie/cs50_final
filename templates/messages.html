@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Write a new note!
+{% endblock %}
+
+{% block main %}
+
+<body>
+    <div class="other_box">
+        <div class="other_box_over">
+        <div class="welcome">
+            <header>
+                <div class="mininav">
+                    <ul>
+                        <li>
+                            <a href={{ url_for('home') }}>Home</a>&emsp;&emsp;
+                        </li>
+                        <li>
+                            <a href={{ url_for('messages') }}>Mail</a>&emsp;&emsp;
+                        </li>
+                        <li>
+                            <a href={{ url_for('notes') }}>Notes</a>&emsp;&emsp;
+                        </li>
+                        <li>
+                            <a href={{ url_for_security('change_password') }}>Password</a>&emsp;&emsp;
+                        </li>
+                        <li>
+                            <a href={{ url_for_security('logout') }}>Logout</a>&emsp;&emsp;
+                        </li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+        
+        <div class="messages_table">
+            <div class="notes">
+                <a href={{ url_for('new_message') }}> <button class="btn btn-primary">Write a Message</button></a><p>
+
+               <table class="table table-sm"">
+                    <thead>
+                        <tr>
+                            <th scope="col">From</th>
+                            <th scope="col">To</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>text</td>
+                            <td>text</td>
+                            <td>text</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+
+        <div class = "messages_buttons">
+         
+        <form action= {{ url_for('messages') }} id="search_messages" method = "POST" >
+            <input name="search_messages_sender" id="search_messages_sender" placeholder="Sender" type="text">
+            &emsp; <input name="search_messages_receiver" id="search_messages_receiver" placeholder="Recipient" type="text">
+            &emsp;<input name="search_messages_keyword" id="search_messages_keyword" placeholder="Search Keyword" type="text">
+            &emsp; <input name="search_messages_date" id="search_messages_date" placeholder="Search Date" type="date">
+            &emsp; <input type="submit" value = "Search Messages"> 
+         </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+{% endblock %}

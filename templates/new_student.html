@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Write a new note!
+{% endblock %}
+
+{% block main %}
+
+<body>
+    <div class="other_box">
+        
+        <div class="welcome">
+            <header>
+                <div class="assignments_nav">
+                    <ul>
+                        <li>
+                            <a href={{ url_for('teacher_portal') }}>Teacher Portal</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for('home') }}>Student Portal</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for('lookup_assignments') }}>Lookup Assignments</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for('add_assignments') }}>Add Assignments</a>
+                        </li>
+                       
+                        <li>
+                            <a href={{ url_for('messages') }}>User Mail</a>
+                        </li>
+                        
+                        <li>
+                            <a href={{ url_for('notes') }}>Assignment Notes</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for_security('logout') }}>User Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+        <div class = "other_box_over2">
+      
+    <div class="new_student_form">
+        <form action="/teacher_portal.html" id="new_student" method="POST">
+            <input name="new_student_firstname" id="new_student_firstname" placeholder="First Name" type="text">
+            <br>
+            <input name="new_student_lastname" id="new_student_lastname" placeholder="Last Name" type="text">
+            <br><textarea placeholder="New Student Note" name = "note"></textarea> <br>
+            <input type="submit" value="Add Student">
+        </form>
+    
+</div>
+        
+</div>
+    </div>
+    </div>
+</div>
+</body>
+{% endblock %}

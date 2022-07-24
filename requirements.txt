@@ -1,0 +1,5 @@
+flask_sqlalchemy
+flask_security_too
+flask_mail
+flask_dotenv
+flask_migrate

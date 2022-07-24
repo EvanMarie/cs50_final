@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+{% endblock %}
+Homeschool Planner - Home!
+{% block main %}
+
+<body>
+    <section id="home_box">
+        <div class="welcome">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href={{ url_for('home') }}><img src="/static/images/homeschool_logo_sized.png" alt
+                                    text="Homeschool!"></a></li>
+                        <li>
+                            <a href={{ url_for('messages') }}>Mail</a>
+                        </li>
+                        <li>
+                            <a href='{{ url_for('notes') }}'>Notes</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for_security('change_password') }}>Password</a>
+                        </li>
+                        <li>
+                            <a href={{ url_for_security('logout') }}>Logout</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="section_large">
+            <!-- GRID CONTAINER -->
+            <div class="section_medium_teacher">
+                <!-- STUDENT LIST -->
+                <div class = "student_table_top">
+                    <div class="assignment_links">
+                        <a href={{ url_for('add_assignments') }}>Add
+                            Assignments</a>
+                        <a href='{{ url_for('lookup_assignments') }}'>Look Up Assignments</a>
+                    </div>
+                    <div class="break"></div>
+                    <div class="table_lable">
+                    <h3> Today is day number {{day_number}}.
+                </div>
+                </h3>
+
+                <div class="break"></div>
+                <div class="students_table">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">Student's Portal</th>
+                                <th scope="col">Notes</th>
+                                <th scope="col">Message</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>text</td>
+                                <td>text</td>
+                                <td>text</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="break"></div>
+                <div class = "search_students">
+                    <form action= {{ url_for('search_students') }} id="search_students" method = "POST" >
+                        <input name="search_students_name" id="search_student_name" placeholder="Student Name" type="text">
+                        &emsp; <input name="search_student_class" id="search_student_class" placeholder="Class" type="text">
+                        &emsp;<input name="search_student_keyword" id="search_student_keyword" placeholder="Keyword" type="text">
+                        &emsp; <br><input type="submit" value = "Search Students"> 
+                     </form>
+                   
+                    </div>
+            </div>
+            <div class="section_small_one">
+                <!-- UPCOMING -->
+                <div class="table_lable">
+                    <h4>Add Upcoming:</h4>
+                </div>
+                <div class="upcoming_add">
+                    <form action="/teacher_portal.html" id="upcoming_add" method="POST">
+                        <input name="student_upcoming" id="student_upcoming" placeholder="Student" type="text">
+                        <br>
+                        <input name="day_upcoming" id="day_upcoming" placeholder="School Day" type="text">
+                        <br>
+                        <input name="class_upcoming" id="class_upcoming" placeholder="Class" type="text">
+                        <textarea placeholder="Upcoming Task"></textarea>
+                      <input type="submit" value="Add Upcoming">
+                    </form>
+                </div>
+            </div>
+
+            <div class="section_small_two">
+                <!-- MY LINKS -->
+                <div class="table_lable">
+                    <h4>Add Student Link:</h4>
+                </div>
+                <div class="link_add">
+                    <form action="/teacher_portal.html" id="link_add" method="POST">
+                        <input name="student_link" id="student_link" placeholder="Student" type="text">
+                        <br>
+                        <input name="link_url" id="link_url" placeholder="Link URL" type="text">
+                        <br>
+                        <input name="link_description" id="link_description" placeholder="Description" type="text">
+                        <br>
+                        <input type="submit" value="Add Link">
+                    </form>
+                </div>
+            </div>
+            <div class="teacher_portal_link">
+                <a href='{{ url_for('home') }}'> Student Portal </a>
+            </div>
+        </div>
+    </section>
+</body>
+{% endblock %}

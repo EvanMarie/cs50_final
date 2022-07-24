@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Write a new note!
+{% endblock %}
+
+{% block main %}
+
+<body>
+    <div class="other_box">
+        <div class="other_box_over">
+        <div class="welcome">
+            <header>
+                <div class="mininav">
+                    <ul>
+                        <li>
+                            <a href={{ url_for('home') }}>Home</a>&emsp;&emsp;
+                        </li>
+                        <li>
+                            <a href={{ url_for('messages') }}>Mail</a>&emsp;&emsp;
+                        </li>
+                        <li>
+                            <a href={{ url_for('notes') }}>Notes</a>&emsp;&emsp;
+                        </li>
+                        <li>
+                            <a href={{ url_for_security('change_password') }}>Password</a>&emsp;&emsp;
+                        </li>
+                        <li>
+                            <a href={{ url_for_security('logout') }}>Logout</a>&emsp;&emsp;
+                        </li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+
+        <div class="messages_table">
+            <div class="notes">
+                <a href={{ url_for('new_note') }}> <button class="btn btn-primary">Add a New Note</button></a><p>
+                <div class = "notes_table">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Day</th>
+                            <th scope="col">Class</th>
+                            <th scope="col">Student</th>
+                            <th scope="col">Author</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>text</td>
+                            <td>text</td>
+                            <td>text</td>
+                            <td>text</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div> 
+        <div class = "messages_buttons">
+
+            <form action= {{ url_for('search_notes') }} id="note" method = "POST" >
+                <input name="search_notes_author" id="search_notes_author" placeholder="Author" type="text">
+                &emsp; <input name="search_notes_keyword" id="search_notes_keyword" placeholder="Search Keyword" type="text">
+                &emsp; <input name="search_notes_date" id="search_notes_date" placeholder="Search Date" type="date">
+                &emsp; <input name="search_notes_schoolday" id="search_notes_schoolday" placeholder="Search Schoolday" type="text">
+                &emsp; <input type="submit" value = "Search Notes"> 
+               
+        </form>
+    
+            </div>
+</body>
+{% endblock %}

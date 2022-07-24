@@ -1,0 +1,31 @@
+{% extends "security/base.html" %}
+{% from "security/_macros.html" import render_field_with_errors, render_field, render_field_errors %}
+
+{% block content %}
+{% include "security/_messages.html" %}
+<section id = "login_box">
+<div class = "section1">
+<h1><i class="bi bi-pencil"></i>  {{ _fsdomain('Login') }}, please!</h1>
+</div>
+<div class = "section2">
+<form action="{{ url_for_security('login') }}" method="POST" name="login_user_form">
+  {{ login_user_form.hidden_tag() }}
+  {{ render_field_with_errors(login_user_form.email) }}
+  {{ render_field_with_errors(login_user_form.password) }}
+  {{ render_field_with_errors(login_user_form.remember) }}
+  {{ render_field_errors(login_user_form.csrf_token) }}
+  {{ render_field(login_user_form.submit) }}
+</form>
+</div>
+<div class = "section3">
+<ul>
+{% if security.recoverable %}
+<li><a href="{{ url_for_security('forgot_password') }}">{{ _fsdomain('Forgot password') }}</a><br/></li>
+{% endif %}
+{% if security.registerable %}
+<li><a href="{{ url_for_security('register') }}{% if 'next' in request.args %}?next={{ request.args.next|urlencode }}{% endif %}">{{ _fsdomain('Register') }}</a><br/></li>
+{% endif %}
+</ul>
+</div>
+</section>
+{% endblock %}
