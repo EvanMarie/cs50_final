@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 2ce6fff27a81
+Revision ID: 9bc98618f0a8
 Revises: 
-Create Date: 2022-07-23 10:08:22.247658
+Create Date: 2022-07-25 12:15:54.829511
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '2ce6fff27a81'
+revision = '9bc98618f0a8'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -89,6 +89,8 @@ def upgrade():
     sa.Column('subject', sa.String(length=64), nullable=True),
     sa.Column('content', sa.String(length=256), nullable=True),
     sa.Column('completed', sa.Boolean(), nullable=True),
+    sa.Column('assigned_by', sa.Integer(), nullable=True),
+    sa.ForeignKeyConstraint(['assigned_by'], ['user.id'], ),
     sa.ForeignKeyConstraint(['school_day'], ['school_day.day_number'], ),
     sa.ForeignKeyConstraint(['student'], ['student.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -104,10 +106,10 @@ def upgrade():
     )
     op.create_table('upcoming',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('event_day', sa.Integer(), nullable=True),
+    sa.Column('day', sa.Integer(), nullable=True),
     sa.Column('student', sa.Integer(), nullable=True),
-    sa.Column('event', sa.String(length=128), nullable=True),
-    sa.ForeignKeyConstraint(['event_day'], ['school_day.day_number'], ),
+    sa.Column('content', sa.String(length=128), nullable=True),
+    sa.ForeignKeyConstraint(['day'], ['school_day.day_number'], ),
     sa.ForeignKeyConstraint(['student'], ['student.id'], ),
     sa.PrimaryKeyConstraint('id')
     )

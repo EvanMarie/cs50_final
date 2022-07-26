@@ -13,47 +13,44 @@ Write a new note!
                 <div class="assignments_nav">
                     <ul>
                         <li>
-                            <a href={{ url_for('teacher_portal') }}>Teacher Portal</a>
+                            <a href={{ url_for('teacher_portal') }}> <i class="bi bi-house-fill"></i>&emsp;Teacher Portal</a>
+                        </li>
+                    
+                        <li>
+                            <a href={{ url_for('lookup_assignments') }}> <i class="bi bi-search"></i>&emsp; Lookup Assignments</a>
                         </li>
                         <li>
-                            <a href={{ url_for('add_assignments') }}>Add Assignments</a>
+                            <a href={{ url_for('messages') }}><i class="bi bi-envelope"></i>&emsp; Mail</a>
+                        </li>                      
+                        <li>
+                            <a href={{ url_for('notes') }}><i class="bi bi-journals"></i>&emsp; Notes</a>
                         </li>
                         <li>
-                            <a href={{ url_for('lookup_assignments') }}>Lookup Assignments</a>
+                            <a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i>&emsp; Password</a>
                         </li>
                         <li>
-                            <a href={{ url_for('messages') }}>Mail</a>
-                        </li>
-
-                        <li>
-                            <a href={{ url_for('home') }}>Student Portal</a>
-                        </li>
-                        <li>
-                            <a href={{ url_for_security('change_password') }}>Notes</a>
-                        </li>
-                        <li>
-                            <a href={{ url_for_security('logout') }}>Logout</a>
+                            <a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i>&emsp; Logout</a>
                         </li>
                     </ul>
                 </div>
         </div>
         </header>
-    </div>
-
+<div class = "other_box_over2">
     <div class="assignment_form">
-        <form action="/lookup_assignments.html" id="update_assignments" method="POST">
-            <input name="update_assignment_student" id="update_assignment_student" placeholder="Student" type="text">
+        Update an Assignment: <br>
+        <form action="{{url_for('update_assignment')}}" id="update_assignments" method="POST">
+            <input name="update_assignment_student" id="update_assignment_student" placeholder="{{student.first_name}} {{student.last_name}}" type="text">
             <br>
-            <input name="update_assignment_day" id="update_assignment_day" placeholder="School Day Number" type="text">
+            <input name="update_assignment_day" id="update_assignment_day" value="{{assignment.school_day}}" type="text">
             <br>
-            <input name="update_assignment_class" id="update_assignment_class" placeholder="Class Name" type="text">
+            <input name="update_assignment_class" id="update_assignment_class" value="{{assignment.subject}}" type="text">
             <br>
-            Assignment to Update: <br><textarea name="update_assigment_assignment" width="400px" height="500px"
-                font-size="12px"> </textarea><br>
+            <br> <textarea name = "update_assignment"> {{assignment.content}} </textarea> <br>
+            <br> <textarea name = "update_note"> {{assignment.notes.first().content}} </textarea> <br>
             <input type="submit" value="Update Assignment">
         </form>
     </div>
     </div>
-    </div>
+</div>
 </body>
 {% endblock %}

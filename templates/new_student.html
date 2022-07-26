@@ -8,54 +8,54 @@ Write a new note!
 
 <body>
     <div class="other_box">
-        
+
         <div class="welcome">
             <header>
                 <div class="assignments_nav">
                     <ul>
                         <li>
-                            <a href={{ url_for('teacher_portal') }}>Teacher Portal</a>
+                            <a href={{ url_for('teacher_portal') }}> <i class="bi bi-house-fill"></i>&emsp;Teacher Portal</a>
+                        </li>
+                    
+                        <li>
+                            <a href={{ url_for('lookup_assignments') }}> <i class="bi bi-search"></i>&emsp; Lookup Assignments</a>
                         </li>
                         <li>
-                            <a href={{ url_for('home') }}>Student Portal</a>
+                            <a href={{ url_for('messages') }}><i class="bi bi-envelope"></i>&emsp; Mail</a>
+                        </li>                      
+                        <li>
+                            <a href={{ url_for('notes') }}><i class="bi bi-journals"></i>&emsp; Notes</a>
                         </li>
                         <li>
-                            <a href={{ url_for('lookup_assignments') }}>Lookup Assignments</a>
+                            <a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i>&emsp; Password</a>
                         </li>
                         <li>
-                            <a href={{ url_for('add_assignments') }}>Add Assignments</a>
-                        </li>
-                       
-                        <li>
-                            <a href={{ url_for('messages') }}>User Mail</a>
-                        </li>
-                        
-                        <li>
-                            <a href={{ url_for('notes') }}>Assignment Notes</a>
-                        </li>
-                        <li>
-                            <a href={{ url_for_security('logout') }}>User Logout</a>
+                            <a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i>&emsp; Logout</a>
                         </li>
                     </ul>
                 </div>
             </header>
         </div>
-        <div class = "other_box_over2">
-      
-    <div class="new_student_form">
-        <form action="/teacher_portal.html" id="new_student" method="POST">
-            <input name="new_student_firstname" id="new_student_firstname" placeholder="First Name" type="text">
-            <br>
-            <input name="new_student_lastname" id="new_student_lastname" placeholder="Last Name" type="text">
-            <br><textarea placeholder="New Student Note" name = "note"></textarea> <br>
-            <input type="submit" value="Add Student">
-        </form>
-    
-</div>
-        
-</div>
+        <div class="other_box_over2">
+            <div class="new_student_all">
+                <div class="new_student_banner">
+                    Add a New Student: </div>
+                <div class="new_student">
+                    <form action="/new_student" id="new_student" method="POST" width="100%">
+                        <div class="new_student_firstname"><input name="new_student_firstname"
+                                id="new_student_firstname" placeholder="New Student First Name" type="text"></div>
+                        <div class="new_student_lastname"><input name="new_student_lastname" id="new_student_lastname"
+                                placeholder="New Student Last Name" type="text"></div>
+                            <div class="new_student_email"><input name="new_student_email" id="new_student_email"
+                                    placeholder="New Student Email" type="text"></div>
+                                <div class="new_student_note"><textarea placeholder="New Student Note"
+                                        name="new_student_note"></textarea> </div>
+                                    <div class="new_student_submit"><input class="btn btn-primary" type="submit" value="Add Student"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
-    </div>
-</div>
 </body>
 {% endblock %}

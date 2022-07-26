@@ -16,8 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
     <!-- CSS Stylesheet -->
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
-
-    <title>Homeschool Planner: {% block title %}{% endblock %}</title>
+<title>Homeschool Planner {% block title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -25,5 +24,7 @@
             {% block main %}{% endblock %}
         </main>
 </body>
+<footer> <div class = "image_credit"> Image credit: Wassily Kandinsky "Color Study. Squares with Concentric Circles", 1913 <div>
+</footer>
 
 </html>

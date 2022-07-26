@@ -15,16 +15,16 @@ Homeschool Planner - Home!
                         <li><a href={{ url_for('home') }}><img src="/static/images/homeschool_logo_sized.png" alt
                                     text="Homeschool!"></a></li>
                         <li>
-                            <a href={{ url_for('messages') }}>Mail</a>
+                            <a href={{ url_for('messages') }}><i class="bi bi-envelope"></i>&emsp;&emsp; Mail</a>
                         </li>
                         <li>
-                            <a href='{{ url_for('notes') }}'>Notes</a>
+                            <a href='{{ url_for('notes') }}'><i class="bi bi-journals"></i>&emsp; Notes</a>
                         </li>
                         <li>
-                            <a href={{ url_for_security('change_password') }}>Password</a>
+                            <a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i>&emsp;Password</a>
                         </li>
                         <li>
-                            <a href={{ url_for_security('logout') }}>Logout</a>
+                            <a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i>&emsp;Logout</a>
                         </li>
                     </ul>
                 </nav>
@@ -76,22 +76,18 @@ Homeschool Planner - Home!
                         <thead>
                             <tr>
                                 <th scope="col">School Day</th>
-                                <th scope="col">Class</th>
                                 <th scope="col">Task / Assignment</th>
-
+                                <th scope="col">Remove</th>
                             </tr>
                         </thead>
                         <tbody>
+                            {% for task in upcoming %}
                             <tr>
-                                <td>text</td>
-                                <td>text</td>
-                                <td>text</td>
+                                <td>{{ task.day }}</td>
+                                <td>{{ task.content }}</td>
+                                <td><a href = "{{ url_for('remove_upcoming', upcoming_id = task.id, student_id=student_id) }}">Remove</a></td>
                             </tr>
-                            <tr>
-                                <td>text</td>
-                                <td>text</td>
-                                <td>text</td>
-                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -107,18 +103,16 @@ Homeschool Planner - Home!
                         <thead>
                             <tr>
                                 <th scope="col">Link</th>
-                                <th scope="col">Description</th>
+                                <th scope="col">Remove </th>
                             </tr>
                         </thead>
                         <tbody>
+                            {% for link in links %}
                             <tr>
-                                <td>text</td>
-                                <td>text</td>
+                                <td><a href = "{{ link.link }}" target = "_blank">{{ link.description }}</a></td>
+                                <td><a href = "{{ url_for('remove_link', link_id = link.id, student_id=student_id) }}">Remove</a></td>
                             </tr>
-                            <tr>
-                                <td>text</td>
-                                <td>text</td>
-                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>

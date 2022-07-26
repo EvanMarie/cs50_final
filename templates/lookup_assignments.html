@@ -6,45 +6,37 @@ Write a new note!
 
 {% block main %}
 
-<body>
-    <div class="other_box">
-        
+<body>       
         <div class="welcome">
             <header>
                 <div class="assignments_nav">
                     <ul>
                         <li>
-                            <a href={{ url_for('teacher_portal') }}>Teacher Portal</a>
+                            <a href={{ url_for('teacher_portal') }}> <i class="bi bi-house-fill"></i>&emsp;Teacher Portal</a>
+                        </li>
+                    
+                        <li>
+                            <a href={{ url_for('lookup_assignments') }}> <i class="bi bi-search"></i>&emsp; Lookup Assignments</a>
                         </li>
                         <li>
-                            <a href={{ url_for('home') }}>Student Portal</a>
+                            <a href={{ url_for('messages') }}><i class="bi bi-envelope"></i>&emsp; Mail</a>
+                        </li>                      
+                        <li>
+                            <a href={{ url_for('notes') }}><i class="bi bi-journals"></i>&emsp; Notes</a>
                         </li>
                         <li>
-                            <a href={{ url_for('lookup_assignments') }}>Lookup Assignments</a>
+                            <a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i>&emsp; Password</a>
                         </li>
                         <li>
-                            <a href={{ url_for('add_assignments') }}>Add Assignments</a>
-                        </li>
-                       
-                        <li>
-                            <a href={{ url_for('messages') }}>User Mail</a>
-                        </li>
-                        
-                        <li>
-                            <a href={{ url_for_security('change_password') }}>Assignment Notes</a>
-                        </li>
-                        <li>
-                            <a href={{ url_for_security('logout') }}>User Logout</a>
+                            <a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i>&emsp; Logout</a>
                         </li>
                     </ul>
                 </div>
             </div>
             </header>
-
-            <div class = "other_box_over2">
                 <div class = "table_lable">
                     <div class="lookup_form">
-                        <form action="/lookup_assignments.html" id="lookup_assignments" method="POST">
+                        <form action="{{url_for('lookup_assignments')}}" id="lookup_assignments" method="POST">
                             <input name="lookup_student" id="lookup_student" placeholder="Student" type="text">
                             <input name="lookup_day" id="lookup_day" placeholder="School Day Number" type="text">
                             
@@ -69,18 +61,15 @@ Write a new note!
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for assignment in assignment_query %}
+                                {% for record in assignment_query %}
                                 <tr>
-                                   <td>{{assignment.day}}</td>
-                                   <td>{{assignment.student}}</td>
-                                   <td>{{assignment.subject}}</td>
-                                   <td>{{assignment.content | convert_links | safe}}</td>
-                                   <td> UPDATE </td>
-                                   <td>ADD NOTE</td>
-                                   <td>delete link</td>
+                                   <td>{{record.Assignment.school_day}}</td>
+                                   <td>{{record.Student.first_name}}</td>
+                                   <td>{{record.Assignment.subject}}</td>
+                                   <td>{{record.Assignment.content | convert_links | safe}}</td>
+                                   <td><a href = "{{url_for('update_assignment', assignment = record.Assignment.id, student = record.Student.id)}}"<i class="bi bi-pencil-square"></i> </td>
+                                   <td><i class="bi bi-trash"></i></td>
                                    {% endfor %} 
-
-
 
 
                                 </tr>

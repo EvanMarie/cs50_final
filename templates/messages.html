@@ -14,55 +14,71 @@ Write a new note!
                 <div class="mininav">
                     <ul>
                         <li>
-                            <a href={{ url_for('home') }}>Home</a>&emsp;&emsp;
+                            <a href={{ url_for('home') }}><i class="bi bi-house-fill"></i>&emsp;Home</a>&emsp;&emsp;
                         </li>
                         <li>
-                            <a href={{ url_for('messages') }}>Mail</a>&emsp;&emsp;
+                            <a href={{ url_for('messages') }}><i class="bi bi-envelope"></i>&emsp;Mail</a>&emsp;&emsp;
                         </li>
                         <li>
-                            <a href={{ url_for('notes') }}>Notes</a>&emsp;&emsp;
+                            <a href={{ url_for('notes') }}><i class="bi bi-journals"></i>&emsp;Notes</a>&emsp;&emsp;
                         </li>
                         <li>
-                            <a href={{ url_for_security('change_password') }}>Password</a>&emsp;&emsp;
+                            <a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i>&emsp;Password</a>&emsp;&emsp;
                         </li>
                         <li>
-                            <a href={{ url_for_security('logout') }}>Logout</a>&emsp;&emsp;
+                            <a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i>&emsp;Logout</a>&emsp;&emsp;
                         </li>
                     </ul>
                 </div>
             </header>
         </div>
         
-        <div class="messages_table">
-            <div class="notes">
-                <a href={{ url_for('new_message') }}> <button class="btn btn-primary">Write a Message</button></a><p>
-
-               <table class="table table-sm"">
+       <div class = "messages_table_container">
+        {% if messages_type == 'sent' %}
+        {% set other = 'received' %}
+        {% set other_heading = 'To' %}
+        {% else %}
+        {% set other = 'sent' %}
+        {% set other_heading = 'From' %}
+        {% endif %}
+        <div class = "current_messages_button"><button class="btn btn-secondary">{{messages_type}}</button></div>
+        <div class = "other_message_button"><a href="{{ url_for('messages', messages_type = other)}}"> <button class="btn btn-primary">{{other}}</button></a></div>
+                <div class = "new_message_button"><a href="{{ url_for('new_message') }}"> <button class="btn btn-primary">Write a Message</button></a></div>
+<div class = "break"></div>
+<div class="messages_table">      
+<table class="table table-sm"">
                     <thead>
                         <tr>
-                            <th scope="col">From</th>
-                            <th scope="col">To</th>
+                            <th scope="col">{{other_heading}}</th>
                             <th scope="col">Date</th>
                             <th scope="col">Subject</th>
                             <th scope="col">Message</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {% for message in messages %}
+                        {% if messages_type == 'received' %}
+                        {% set other_user = message.receiver %}
+                        {% else %}
+                        {% set other_user = message.sender %}
+                        {% endif %}
                         <tr>
-                            <td>text</td>
-                            <td>text</td>
-                            <td>text</td>
+                            <td>{{other_user}}</td>
+                            <td>{{ message.date }}</td>
+                            <td>{{ message.subject}}</td>
+                            <td>{{ message.content }}</td>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
-                
             </div>
+         
         </div>
     </div>
 
         <div class = "messages_buttons">
          
-        <form action= {{ url_for('messages') }} id="search_messages" method = "POST" >
+        <form action= {{ url_for('message_search') }} id="search_messages" method = "POST" >
             <input name="search_messages_sender" id="search_messages_sender" placeholder="Sender" type="text">
             &emsp; <input name="search_messages_receiver" id="search_messages_receiver" placeholder="Recipient" type="text">
             &emsp;<input name="search_messages_keyword" id="search_messages_keyword" placeholder="Search Keyword" type="text">

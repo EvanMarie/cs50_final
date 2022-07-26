@@ -41,8 +41,13 @@ a {
     color: var(--yellow);
 }
 
+.image_credit {
+    font-size: small;
+    text-align: center;
+}
+
 .break {
-    flex-basis: 100%;
+    width: 100%;
     height: 0;
   }
 
@@ -257,6 +262,16 @@ table table-sm {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 
+.section_medium a,
+.section_medium_teacher a {
+    color: black;
+}
+
+.section_medium a:hover,
+.section_medium_teacher a:hover {
+    color: white;
+}
+
 .student_table_search {
     display: flex;
     flex-direction: row;
@@ -277,6 +292,32 @@ table table-sm {
     font-weight: normal;
     text-align: left;
     padding: 1rem 1rem 1rem 1rem;
+    margin-top: 2rem;
+}
+
+.assignment_form {
+    display: inline-block;
+    width: 93%;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin: 0 auto;
+    background-color: var(--yellow);
+    font-size: 14px;
+}
+
+.assignment_form h3 {
+    margin: 0 auto;
+    margin-bottom: 0;
+}
+
+.assignment_form input {
+    width: 300px;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.assignment_form textarea {
+    width: 300px;
+    height: 100px;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 .search_students {
@@ -297,6 +338,65 @@ table table-sm {
     width: 270px;
     margin: 0.5rem 0.5rem 0rem 0.5rem;
 }
+
+.search_students input[type=submit] {
+    margin-right: 4rem;
+}
+
+.search_students a {
+    color: black;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.75;
+    width: 175px;
+    background-color: var(--red);
+    border-width: 1px;
+    border-color: black;
+    border-radius: 3px;
+}
+
+.search_students a:hover {
+    color: white;
+}
+
+.new_student_all {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1%;
+}
+
+.new_student_banner {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    width: 98%;
+}
+
+.new_student {
+    display: flex;
+    flex-basis: 98%;
+    flex-flow: nowrap;
+    justify-content: center;
+    gap: 2%;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+.new_student input {
+    width: 325px;
+    font-size: 15px;
+}
+
+.new_student textarea {
+    width: 325px;
+    height: 100px;
+    font-size: 15px;
+}
+
+.new_student :nth-child(4) {
+    margin-top: 0.5rem;
+}
+
 
 .section_small_one {
     display: flex;
@@ -336,7 +436,6 @@ table table-sm {
     align-items: flex-start;
     text-align: left;
     padding: 0 1rem 1rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 
 .section_small_two {
@@ -358,7 +457,7 @@ table table-sm {
 
 .link_add,
 .upcoming_add {
-    font-family: sans-serif;
+    font-family: monospace;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
     width: 100%;
     height: 87%;
@@ -366,7 +465,9 @@ table table-sm {
 }
 
 .assignment_links {
-    font-size: 15px;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    font-size: 13px;
+    font-family: monospace;
 }
 
 .link_add input,
@@ -392,7 +493,6 @@ font-size: 15px;
     font-weight: normal;
     align-content: top;
     padding: 0 1rem 1rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 
 .other_box {
@@ -461,7 +561,7 @@ font-size: 15px;
 .note_form_head {
     display: flex;
     justify-content: center;
-    margin: 0.5rem 0.5rem 1.5rem 0.5rem;
+    margin: 1rem 0.5rem 1.5rem 0.5rem;
     flex-basis: 90%;
     background-color: var(--green);
     padding: 0.5em 0.25em 0.25em 0.25em;
@@ -476,7 +576,6 @@ font-size: 15px;
     padding: 0.5rem;
     width: 100%;
     font-size: 15px;
-
 }
 
 .note_form input,
@@ -489,14 +588,29 @@ font-size: 15px;
     height: 200px;
 }
 
+.note_form textarea {
+    height: 200px;
+}
+
+.blue_header_short {
+    font-weight: 400;
+    width: 325px;
+    background-color: #1C9ACF;
+    border-radius: 5px;
+    padding: 1rem 1rem 1rem 1rem;
+    font-size: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
 .messages_table {
     table-layout: auto;
-    width: 98%;
+    display: flex;
+    flex-basis: 98%;
     margin: 0 auto;
     display: flex;
     align-items: flex-start;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap:  row wrap;
     align-items: flex-start;
     text-align: left;
     padding: 0 1rem 1rem;
@@ -549,54 +663,26 @@ font-size: 15px;
     align-content: flex-start;
 }
 
-.assignment_links {
+.messages_table_container {
+    width: 100%;
     display: flex;
+    flex-flow: row wrap;
     margin: 0 auto;
-    align-self: center;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.assignment_links {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
     text-align: center;
     width: 375px;
-    margin-bottom: 1rem;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.assignment_links a {
-    width: 48%;
-    background-color:rgba(201, 65, 77, 1);
-    line-height: 2;
-    border-radius: 5px;
-    margin: 0.5rem;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-size: 15px;
-    font-weight: normal;
-    color: black;
-}
 
-.assignment_links a:hover {
-    color: white;
-}
-
-.assignment_form {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-    justify-content: center;
-    align-content: center;
-    width: 350px;
-    background-color: #1C9ACF;
-    border-radius: 5px;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    text-align: center;
-}
-
-.assignment_form input,
-.assignment_form textarea {
-    width: 325px;
-    font-size: 15px;
-    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-}
 
 .assignments_nav {
     padding: 0;
@@ -678,6 +764,32 @@ font-size: 15px;
 font-size: 15px;
 }
 
+.error_section {
+    display: flex;
+    flex-flow: row;
+    width: 375px;
+    min-height: 350px;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    font-style: monospace;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 5rem 1rem 5rem 1rem;
+    background-color: var(--red);
+    border-radius: 5px;
+    padding: 1rem 1rem 1rem 1rem;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.error {
+    flex-basis: 100%;
+}
+
+.error_message {
+    flex-basis: 100%;
+}
+
 /* *************************************************** */
 @media (min-width: 600px) {
 
@@ -698,6 +810,7 @@ font-size: 15px;
     }
 
     nav li {
+        text-align: center;
         flex-basis: auto;
         margin-bottom: 0;
     }
@@ -723,19 +836,6 @@ font-size: 15px;
         background-color: var(--yellow);
         color: var(--color5);
     }
-
-    .assignment_form {
-        width: 450px;
-    }
-
-    .assignment_form input {
-        width: 400px;
-    }
-
-    .assignment_form textarea {
-        width: 400px;
-        height: 200px;
-    }
 }
 
 /* ******************************************************************* */
@@ -748,19 +848,6 @@ font-size: 15px;
 
     nav ul {
         flex-flow: row wrap;
-    }
-
-    .assignment_form {
-        width: 450px;
-    }
-
-    .assignment_form input {
-        width: 400px;
-    }
-
-    .assignment_form textarea {
-        width: 400px;
-        height: 200px;
     }
 
     .lookup_form {
@@ -791,13 +878,12 @@ font-size: 15px;
     }
 
     .assignment_links {
+        padding: 1rem 0.5rem 1rem 0.5rem;
         width: 600px;
+        align-self: center;
     }
 
-    .assignment_links a{
-        font-size: 18px;
-        font-weight: 550;
-    }
+
 
     .link_add input,
     .upcoming_add input,
@@ -813,15 +899,21 @@ font-size: 15px;
         font-size: 18px;
     }
 
+    .messages_table {
+        font-size: 18px;
+    }
+
 .note_form_head {
     font-weight: 400;
     flex-basis: 500px;
     width: 500px;
 }
 
-    .note_form {
+    .note_form,
+    .notes {
         font-size: 18px;
     }
+
     .note_form input,
     .note_form textarea {
         width: 500px;
@@ -829,8 +921,15 @@ font-size: 15px;
     }
     
     .note_form textarea {
-        height: 300px;
+        height: 200px;
     }
+
+    .blue_header_short {
+        font-size: 18px;
+        width: 500px;
+        font-weight: 300;
+    }
+
 
     .other_box {
         display: flex;
@@ -893,7 +992,73 @@ font-size: 15px;
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     }
-    
+
+
+    .new_student_banner {
+        display: inline-block;
+        margin: 0 auto;
+        width: 98%;
+        font-size: 150%;
+    }
+
+    .new_student {
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 2%;
+        margin: 1rem 1rem 1rem 1rem;
+    }
+
+    .new_student input {
+        width: 425px;
+        font-size: 18px;
+    }
+
+    .new_student textarea {
+        width: 425px;
+        height: 150px;
+        font-size: 18px;
+    }
+
+    .new_student :nth-child(1) {
+        margin-top: 0.5rem;
+    }
+
+    .new_student :nth-child(2) {
+        margin-top: 0.5rem;
+    }
+
+    .new_student :nth-child(3) {
+        margin-top: 0.5rem;
+    }
+
+    .new_student :nth-child(4) {
+        margin-top: 0.5rem;
+    }
+
+    .assignment_form {
+        display: inline-block;
+        width: 93%;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        margin: 0 auto;
+        background-color: var(--yellow);
+        font-size: 16px;
+    }
+
+    .assignment_form h3 {
+        margin: 0 auto;
+        margin-bottom: 0;
+    }
+
+    .assignment_form input {
+        width: 250px;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+    .assignment_form textarea {
+        width: 550px;
+        height: 100px;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
 }
 
 
@@ -937,13 +1102,7 @@ font-size: 15px;
         font-weight: bold;
     }
 
-    .note_form_head h3 {
-        font-size: 150%;
-        font-weight: bold;
-    }
-
     .note_form_head h4 {
-        font-size: 150%;
         font-weight: bold;
     }
 
@@ -951,6 +1110,7 @@ font-size: 15px;
 /* ******************************************************************** */
 @media (min-width: 1150px) {
 
+    
     h1 {
         text-align: center;
         margin: 0 auto;
@@ -1030,6 +1190,16 @@ font-size: 15px;
         align-content: flex-start;
     }
 
+    .section_medium a,
+    .section_medium_teacher a {
+        color: black;
+    }
+
+    .section_medium a:hover,
+    .section_medium_teacher a:hover {
+        color: white;
+    }
+
     .section_medium_teacher {
         display: flex;
         justify-content: center;
@@ -1050,6 +1220,7 @@ font-size: 15px;
         align-content: flex-start;
         flex-direction: row;
         flex-flow: row wrap;
+        margin-bottom: 2rem;
     }
 
     .section_small_one {
@@ -1064,6 +1235,14 @@ font-size: 15px;
         grid-row: 2 / 3;
         margin-bottom: 0.5rem;
         align-content: flex-start;
+    }
+
+    .section_small_two a {
+        color: black;
+    }
+
+    .section_small_two a:hover {
+        color: white;
     }
 
     .assignments_nav {
@@ -1100,29 +1279,7 @@ font-size: 15px;
         color: white;
     }
 
-    .assignment_form {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        margin-top: 2rem;
-        width: 650px;
-        height: 450px;
-        background-color: #1C9ACF;
-        border-radius: 5px;
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-        text-align: center;
-    }
 
-    .assignment_form input,
-    .assignment_form textarea {
-        width: 500px;
-        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-        font-size: 18px;
-    }
-
-    .assignment_form textarea {
-        height: 150px;
-    }
 
     .lookup_form {
         display: flex;
@@ -1157,6 +1314,8 @@ font-size: 15px;
     .upcoming_add textarea {
         width: 375px;
     }
+
+
 }
 
 

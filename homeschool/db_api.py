@@ -1,17 +1,34 @@
+from multiprocessing.sharedctypes import Value
 from termios import TCOFLUSH
-from homeschool.models import User, Student, SchoolDay, Assignment, Note, Message
+from homeschool.models import Link, Upcoming, User, Student, SchoolDay, Assignment, Note, Message
 from homeschool import db, app, user_datastore
 from datetime import datetime, date, time
 from flask_security import hash_password
+from sqlalchemy.orm.exc import UnmappedInstanceError
+from sqlalchemy import or_, and_, func
 
+def init_roles(teacher_email = None):
+    user_datastore.create_role(name='teacher')
+    user_datastore.create_role(name='student')
+    if teacher_email:
+        teacher = User.query.filter_by(email = teacher_email).one()
+        user_datastore.add_role_to_user(teacher, 'teacher')
+        db.session.commit()
 
 def add_user(email, password, roles=[]):
     user_datastore.create_user(
         email=email, password=hash_password(password), roles=roles)
     db.session.commit()
+    
+def create_user_for_student(student, new_student_email):
+    add_user(email=new_student_email, password=hash_password('changemenow'), roles=['student'])
+            
+    user = User.query.filter_by(email=new_student_email).one()
+    student.user_id = user.id
+    db.session.commit()
+    
 
-
-def add_student(first_name, last_name, user_id=None):
+def add_new_student(first_name, last_name, user_id=None):
     db.session.add(Student(first_name=first_name,
                    last_name=last_name, user_id=user_id))
     db.session.commit()
@@ -19,7 +36,11 @@ def add_student(first_name, last_name, user_id=None):
 
 def assign_user_to_student(student: Student, user_id):
     Student.user_id = user_id
+    
     db.session.commit()
+
+def get_user_by_email(email):
+    return User.query.filter_by(email = email).one()
 
 
 def new_schoolday(day_number=None):
@@ -32,25 +53,24 @@ def new_schoolday(day_number=None):
     db.session.commit()
 
 
-def new_assignment(student_first_name,
-                   student_last_name,
+def new_assignment(student_id,
                    school_day,
                    subject,
                    content,
-                   notes=None):
-    student = Student.query.filter_by(first_name=student_first_name,
-                                      last_name=student_last_name).one()
+                   assigned_by_id,
+                   note=None):
+    
     assignment = Assignment(school_day=school_day,
-                            student=student.id,
+                            student=student_id,
                             subject=subject,
-                            content=content)
+                            content=content,
+                            assigned_by = assigned_by_id)
     db.session.add(assignment)
     db.session.commit()
-    db.session.refresh(assignment)
-    add_note(content=notes,
-             assignment=assignment.id,
-             student=student.id,
-             school_day=school_day)
+    
+
+def get_assignment_by_id(assignment_id):
+    return Assignment.query.get(assignment_id)
 
 
 def get_assignments(day_number, student_id):
@@ -59,8 +79,9 @@ def get_assignments(day_number, student_id):
     return assignments
 
 
-def add_note(content, school_day=None, assignment=None, student=None):
-    db.session.add(Note(school_day=school_day,
+def add_note(content, author_id, school_day=None, assignment=None, student=None):
+    db.session.add(Note(author_id = author_id,
+                        school_day=school_day,
                         assignment=assignment,
                         student=student,
                         content=content))
@@ -105,16 +126,17 @@ def set_date(schoolday_id, date_assignment):
     db.session.commit()
 
 
-def lookup_assignments(student, day, subject, keyword):
-    query = Assignment.query
+def search_assignments(student, day, subject, keyword):
+    query = db.session.query(Assignment, Student).join(Student)
 
     if student:
-        first_name, last_name = student.split(' ')
-        query = query.join(Student).where(Student.first_name.lower()
-                            == first_name.lower())
-        if last_name:
-            query = query.join(Student).where(
-                Student.last_name.lower() == last_name.lower())
+        try:
+            first_name, last_name = student.split(' ')
+            query = query.filter(func.lower(Student.first_name) == first_name.lower())
+            query = query.filter(func.lower(Student.last_name) == last_name.lower())
+        except ValueError:
+            query = query.filter(or_(func.lower(Student.first_name) == student.lower(),
+                                               func.lower(Student.last_name) == student.lower())) 
 
     if day:
         day = int(day)
@@ -179,16 +201,106 @@ def search_messages(owner,
                     sender = None, 
                     message_date = None, 
                     keyword = None):
-    owner = User.get(int(owner))   
+     
     if sender:
         sender = int(sender)
-        query = owner.received_messages.where(Message.sender == sender) 
+        query = Message.query.join(User, onclause = 'user.id == sender').where(and_(User.id == int(owner), 
+                                                    Message.sender == int(sender)))
+         
     elif receiver:
         receiver = int(receiver)
-        query = owner.received_messages.where(Message.receiver == receiver)
-    
-    elif message_date:
-        query = owner.received_messages.where(Message.date == message_date)
+        query = Message.query.join(User, onclause = 'user.id == receiver').where(and_(User.id == int(owner),
+                                                    Message.receiver == int(receiver)))
+      
+    if message_date:
+        query = query.where(Message.date == message_date)
         
-    elif keyword:
-        query = owner.re
+    if keyword:
+        query = query.where(Message.subject.like("%keyword%") |
+                            Message.content.like("%keyword%"))
+        
+    return query
+        
+    
+
+def get_student(first_name=None, last_name=None, id=None):
+    
+    if id:
+        return Student.query.get(id)
+    
+    return Student.query.filter_by(first_name = first_name,
+                                       last_name = last_name).one()
+
+def search_students(student_name = None):
+    query = Student.query
+    if student_name:
+        try:
+            first_name, last_name = student_name.split(' ')
+            query = query.where(Student.first_name == first_name)
+        except ValueError:
+            query = query.where(Student.first_name == student_name)
+            last_name = None
+
+        if last_name:
+            query = query.where(
+                Student.last_name == last_name)
+    return query.one()
+        
+def get_all_students():
+    return Student.query
+
+    
+def add_upcoming(student, day, content):
+    db.session.add(Upcoming(student = student,
+                            day = day,
+                            content = content))
+    db.session.commit()
+
+def get_upcoming(student, day):
+    return Upcoming.query.filter_by(student = student).where(Upcoming.day >= day)
+
+def delete_upcoming(upcoming):
+    try:
+        db.session.delete(upcoming)
+    except UnmappedInstanceError:
+        db.session.delete(Upcoming.query.get(upcoming))
+    db.session.commit()
+    
+    
+def add_link(student, link, description):
+    db.session.add(Link(student = student,
+                            link = link,
+                            description = description))
+    db.session.commit()
+
+def get_links(student):
+    return Link.query.filter_by(student = student)
+
+def delete_link(link):
+    try:
+        db.session.delete(link)
+    except UnmappedInstanceError:
+        db.session.delete(Link.query.get(link))
+    db.session.commit()
+    
+    
+def send_message(sender, receiver, subject, content):
+    db.session.add(Message( sender = sender,
+                            receiver = receiver,
+                            subject = subject,
+                            content = content))
+    db.session.commit()
+
+def get_messages_for_user(user_id):
+    received_messages = search_messages(owner = user_id,
+                                        receiver = user_id)
+    sent_messages = search_messages(owner = user_id,
+                                    sender = user_id)
+    return received_messages, sent_messages
+
+def delete_message(message):
+    try:
+        db.session.delete(message)
+    except UnmappedInstanceError:
+        db.session.delete(Message.query.get(message))
+    db.session.commit()

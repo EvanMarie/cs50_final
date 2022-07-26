@@ -9,6 +9,7 @@ class Role(db.Model, fsqla.FsRoleMixin):
 class User(db.Model, fsqla.FsUserMixin):
     #sent_messages = db.relationship('Message', primaryjoin = 'user.id == message.sender')
     #received_messages = db.relationship('Message', primaryjoin = 'user.id == message.receiver')
+    student = db.relationship('Student', lazy = 'dynamic')
     pass
 
 class Student(db.Model):
@@ -30,7 +31,9 @@ class Assignment(db.Model):
     subject = db.Column(db.String(64), index = True)
     content = db.Column(db.String(256))
     completed = db.Column(db.Boolean, default = False)
+    assigned_by = db.Column(db.Integer, db.ForeignKey("user.id"))
     notes = db.relationship("Note", lazy = "dynamic")
+
 
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -43,9 +46,9 @@ class Note(db.Model):
 
 class Upcoming(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    event_day = db.Column(db.Integer, db.ForeignKey("school_day.day_number"), default = None)
+    day = db.Column(db.Integer, db.ForeignKey("school_day.day_number"), default = None)
     student = db.Column(db.Integer, db.ForeignKey("student.id"), default = None)
-    event = db.Column(db.String(128), default = None)
+    content = db.Column(db.String(128), default = None)
 
 class Link(db.Model):
     id = db.Column(db.Integer, primary_key = True)

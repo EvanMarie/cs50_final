@@ -54,13 +54,15 @@ def import_lesson_plans(file_path):
                                    student_last_name = 'Stefanuk',
                                    school_day = day,
                                    subject = subject_text,
-                                   content = row[subject])
+                                   content = row[subject],
+                                   assigned_by_id = 1)
                 if not subject.startswith(only_emma):
                     new_assignment(student_first_name = 'Michael',
                                    student_last_name = 'Stefanuk',
                                    school_day = day,
                                    subject = subject_text,
-                                   content = row[subject])
+                                   content = row[subject],
+                                   assigned_by_id = 1)
 
 
 def get_http_strings(content: str):

@@ -1,0 +1,58 @@
+for banner, 1000 x 250
+
+html
+<div class = "welcome_container">
+  <figure class = "dab">
+    <img src = "https://res.cloudinary.com/evanmarie/image/upload/v1658789800/dab_sm_zsdxxd.png"></figure>
+  <figure class = "electrons">
+    <img src = "https://res.cloudinary.com/evanmarie/image/upload/v1658789800/electrons_sm_q3mv2c.png">
+    </figure>
+  <figure class = "books"> <img src = "https://res.cloudinary.com/evanmarie/image/upload/v1658789800/books_sm_qaaizz.png"></figure>
+  <figure class = "welcome"><img src = "https://res.cloudinary.com/evanmarie/image/upload/v1658789800/welcome_sm_zzzqcb.png"></figure>
+  <figure class = "awesome"><img src = "https://res.cloudinary.com/evanmarie/image/upload/v1658789800/awesome_sm_obtjkc.png"></figure>
+  
+</div>
+
+
+
+CSS
+
+.welcome_container {
+  display: grid;
+  width: 1000px;
+  height: 250px;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: space-between;
+  align-content: center;
+  background: rgb(236, 127, 55);
+  background: radial-gradient(circle, rgba(236, 127, 55, 1) 0%, rgba(201, 65, 77, 1) 42%, rgba(231, 195, 53, 0.6852941860337884) 100%);
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  flex-flow: nowrap;
+}
+
+.dab {
+  grid-row: 4/5;
+  grid-column: 6/7;
+}
+
+.electrons {
+  grid-row: 2/5;
+  grid-column: 1/2;
+}
+
+.books {
+  grid-row: 1/4;
+  grid-column: 6/7;
+}
+
+.welcome {
+  grid-row: 1/3;
+  grid-column: 2/5;
+}
+
+.awesome {
+  grid-row 4/5;
+  grid-column: 2/6;
+}

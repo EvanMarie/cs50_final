@@ -38,6 +38,7 @@ Write a new note!
                 <table class="table table-sm">
                     <thead>
                         <tr>
+                            <th scope="col">To</th>
                             <th scope="col">From</th>
                             <th scope="col">Date</th>
                             <th scope="col">Subject</th>
@@ -45,12 +46,15 @@ Write a new note!
                         </tr>
                     </thead>
                     <tbody>
+                        {% for message in messages %}
                         <tr>
-                            <td>text</td>
-                            <td>text</td>
-                            <td>text</td>
-                            <td>text</td>
+                            <td>{{ message.receiver }}</td>
+                            <td>{{ message.sender }}</td>
+                            <td>{{ message.date }}</td>
+                            <td>{{ message.subject }}</td>
+                            <td>{{ message.content }}</td>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
