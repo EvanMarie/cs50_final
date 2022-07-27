@@ -38,7 +38,11 @@ h4 {
 }
 
 a {
-    color: var(--yellow);
+    color: var(--black);
+}
+
+a {
+    color: var(--white);
 }
 
 .image_credit {
@@ -191,7 +195,6 @@ nav a:hover {
 
 .section_large a:hover {
     text-decoration: none;
-    color: var(--blue)
 }
 
 .section_medium {
@@ -224,6 +227,14 @@ table table-sm {
     align-content: top;
     font-family: sans-serif;
 }
+
+table table-sm a {
+color: black;
+}
+
+table table-sm a {
+    color: white;
+    }
 
 .today_table {
     table-layout: auto;
@@ -282,7 +293,6 @@ table table-sm {
 .student_table_top {
     align-content: center;
     width: 100%;
-    
 }
 
 .students_table {
@@ -293,6 +303,16 @@ table table-sm {
     text-align: left;
     padding: 1rem 1rem 1rem 1rem;
     margin-top: 2rem;
+}
+
+.remove_student_button {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.remove_student_button button {
+    width: 300px;
 }
 
 .assignment_form {
@@ -310,7 +330,8 @@ table table-sm {
     margin-bottom: 0;
 }
 
-.assignment_form input {
+.assignment_form input,
+.lookup_form input {
     width: 300px;
     margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
@@ -476,7 +497,12 @@ table table-sm {
     width: 355px;
 }
 
-.today_table,
+
+.today_table {
+    font-size: 15px;
+    font-weight: normal;
+}
+
 .students_table,
 .messages_table
 {
@@ -680,9 +706,12 @@ font-size: 15px;
     text-align: center;
     width: 375px;
     margin-bottom: 0.5rem;
+
 }
 
-
+.assignment_links a {
+    font-size: 13px;
+}
 
 .assignments_nav {
     padding: 0;
@@ -733,15 +762,30 @@ font-size: 15px;
 
 .lookup_form input {
     width: 325px;
+    font-size: 15px;
     margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
-.lookup_table {
+.lookup_table,
+.messages_table {
     width: 95%;
     background-color: var(--orange);
     font-size: 10px;
     border-radius: 5px;
+    margin: 0 auto;
     margin-top: 1rem;
+    font-style: sans-serif;
+    font-size: 16px;
+}
+
+.lookup_table a
+.messages_table a {
+    color: black;
+}
+
+.lookup_table a:hover
+.messages_table a:hover {
+    color: white;
 }
 
 .messages_buttons {
@@ -855,6 +899,7 @@ font-size: 15px;
     }
 
     .lookup_form input {
+        font-size: 18px;
         width: 250px;
 
     }
@@ -881,6 +926,11 @@ font-size: 15px;
         padding: 1rem 0.5rem 1rem 0.5rem;
         width: 600px;
         align-self: center;
+
+    }
+
+    .assignment_links a {
+        font-size: 18px;
     }
 
 
@@ -891,7 +941,11 @@ font-size: 15px;
         width: 450px;
     }
 
-    .today_table,
+    .today_table {
+        font-size: 15px;
+        font-weight: normal;
+    }
+
     .students_table,
     .upcoming_table,
     .links_table,

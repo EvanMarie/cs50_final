@@ -33,25 +33,27 @@ Write a new note!
             </header>
         </div>
 
-        <div class="messages_table">
+       
             <div class="notes">
-                <a href={{ url_for('new_note') }}> <button class="btn btn-primary">Add a New Note</button></a><p>
-                <div class = "notes_table">
+                 <div class="messages_table">
+                    <div class = "notes_table">
                 <table class="table table-sm">
                     <thead>
                         <tr>
                             <th scope="col">Day</th>
-                            <th scope="col">Class</th>
                             <th scope="col">Student</th>
                             <th scope="col">Author</th>
+                            <th scope="col">Assignment</th>
+                            <th scope="col">Note</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>text</td>
-                            <td>text</td>
-                            <td>text</td>
-                            <td>text</td>
+                            <td>{{ note.school_day }}</td>
+                            <td>{{ note.Student.first_name }}</td>
+                            <td>{{ note.author }}</td>
+                            <td>{{ note.assignment }}</td>
+                            <td>{{ note.content }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -73,3 +75,5 @@ Write a new note!
             </div>
 </body>
 {% endblock %}
+<footer><div class = "image_credit"> Image credit: Wassily Kandinsky "Color Study. Squares with Concentric Circles", 1913 <div>
+</footer>

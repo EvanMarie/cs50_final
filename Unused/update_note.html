@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Write a new note!
+{% endblock %}
+
+{% block main %}
+<body>
+    <body>
+        <div class = "other_box">
+            <div class="welcome">
+                <header>
+                    <div class = "mininav">
+                        <ul>
+                            <li>
+                                <a href={{ url_for('home') }}><i class="bi bi-house-fill"></i>&emsp;Home</a>&emsp;&emsp;
+                            </li>
+                            <li>
+                                <a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i>&emsp;Password</a>&emsp;&emsp;
+                            </li>
+                            <li>
+                                <a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i>&emsp;Logout</a>&emsp;&emsp;
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+            </div>
+            <div class="other_box_over">
+                <div class="note_form_head">
+                    <h3>Update Your Note:</h3>
+                </div>
+                    <div class = "break"></div>
+                <div class = "blue_header_short">
+              Update note: {{assignment.content}}
+                <br> for {{assignment.assigned_to.first_name}}
+                <br>from day {{assignment.school_day}}.</div>
+                <div class = "break"></div>
+          <div class = "note_form">
+            <form action="{{url_for('update_note', assignment.id)}}" id="update_note" method = "POST" >
+                <textarea name = "note_content" placeholder="Note">{{assignment.note}}</textarea>
+                <div class = "break"></div><br>
+      <input type="submit" value = "Submit" width="150px" font-size="15px">
+    </form>
+            </div>
+        </div>
+    </body>
+
+{% endblock %}

@@ -31,22 +31,17 @@ Write a new note!
         </header>
 <div class = "other_box_over2">
     <div class="assignment_form">
-        Update an Assignment: <br>
-        <form action="{{url_for('update_assignment', assignment_id=assignment.id)}}" id="update_assignments" method="POST">
-            Student: <input name="update_assignment_student" id="update_assignment_student" placeholder="{{student.first_name}} {{student.last_name}}" type="text">
+        
+            Student: {{assignment.assigned_to.first_name}} {{assignment.assigned_to.last_name}}
             <br>
-            School Day: <input name="update_assignment_day" id="update_assignment_day" value="{{assignment.school_day}}" type="text">
+            School Day: {{assignment.school_day}}
             <br>
-            Subject: <input name="update_assignment_class" id="update_assignment_class" value="{{assignment.subject}}" type="text">
+            Subject: {{assignment.subject}}
             <br>
-           Assignment: <br> <textarea name = "update_assignment"> {{assignment.content}} </textarea> <br>
-           Note: <br> <textarea name = "update_note"> {{assignment.note }} </textarea> <br>
-            <input type="submit" value="Update Assignment">
-        </form>
+           Assignment: {{assignment.content}} 
+           Note: {{assignment.note }} 
+       
     </div>
-        <a href="{{url_for('remove_assignment', assignment_id = assignment.id)}}"
-         onclick="return confirm('Are you sure you want to permanently delete this assignment?');"><button type="button" class="btn btn-danger">REMOVE ASSIGNMENT!</button></a>
-
     </div>
 </div>
 </body>

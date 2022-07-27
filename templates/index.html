@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 
 {% block title %}
-
-{% endblock %}
 Homeschool Planner - Home!
+{% endblock %}
+
 {% block main %}
 
 <body>
@@ -14,12 +14,6 @@ Homeschool Planner - Home!
                     <ul>
                         <li><a href={{ url_for('home') }}><img src="/static/images/homeschool_logo_sized.png" alt
                                     text="Homeschool!"></a></li>
-                        <li>
-                            <a href={{ url_for('messages') }}><i class="bi bi-envelope"></i>&emsp;&emsp; Mail</a>
-                        </li>
-                        <li>
-                            <a href='{{ url_for('notes') }}'><i class="bi bi-journals"></i>&emsp; Notes</a>
-                        </li>
                         <li>
                             <a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i>&emsp;Password</a>
                         </li>
@@ -47,16 +41,24 @@ Homeschool Planner - Home!
                                 <th scope="col">Class</th>
                                 <th scope="col">Assignment</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Notes</th>
+                                <th scope="col">View</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for assignment in day_assignments %}
-                            <tr>
+                            {% if assignment.completed %}
+                                {% set _input = '<i class="bi bi-check2-square"></i>' %}
+                                {% set strikethrough = 'text-decoration: red underline overline line-through;' %}
+                            {% else %}
+                                {% set strikethrough = '' %}
+                                {% set _input = '<i class="bi bi-square"></i>' %}
+                            {% endif %}
+                            <tr style="{{strikethrough | safe}}">
                                 <td>{{assignment.subject}}</td>
                                 <td>{{assignment.content | convert_links | safe}} </td>
-                                <td>{{assignment.completed}}</td>
-                                <td>Note</td>
+                                <td ><div class="form-check" >
+                                    <a href="{{url_for('complete_assignment', assignment_id=assignment.id)}}">{{_input | safe}}</a></div></td>
+                                <td><a href ="{{url_for('view_assignment', assignment_id = assignment.id)}}"><i class="bi bi-binoculars"></i></a></td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -85,7 +87,7 @@ Homeschool Planner - Home!
                             <tr>
                                 <td>{{ task.day }}</td>
                                 <td>{{ task.content }}</td>
-                                <td><a href = "{{ url_for('remove_upcoming', upcoming_id = task.id, student_id=student_id) }}">Remove</a></td>
+                                <td><a href = "{{ url_for('remove_upcoming', upcoming_id = task.id, student_id=student_id) }} "><i class="bi bi-file-x"></i></a></td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -110,7 +112,7 @@ Homeschool Planner - Home!
                             {% for link in links %}
                             <tr>
                                 <td><a href = "{{ link.link }}" target = "_blank">{{ link.description }}</a></td>
-                                <td><a href = "{{ url_for('remove_link', link_id = link.id, student_id=student_id) }}">Remove</a></td>
+                                <td><a href = "{{ url_for('remove_link', link_id = link.id, student_id=student_id) }}"><i class="bi bi-file-x"></i></a></td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -123,4 +125,6 @@ Homeschool Planner - Home!
         </div>
     </section>
 </body>
+<footer><div class = "image_credit"> Image credit: Wassily Kandinsky "Color Study. Squares with Concentric Circles", 1913 <div>
+</footer>
 {% endblock %}
