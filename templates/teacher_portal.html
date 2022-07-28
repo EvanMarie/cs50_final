@@ -1,118 +1,117 @@
-{% extends "layout.html" %}
-
-{% block title %}
-
-{% endblock %}
-Homeschool Planner - Home!
-{% block main %}
+{% extends "layout.html" %} {% block title %} Teacher Portal {% endblock %} {% block main %}
 
 <body>
-    <section id="home_box">
-        <div class="welcome">
-            <header>
-                <nav>
-                    <ul>
-                        <li><a href={{ url_for('home') }}><img src="/static/images/homeschool_logo_sized.png" alt
-                                    text="Homeschool!"></a></li>
-                        <li>
-                            <a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i>&emsp;Password</a>
-                        </li>
-                        <li>
-                            <a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i>&emsp;Logout</a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
-
-        <div class="section_large">
-            <!-- GRID CONTAINER -->
-            <div class="section_medium_teacher">
-                <!-- STUDENT LIST -->
-                <div class = "student_table_top">
-                    <div class="table_lable">
-                        <h3> Today is day number {{day_number}}.</h3>
-                </div>
-                
-
-                <div class="break"></div>
-                <div class="students_table">
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col">Student's Portal</th>
-                                <th scope="col">Update</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for student in students %}
-                            <tr>
-                                <td><a href = "{{url_for('home', student_id = student.id)}}"> {{student.first_name + " " + student.last_name}}  </a></td>
-                                <td><a href = "{{url_for('update_student', student_id = student.id)}}"><i class="bi bi-pencil-square"></i></a></td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-               
-                <div class="assignment_form">
-                    <div class="assignment_links">
-                        <a href='{{ url_for('lookup_assignments') }}'><button class="btn btn-primary">Assignment Search</button></a>
-                            <a href = {{ url_for('new_student') }} ><button class="btn btn-primary"> Add Student </button> </a>
-                    </div>                  
-                  
-                    <h4>Add a New Assignment:</h4> 
-                    <div class="break"></div>
-                    <form action="{{url_for('add_assignment')}}" id="add_assignment" method="POST">
-                        <input name="add_assignment_student" id="add_assignment_student" placeholder="Student" type="text">
-                        <input name="add_assignment_day" id="add_assignment_day" placeholder="School Day Number" type="text">
-                        <input name="add_assignment_class" id="add_assignment_class" placeholder="Class Name" type="text">
-                   <textarea placeholder="Assignment to Add" name = "assignment"></textarea> <br>
-                   <input class="btn btn-primary" type="submit" value="Add Assignment">
-                    </form>
-                
-            </div>
-            </div>
-            <div class="break"></div>
-            
-            </div>
-            <div class="section_small_one">
-                <!-- UPCOMING -->
-                <div class="table_lable">
-                    <h4>Add Upcoming:</h4>
-                </div>
-                <div class="upcoming_add">
-                    <form action="{{url_for("teacher_portal", post_type='upcoming')}}" id="upcoming_add" method="POST">
-                        <input name="student_upcoming" id="student_upcoming" placeholder="Student" type="text">
-                        <br>
-                        <input name="day_upcoming" id="day_upcoming" placeholder="School Day" type="text">
-                        <br>
-                        <textarea placeholder="Upcoming Task" name = "assignment_upcoming"></textarea>
-                        <input class="btn btn-primary" type="submit" value="Add Upcoming">
-                    </form>
-                </div>
-            </div>
-
-            <div class="section_small_two">
-                <!-- MY LINKS -->
-                <div class="table_lable">
-                    <h4>Add Student Link:</h4>
-                </div>
-                <div class="link_add">
-                    <form action="{{url_for("teacher_portal", post_type='link')}}" id="link_add" method="POST">
-                        <input name="student_link" id="student_link" placeholder="Student" type="text">
-                        <br>
-                        <input name="link_url" id="link_url" placeholder="Link URL" type="text">
-                        <br>
-                        <input name="link_description" id="link_description" placeholder="Description" type="text">
-                        <br>
-                        <input class="btn btn-primary" type="submit" value="Add Upcoming">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+	<!-- MAIN CONTAINER -->
+	<div class = "tp_background_image">
+	<div class="tp_container_main">
+		<!-- BANNER -->
+		<div class="tp_item01">
+			<div class="teacher_portal_banner">
+				<div class="teacher_portal_banner_image"> <img src="/static/images/homeschool_banner_sized.png"> </div>
+				<!-- NAVBAR -->
+				<div class="teacher_navbar">
+					<ul>
+						<li><a href={{ url_for('home') }}><i class="bi bi-house-fill"></i> </a></li>
+						&emsp;<li><a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i></a></li>
+						&emsp;<li><a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i> </a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- TEACHER: TABLE OF STUDENTS -->
+		<div class="tp_item02">
+			<div class="students_table_label"> Today is day number {{day_number}}.</div>
+			<table class="table table-sm">
+				<thead>
+					<tr>
+						<th scope="col">Student's Portal</th>
+						<th scope="col">Update</th>
+					</tr>
+				</thead>
+				<tbody> {% for student in students %}
+					<tr>
+						<td><a href="{{url_for('home', student_id = student.id)}}"> {{student.first_name + " " + student.last_name}}  </a></td>
+						<td><a href="{{url_for('update_student', student_id = student.id)}}"><i class="bi bi-pencil-square"></i></a></td>
+					</tr> {% endfor %} </tbody>
+					</table>
+					<div class = "tp_item02_button">
+					<a href = "{{url_for('new_student')}}"><button type="button" class="btn btn-primary btn-sm">Add a Student</button></a>
+					</div>
+		</div>
+		<!-- TEACHER: ADD ASSIGNMENT FORM -->
+		<div class="tp_item03">
+			<form action="{{url_for('add_assignment')}}" id="add_assignment" method="POST">
+				<div class="add_assignment_label"> Add a Student Assignment</div>
+				<div class="add_assignment_student">
+					<input name="add_assignment_student" id="add_assignment_student" placeholder="Student" type="text"> </div>
+				<div class="add_assignment_day">
+					<input name="add_assignment_day" id="add_assignment_day" placeholder="School Day Number" type="number" min="1" max="180"> </div>
+				<div class="add_assignment_class">
+					<input name="add_assignment_class" id="add_assignment_class" placeholder="Class Name" type="text"> </div>
+				<div class="add_assignment_content">
+					<textarea placeholder="Assignment to Add" name="assignment"></textarea>
+				</div>
+				<div class="add_assignment_submit">
+					<input class="btn btn-primary btn-sm" type="submit" value="Add Assignment"> </div>
+			</form>
+		</div>
+		<!--/div-->
+		<!-- TEACHER: SEARCH ASSIGNMENTS FORM -->
+		<div class="tp_item04">
+			<form action="{{url_for('lookup_assignments')}}" id="lookup_assignments" method="POST">
+				<div class="search_assignments_label"> Search Student Assignments </div>
+				<div class="search_assignments_student">
+					<input name="lookup_student" id="lookup_student" placeholder="Student" type="text"> </div>
+				<div class="search_assignments_day">
+					<input name="lookup_day" id="lookup_day" placeholder="School Day Number" type="number" min="1" max="180"> </div>
+				<div class="search_assignments_class">
+					<input name="lookup_class" id="lookup_class" placeholder="Class Name" type="text"> </div>
+				<div class="search_assignments_keyword">
+					<input name="lookup_keyword" id="lookup_keyword" placeholder="Keyword" type="text"> </div>
+				<div class="search_assignments_submit">
+					<input class="btn btn-primary btn-sm" type="submit" value="Search Assignments"> </div>
+			</form>
+		</div>
+		<!-- TEACHER: ADD UPCOMING -->
+		<div class="tp_item05">
+			<form action="{{url_for("teacher_portal", post_type='upcoming')}}" id="upcoming_add" method="POST">
+				<div class="add_upcoming_label"> Add Upcoming for Student</div>
+				<div class="add_upcoming_student">
+					<input name="student_upcoming" id="student_upcoming" placeholder="Student" type="text"> </div>
+				<div class="add_upcoming_day">
+					<input name="day_upcoming" id="day_upcoming" placeholder="School Day Number" type= "number" min = "1" max = "180">
+					</div>
+					<div class="add_upcoming_content">
+						<textarea placeholder="Upcoming Task" name="assignment_upcoming"></textarea>
+					</div>
+					<div class="add_upcoming_submit">
+						<input class="btn btn-primary btn-sm" type="submit" value="Add Upcoming" >
+					</div>
+				</form>
+		</div>
+		<!-- TEACHER: ADD STUDENT LINK -->
+		<div class="tp_item06 ">
+				<form action="{{url_for("teacher_portal", post_type='link' )}} " id="link_add" method="POST">
+                    <div class="add_link_label"> Add a Student Link</div>
+                    <div class="add_link_student">
+						<input name="student_link" id="student_link" placeholder="Student" type="text">
+					</div>
+					<div class="add_link_url">
+						<input name="link_url" id="link_url" placeholder="Link URL" type="text">
+					</div>
+					<div class="add_link_description">
+						<input name="link_description" id="link_description" placeholder="Description" type="text">
+					</div>
+					<div class="add_link_submit ">
+						<input class="btn btn-primary btn-sm" type="submit" value="Add Link">
+					</div>
+				</form>
+		</div>
+	</div>
+</div>	
 </body>
+<footer>
+	<div class="image_credit"> Background Image: Wassily Kandinsky "Color Study. Squares with Concentric Circles", 1913 <br>
+        Banner logo by Emma E. Stefanuk<div> 
+</footer> 
 {% endblock %}
-<footer><div class = "image_credit"> Image credit: Wassily Kandinsky "Color Study. Squares with Concentric Circles", 1913 <div>
-</footer>

@@ -1,56 +1,54 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Write a new note!
+Update an Assignment
 {% endblock %}
 
 {% block main %}
 
-<body>
-    <div class="other_box">
-        <div class="welcome">
-            <header>
-                <div class="assignments_nav">
-                    <ul>
-                        <li>
-                            <a href={{ url_for('teacher_portal') }}> <i class="bi bi-house-fill"></i>&emsp;Teacher Portal</a>
-                        </li>
-                    
-                        <li>
-                            <a href={{ url_for('lookup_assignments') }}> <i class="bi bi-search"></i>&emsp; Lookup Assignments</a>
-                        </li>
-                        <li>
-                            <a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i>&emsp; Password</a>
-                        </li>
-                        <li>
-                            <a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i>&emsp; Logout</a>
-                        </li>
-                    </ul>
-                </div>
+<body> 
+<div class = "assignment_background_image">
+<div class = "general_container">
+    <div class="general_banner">
+        <div class="general_heading_banner_image"> <img src="/static/images/homeschool_banner_sized.png"> </div>
+        <!-- NAVBAR -->
+        <div class="general_navbar">
+            <ul>
+                <li><a href={{ url_for('home') }}><i class="bi bi-house-fill"></i> </a></li>
+                &emsp;<li><a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i></a></li>
+                &emsp;<li><a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i> </a></li>
+            </ul>
         </div>
-        </header>
-<div class = "other_box_over2">
-    <div class="assignment_form">
-        Update an Assignment: <br>
-        <form action="{{url_for('update_assignment', assignment_id=assignment.id)}}" id="update_assignments" method="POST">
-            Student: <input name="update_assignment_student" id="update_assignment_student" placeholder="{{student.first_name}} {{student.last_name}}" type="text">
-            <br>
-            School Day: <input name="update_assignment_day" id="update_assignment_day" value="{{assignment.school_day}}" type="text">
-            <br>
-            Subject: <input name="update_assignment_class" id="update_assignment_class" value="{{assignment.subject}}" type="text">
-            <br>
-           Assignment: <br> <textarea name = "update_assignment"> {{assignment.content}} </textarea> <br>
-           Note: <br> <textarea name = "update_note"> {{assignment.note }} </textarea> <br>
-            <input type="submit" value="Update Assignment">
-        </form>
     </div>
-        <a href="{{url_for('remove_assignment', assignment_id = assignment.id)}}"
-         onclick="return confirm('Are you sure you want to permanently delete this assignment?');"><button type="button" class="btn btn-danger">REMOVE ASSIGNMENT!</button></a>
+<div class = "general_medium_box">
+        <div class = "general_heading_banner">
+<h2>Update an Assignment</h2>
+        </div>
+                <div class="update_view_assignment">
+                    <form action="{{url_for('update_assignment', assignment_id=assignment.id)}}" id="update_assignments" method="POST">
+                        <p>Student:&emsp;<input name="update_assignment_student" id="update_assignment_student" placeholder="{{student.first_name}} {{student.last_name}}" type="text"></p>
+                        <p>School Day:&emsp;<input name="update_assignment_day" id="update_assignment_day" value="{{assignment.school_day}}" type="text"></p>
+                        <p>Subject:&emsp;<input name="update_assignment_class" id="update_assignment_class" value="{{assignment.subject}}" type="text"></p>
+                       <p>Assignment:&emsp;<textarea name = "update_assignment"> {{assignment.content}} </textarea> <br></p>
+                       <pr>Note:&emsp;<textarea name = "update_note"> {{assignment.note}} </textarea> <br></p>
+                        <p><input class="btn btn-primary btn-sm" type="submit" value="Update Assignment"></p>
+                    </form>
+                </div>
+                    <div class = "remove_button"><a href="{{url_for('remove_assignment', assignment_id = assignment.id)}}"
+                     onclick="return confirm('Are you sure you want to permanently delete this assignment?');"><button type="button" class="btn btn-danger">REMOVE ASSIGNMENT!</button></a></div>
+                </div>
 
+
+                        </tr>
+                    </tbody>
+                </table>
     </div>
 </div>
-</body>
-{% endblock %}
 
-<footer><div class = "image_credit"> Image credit: Wassily Kandinsky "Color Study. Squares with Concentric Circles", 1913 <div>
-</footer>
+</div>
+</body>
+<footer>
+	<div class="image_credit"> Background Image: Wassily Kandinsky "Color Study. Squares with Concentric Circles", 1913 <br>
+        Banner logo by Emma E. Stefanuk<div> 
+</footer> 
+{% endblock %}

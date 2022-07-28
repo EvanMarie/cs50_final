@@ -1,51 +1,60 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Write a new note!
+View an Assignment
 {% endblock %}
 
 {% block main %}
 
-<body>
-    <div class="other_box">
-        <div class="welcome">
-            <header>
-                <div class="assignments_nav">
-                    <ul>
-                        <li>
-                            <a href={{ url_for('teacher_portal') }}> <i class="bi bi-house-fill"></i>&emsp;Teacher Portal</a>
-                        </li>
-                    
-                        <li>
-                            <a href={{ url_for('lookup_assignments') }}> <i class="bi bi-search"></i>&emsp; Lookup Assignments</a>
-                        </li>
-                        <li>
-                            <a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i>&emsp; Password</a>
-                        </li>
-                        <li>
-                            <a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i>&emsp; Logout</a>
-                        </li>
-                    </ul>
-                </div>
+<body> 
+<div class = "assignment_background_image">
+<div class = "general_container">
+    <div class="general_banner">
+        <div class="general_heading_banner_image"> <img src="/static/images/homeschool_banner_sized.png"> </div>
+        <!-- NAVBAR -->
+        <div class="general_navbar">
+            <ul>
+                <li><a href={{ url_for('home') }}><i class="bi bi-house-fill"></i> </a></li>
+                &emsp;<li><a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i></a></li>
+                &emsp;<li><a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i> </a></li>
+            </ul>
         </div>
-        </header>
-<div class = "other_box_over2">
-    <div class="assignment_form">
-        
-            Student: {{assignment.assigned_to.first_name}} {{assignment.assigned_to.last_name}}
-            <br>
-            School Day: {{assignment.school_day}}
-            <br>
-            Subject: {{assignment.subject}}
-            <br>
-           Assignment: {{assignment.content}} 
-           Note: {{assignment.note }} 
-       
     </div>
+<div class = "general_medium_box">
+        <div class = "general_heading_banner">
+<h2>View an Assignment</h2>
+        </div>
+                <div class="update_view_assignment">
+                    <div class="view_assignment">
+        
+                        Student: {{assignment.assigned_to.first_name}} {{assignment.assigned_to.last_name}}
+                        <br>
+                        School Day: {{assignment.school_day}}
+                        <br>
+                        Subject: {{assignment.subject}}
+                        <br>
+                       Assignment: {{assignment.content}} 
+                       <br>
+                       Note: {{assignment.note }} 
+                   
+                </div>
+            
+                </div>
+                    <div class = "remove_button"><a href="{{url_for('remove_assignment', assignment_id = assignment.id)}}"
+                     onclick="return confirm('Are you sure you want to permanently delete this assignment?');"><button type="button" class="btn btn-danger">REMOVE ASSIGNMENT!</button></a></div>
+                </div>
+
+
+                        </tr>
+                    </tbody>
+                </table>
     </div>
 </div>
-</body>
-{% endblock %}
 
-<footer><div class = "image_credit"> Image credit: Wassily Kandinsky "Color Study. Squares with Concentric Circles", 1913 <div>
-</footer>
+</div>
+</body>
+<footer>
+	<div class="image_credit"> Background Image: Wassily Kandinsky "Color Study. Squares with Concentric Circles", 1913 <br>
+        Banner logo by Emma E. Stefanuk<div> 
+</footer> 
+{% endblock %}

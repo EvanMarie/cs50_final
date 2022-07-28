@@ -1,38 +1,29 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Update Student Information
+Add Student
 {% endblock %}
 
 {% block main %}
 
-<body>
-    <div class="other_box">
-        <div class="welcome">
-            <header>
-                <div class="assignments_nav">
-                    <ul>
-                        <li>
-                            <a href={{ url_for('teacher_portal') }}> <i class="bi bi-house-fill"></i>&emsp;Teacher Portal</a>
-                        </li>
-                    
-                        <li>
-                            <a href={{ url_for('lookup_assignments') }}> <i class="bi bi-search"></i>&emsp; Lookup Assignments</a>
-                        </li>
-                        <li>
-                            <a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i>&emsp; Password</a>
-                        </li>
-                        <li>
-                            <a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i>&emsp; Logout</a>
-                        </li>
-                    </ul>
-                </div>
+<body> 
+<div class = "assignment_background_image">
+<div class = "general_container">
+    <div class="general_banner">
+        <div class="general_heading_banner_image"> <img src="/static/images/homeschool_banner_sized.png"> </div>
+        <!-- NAVBAR -->
+        <div class="general_navbar">
+            <ul>
+                <li><a href={{ url_for('home') }}><i class="bi bi-house-fill"></i> </a></li>
+                &emsp;<li><a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i></a></li>
+                &emsp;<li><a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i> </a></li>
+            </ul>
         </div>
-        </header>
-        <div class="other_box_over2">
-            <div class="new_student_all">
-                <div class="new_student_banner">
-                Update Student Information: </div>
+    </div>
+<div class = "general_medium_box">
+        <div class = "general_heading_banner">
+<h2>Add a New Student</h2>
+        </div>
                 <div class="new_student">
                     <form action="{{ url_for('update_student', student_id = student.id) }}"" id="update_student" method="POST">
                         <div class="new_student_firstname"><input name="update_student_firstname"
@@ -46,18 +37,21 @@ Update Student Information
                         <div class="new_student_note"><textarea placeholder="Update Student Note"
                                 name="update_student_note"> {{ student.note }}</textarea>
                         </div>
-                        <div class="new_student_submit"><input class="btn btn-primary" type="submit" value="Update Student Information">
-                    </form><div class = "break"></div><div class = "break"></div>
-                    <div class = "remove_student_button">
-                         <a href="{{ url_for('remove_student', student_id = student.id)}}" onclick="return confirm('Are you sure you want to permanently delete this student?');"><button type="button" class="btn btn-danger">REMOVE STUDENT!</button></a>
-        
+                        <div class="new_student_submit"><input class="btn btn-primary" type="submit" value="Update Student">
+                    </form>
                 </div>
-            </div>
-        </div>
 
-    </div>
-    </div>
 
+                        </tr>
+                    </tbody>
+                </table>
     </div>
+</div>
+
+</div>
 </body>
+<footer>
+	<div class="image_credit"> Background Image: Wassily Kandinsky "Color Study. Squares with Concentric Circles", 1913 <br>
+        Banner logo by Emma E. Stefanuk<div> 
+</footer> 
 {% endblock %}

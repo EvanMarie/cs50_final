@@ -5,6 +5,13 @@
     --yellow: #E7C335;
     --green: #4FA757;
     --blue: #1C9ACF;
+    --purple: #5A00A3;
+    --red_grad: rgb(255, 70, 87) radial-gradient(circle, rgba(255, 70, 87, 1) 0%, rgba(255, 0, 22, 1) 46%, rgba(214, 100, 109, 1) 100%);
+    --orange_grad: rgb(255, 181, 133) radial-gradient(circle, rgba(255, 181, 133, 1) 0%, rgba(236, 127, 55, 1) 46%, rgba(255, 181, 132, 1) 100%);
+    --yellow_grad: rgb(255, 225, 104) radial-gradient(circle, rgba(255, 225, 104, 1) 0%, rgba(231, 195, 53, 1) 46%, rgba(255, 227, 117, 1) 100%);
+    --green_grad: rgb(86, 255, 101) radial-gradient(circle, rgba(86, 255, 101, 1) 0%, rgba(79, 167, 87, 1) 46%, rgba(109, 255, 122, 1) 100%);
+    --blue_grad: rgb(88, 205, 254) radial-gradient(circle, rgba(88, 205, 254, 1) 0%, rgba(28, 154, 207, 1) 46%, rgba(73, 171, 213, 1) 100%);
+    --purple_grad: rgb(187, 134, 231) radial-gradient(circle, rgba(187, 134, 231, 1) 0%, rgba(170, 98, 228, 0.9850140739889706) 46%, rgba(177, 157, 193, 1) 100%);
     --font-size: 1.3rem;
     --font-family: 'Roboto', sans-serif;
     --font-family: 'Ubuntu Mono', monospace;
@@ -38,12 +45,13 @@ h3 {
 }
 
 a {
-    color: var(--yellow);
+    color: var(--black);
 }
 
 a:hover {
-    color: var(--red);
+    color: var(--white);
     text-decoration: none;
+    list-style-type: none;
 }
 
 img {
@@ -53,19 +61,19 @@ img {
 #login_box {
     display: flex;
     flex-flow: row wrap;
-    width: 500px;
+    width: 400px;
     margin-top: 4rem;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     align-content: center;
-    background-color: var(--green);
-    padding: 2rem;
+    background-color: var(--green_grad);
+    padding: 1rem;
     border-radius: 10px;
     color: black;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 1.5;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -74,19 +82,19 @@ img {
 #register_box {
     display: flex;
     flex-flow: row wrap;
-    width: 500px;
-    margin-top: 4rem;
+    width: 400px;
+    margin-top: 2rem;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     align-content: center;
-    background-color: var(--green);
-    padding: 2rem;
+    background-color: var(--green_grad);
+    padding: 1rem;
     border-radius: 10px;
     color: black;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 1.5;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -95,19 +103,19 @@ img {
 #forgot_password_box {
     display: flex;
     flex-flow: row wrap;
-    width: 500px;
-    margin-top: 4rem;
+    width: 400px;
+    margin-top: 2rem;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     align-content: center;
-    background-color: var(--green);
-    padding: 2rem;
+    background-color: var(--green_grad);
+    padding: 1rem;
     border-radius: 10px;
     color: black;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 1.5;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -116,19 +124,19 @@ img {
 #verify_box {
     display: flex;
     flex-flow: row wrap;
-    width: 500px;
-    margin-top: 4rem;
+    width: 400px;
+    margin-top: 2rem;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     align-content: center;
-    background-color: var(--green);
-    padding: 2rem;
+    background-color: var(--green_grad);
+    padding: 1rem;
     border-radius: 10px;
     color: black;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 1.5;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -137,19 +145,19 @@ img {
 #change_password_box {
     display: flex;
     flex-flow: row wrap;
-    width: 500px;
-    margin-top: 4rem;
+    width: 400px;
+    margin-top: 2rem;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     align-content: center;
-    background-color: var(--green);
-    padding: 2rem;
+    background-color: var(--green_grad);
+    padding: 1rem;
     border-radius: 10px;
     color: black;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 1.5;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -158,22 +166,48 @@ img {
 #password_reset_box {
     display: flex;
     flex-flow: row wrap;
-    width: 500px;
-    margin-top: 4rem;
+    width: 400px;
+    margin-top: 2rem;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     align-content: center;
-    background-color: var(--green);
-    padding: 2rem;
+    background-color: var(--green_grad);
+    padding: 1rem;
     border-radius: 10px;
     color: black;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 1.5;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.security_box {
+    display: flex;
+    flex-flow: nowrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.mascot_box {
+    flex-basis: auto;
+}
+
+.mascot_box img{
+    width: 150px;
+}
+
+footer {
+    font-size: 14px;
+    font-style: bold;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .section1 {
@@ -182,11 +216,11 @@ img {
     flex-basis: 95%;
     justify-content: center;
     align-content: center;
-    background-color: var(--red);
+    background: var(--orange_grad);
     color: black;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
+    line-height: 2;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -197,11 +231,11 @@ img {
     flex-basis: 95%;
     justify-content: center;
     align-content:center;
-    background-color: var(--orange);
-    padding: 1rem;
+    background: var(--yellow_grad);
     color: black;
     line-height: 1.5;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -212,11 +246,30 @@ img {
     flex-basis: 95%;
     justify-content: center;
     align-content:center;
-    background-color: var(--blue);
-    padding: 1rem;
+    background: var(--blue_grad);
     color: black;
     line-height: 1.5;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.section4 {
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 95%;
+    justify-content: center;
+    align-content:center;
+    background: var(--purple_grad);
+    color: black;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h1 {
+    font-size: 120%;
 }

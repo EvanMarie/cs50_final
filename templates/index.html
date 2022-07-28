@@ -1,130 +1,92 @@
-{% extends "layout.html" %}
-
-{% block title %}
-Homeschool Planner - Home!
-{% endblock %}
-
-{% block main %}
+{% extends "layout.html" %} {% block title %} Student Home {% endblock %} {% block main %}
 
 <body>
-    <section id="home_box">
-        <div class="welcome">
-            <header>
-                <nav>
-                    <ul>
-                        <li><a href={{ url_for('home') }}><img src="/static/images/homeschool_logo_sized.png" alt
-                                    text="Homeschool!"></a></li>
-                        <li>
-                            <a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i>&emsp;Password</a>
-                        </li>
-                        <li>
-                            <a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i>&emsp;Logout</a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
+	<!-- MAIN CONTAINER -->
 
-        <div class="section_large">
-            <!-- GRID CONTAINER -->
-            <div class="section_medium">
-                <!-- TODAY / TASKS -->
-                <div class="table_lable">
-                    <h3> Today is day number {{day_number}}.
-                </div>
-                </h3>
-
-                <div class="today_table">
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col">Class</th>
-                                <th scope="col">Assignment</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">View</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for assignment in day_assignments %}
-                            {% if assignment.completed %}
-                                {% set _input = '<i class="bi bi-check2-square"></i>' %}
-                                {% set strikethrough = 'text-decoration: red underline overline line-through;' %}
-                            {% else %}
-                                {% set strikethrough = '' %}
-                                {% set _input = '<i class="bi bi-square"></i>' %}
-                            {% endif %}
-                            <tr style="{{strikethrough | safe}}">
-                                <td>{{assignment.subject}}</td>
-                                <td>{{assignment.content | convert_links | safe}} </td>
-                                <td ><div class="form-check" >
-                                    <a href="{{url_for('complete_assignment', assignment_id=assignment.id)}}">{{_input | safe}}</a></div></td>
-                                <td><a href ="{{url_for('view_assignment', assignment_id = assignment.id)}}"><i class="bi bi-binoculars"></i></a></td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-
-                </div>
-
-            </div>
-
-            <div class="section_small_one">
-                <!-- UPCOMING -->
-                <div class="table_lable">
-                    <h4>Upcoming:</h4>
-                </div>
-                <div class="upcoming_table">
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col">School Day</th>
-                                <th scope="col">Task / Assignment</th>
-                                <th scope="col">Remove</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for task in upcoming %}
-                            <tr>
-                                <td>{{ task.day }}</td>
-                                <td>{{ task.content }}</td>
-                                <td><a href = "{{ url_for('remove_upcoming', upcoming_id = task.id, student_id=student_id) }} "><i class="bi bi-file-x"></i></a></td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="section_small_two">
-                <!-- MY LINKS -->
-                <div class="table_lable">
-                    <h4>My Links:</h4>
-                </div>
-                <div class="links_table">
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col">Link</th>
-                                <th scope="col">Remove </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for link in links %}
-                            <tr>
-                                <td><a href = "{{ link.link }}" target = "_blank">{{ link.description }}</a></td>
-                                <td><a href = "{{ url_for('remove_link', link_id = link.id, student_id=student_id) }}"><i class="bi bi-file-x"></i></a></td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="teacher_portal_link">
-                <a href='{{ url_for('teacher_portal') }}'>Teacher Portal (Teachers Only) </a>
+	<div class = "index_background_image">
+	<div class="index_container_main">
+		<!-- BANNER -->
+		<div class="index_item01"> 
+            <div class = "index_banner_image">
+            <img src = "/static/images/homeschool_banner_sized.png">
             </div>
         </div>
-    </section>
+		<!-- STUDENT: TODAY'S ASSIGNMENTS TABLE -->
+		<div class="index_item02">
+			<div class="student_today_table_nav"> <div class="student_navbar">Today is school day number: ___. 
+                &emsp;&emsp;&emsp;&emsp;
+                <ul>
+                    <li><a href={{ url_for('home') }}><i class="bi bi-house-fill"></i> </a></li>
+                    &emsp;<li><a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i></a></li>
+                    &emsp;<li><a href={{ url_for_security('logout') }}><i class="bi bi-door-closed"></i> </a></li>
+                </ul>
+            </div></div> 
+			<div class="student_today_table">
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th scope="col">Class</th>
+							<th scope="col">Assignment</th>
+							<th scope="col">Status</th>
+							<th scope="col">View</th>
+						</tr>
+					</thead>
+					<tbody> {% for assignment in day_assignments %} {% if assignment.completed %} {% set _input = '<i class="bi bi-check2-square"></i>' %} {% set strikethrough = 'text-decoration: red underline overline line-through;' %} {% else %} {% set strikethrough = '' %} {% set _input = '<i class="bi bi-square"></i>' %} {% endif %}
+						<tr style="{{strikethrough | safe}}">
+							<td>{{assignment.subject}}</td>
+							<td>{{assignment.content | convert_links | safe}} </td>
+							<td>
+								<div class="form-check"> <a href="{{url_for('complete_assignment', assignment_id=assignment.id)}}">{{_input | safe}}</a></div>
+							</td>
+							<td><a href="{{url_for('view_assignment', assignment_id = assignment.id)}}"><i class="bi bi-binoculars"></i></a></td>
+						</tr> {% endfor %} </tbody>
+				</table>
+			</div>
+		</div>
+		<!-- STUDENT: UPCOMING -->
+		<div class="index_item03">
+			<div class="student_table_label_template"> Upcoming: </div>
+			<div class="student_upcoming_table"> <table class="table table-sm">
+				<thead>
+					<tr>
+						<th scope="col">School Day</th>
+						<th scope="col">Task / Assignment</th>
+						<th scope="col">Remove</th>
+					</tr>
+				</thead>
+				<tbody> {% for task in upcoming %}
+					<tr>
+						<td>{{ task.day }}</td>
+						<td>{{ task.content }}</td>
+						<td><a href="{{ url_for('remove_upcoming', upcoming_id = task.id, student_id=student_id) }} "><i class="bi bi-file-x"></i></a></td>
+					</tr> {% endfor %} </tbody>
+				</table>
+			</div>
+		</div>
+		<!-- STUDENT: MY LINKS -->
+		<div class="index_item04">
+			<div class="student_link_table">
+				<div class="student_table_label_template"> My Links: </div>
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th scope="col">Link</th>
+							<th scope="col">Remove </th>
+						</tr>
+					</thead>
+					<tbody> {% for link in links %}
+						<tr>
+							<td><a href="{{ link.link }}" target="_blank">{{ link.description }}</a></td>
+							<td><a href="{{ url_for('remove_link', link_id = link.id, student_id=student_id) }}"><i class="bi bi-file-x"></i></a></td>
+						</tr> {% endfor %} </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
-<footer><div class = "image_credit"> Image credit: Wassily Kandinsky "Color Study. Squares with Concentric Circles", 1913 <div>
-</footer>
+<footer>
+	<div class="image_credit"> Background Image: Wassily Kandinsky "Color Study. Squares with Concentric Circles", 1913 <br>
+		                  Banner logo by Emma E. Stefanuk<div> 
+</footer> 
 {% endblock %}

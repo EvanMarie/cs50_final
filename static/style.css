@@ -6,6 +6,12 @@
     --green: #4FA757;
     --blue: #1C9ACF;
     --purple: #5A00A3;
+    --red_grad: rgb(255, 70, 87) radial-gradient(circle, rgba(255, 70, 87, 1) 0%, rgba(255, 0, 22, 1) 46%, rgba(214, 100, 109, 1) 100%);
+    --orange_grad: rgb(255, 181, 133) radial-gradient(circle, rgba(255, 181, 133, 1) 0%, rgba(236, 127, 55, 1) 46%, rgba(255, 181, 132, 1) 100%);
+    --yellow_grad: rgb(255, 225, 104) radial-gradient(circle, rgba(255, 225, 104, 1) 0%, rgba(231, 195, 53, 1) 46%, rgba(255, 227, 117, 1) 100%);
+    --green_grad: rgb(86, 255, 101) radial-gradient(circle, rgba(86, 255, 101, 1) 0%, rgba(79, 167, 87, 1) 46%, rgba(109, 255, 122, 1) 100%);
+    --blue_grad: rgb(88, 205, 254) radial-gradient(circle, rgba(88, 205, 254, 1) 0%, rgba(28, 154, 207, 1) 46%, rgba(73, 171, 213, 1) 100%);
+    --purple_grad: rgb(187, 134, 231) radial-gradient(circle, rgba(187, 134, 231, 1) 0%, rgba(170, 98, 228, 0.9850140739889706) 46%, rgba(177, 157, 193, 1) 100%);
     --font-size: 1.3rem;
     --font-family: 'Roboto', sans-serif;
     --font-family: 'Ubuntu Mono', monospace;
@@ -32,1354 +38,1941 @@ body {
     font-family: monospace;
 }
 
-h3,
-h4 {
-    margin-bottom: 0.75rem;
-}
-
-a {
-    color: var(--black);
-}
-
-a {
-    color: var(--white);
-}
-
-.image_credit {
-    font-size: small;
-    text-align: center;
-}
-
-.break {
-    width: 100%;
-    height: 0;
-  }
-
-#home_box {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 1%;
-    width: 97%;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: space-evenly;
-    align-content: center;
-    background: rgb(51, 227, 66);
-    background: linear-gradient(90deg, rgba(51, 227, 66, 1) 0%, rgba(79, 167, 87, 1) 49%, rgba(0, 255, 44, 0.4023810207676821) 100%);
-    background-image: url('/static/images/kandinsky_1500.jpg');
-    padding: 0.75rem 0.5rem 0.75rem 0.5;
+body a {
     color: black;
-    font-weight: bold;
-    font-size: 1.25rem;
-    line-height: 1.5;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
-.welcome {
-    flex-basis: 97%;
-    background: rgb(236, 127, 55);
-    background: radial-gradient(circle, rgba(236, 127, 55, 1) 0%, rgba(201, 65, 77, 1) 42%, rgba(231, 195, 53, 0.6852941860337884) 100%);
-    color: black;
-    border-radius: 5px;
-    font-family: monospace;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    max-width: 1200px;
-    padding: 1rem;
-    margin: 0 auto;
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
-}
-
-.welcome img {
-    width: 300px;
-}
-
-h1 {
-    text-align: center;
-    margin: 0 auto;
-    width: 300px;
-}
-
-nav ul {
-    list-style-type: None;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-nav li:first-child {
-    flex-basis: 100%;
-    text-align: center;
-}
-
-nav li {
-    flex-basis: 48%;
-    margin-bottom: 0.5rem;
-}
-
-nav a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: black;
-    background-color: var(--blue);
-    display: block;
-    border-radius: 5px;
-    text-align: center;
-}
-
-nav li:first-child a {
-    background-color: transparent;
-}
-
-nav a:hover {
-    background-color: var(--yellow);
-    color: var(--color5);
-}
-
-.mininav {
-    padding: 0;
-    margin: 0 auto;
-}
-
-.mininav ul {
-    list-style-type: none;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: space-between;
-    padding: 0;
-    margin: 0 auto;
-}
-
-.mininav a {
-    text-decoration: none;
-    font-size: 1.3rem;
-    color: black;
-    width: 100%;
-}
-
-.mininav a:hover {
+body a:hover {
     color: white;
 }
 
-.section_large {
-    display: flex;
-    flex-flow: row wrap;
-    flex-basis: 97%;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    background: rgb(231, 195, 53);
-    background: rgb(79, 167, 87);
-    background: radial-gradient(circle, rgba(79, 167, 87, 0.979411833092612) 0%, rgba(231, 195, 53, 1) 42%, rgba(79, 167, 87, 0.8057423653054971) 100%);
-    /* background: rgb(236, 127, 55);
-    background: radial-gradient(circle, rgba(236, 127, 55, 1) 0%, rgba(201, 65, 77, 1) 42%, rgba(231, 195, 53, 0.6852941860337884) 100%); */
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
-    color: black;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+/* ***************************** STUDENT MOBILE DIMENSIONS ******************************************* */
+@media (min-width: 350px) {
 
-.section_large a {
-    text-decoration: none;
-    color: var(--red)
-}
-
-.section_large a:hover {
-    text-decoration: none;
-}
-
-.section_medium {
-    display: flex;
-    flex-flow: row wrap;
-    flex-basis: 95%;
-    justify-content: center;
-    align-content: space-between;
-    background-color: var(--blue);
-    padding: 0.5em 0.5em 0.5em 0.5em;
-    color: black;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-}
-
-.table_lable {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-    text-align: center;
-    padding: 1 1.5em 1 1.5em;
-    font-family: monospace;
-    justify-content: center;
-}
-
-table table-sm {
-    justify-content: flex-start;
-    align-content: top;
-    font-family: sans-serif;
-}
-
-table table-sm a {
-color: black;
-}
-
-table table-sm a {
-    color: white;
-    }
-
-.today_table {
-    table-layout: auto;
-    width: 100%;
-    display: flex;
-    text-align: left;
-    font-family: sans-serif;
-    padding: 0 1rem 1rem 1rem;
-}
-
-/* This part, I still need to figure out how to center ONE column in a table
-.today_table:nth-child(3){
-    text-align: center:
-}*/
-
-
-.teacher_portal_link a {
-    color: black;
-}
-
-.teacher_portal_link a:hover {
-    color: white;
-}
-
-.section_medium_teacher {
-    display: flex;
-    flex-flow: row wrap;
-    flex-basis: 95%;
-    justify-content: center;
-    background-color: var(--blue);
-    padding: 0.5em 0.5em 0.5em 0.5em;
-    color: black;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-}
-
-.section_medium a,
-.section_medium_teacher a {
-    color: black;
-}
-
-.section_medium a:hover,
-.section_medium_teacher a:hover {
-    color: white;
-}
-
-.student_table_search {
-    display: flex;
-    flex-direction: row;
-    flex-flow: row wrap;
-    align-content: space-between;
-}
-
-.student_table_top {
-    align-content: center;
-    width: 100%;
-}
-
-.students_table {
-    width: 100%;
-    flex-grow: 1;
-    font-family: sans-serif;
-    font-weight: normal;
-    text-align: left;
-    padding: 1rem 1rem 1rem 1rem;
-    margin-top: 2rem;
-}
-
-.remove_student_button {
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-}
-
-.remove_student_button button {
-    width: 300px;
-}
-
-.assignment_form {
-    display: inline-block;
-    width: 93%;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    margin: 0 auto;
-    background-color: var(--yellow);
-    font-size: 14px;
-}
-
-.assignment_form h3 {
-    margin: 0 auto;
-    margin-bottom: 0;
-}
-
-.assignment_form input,
-.lookup_form input {
-    width: 300px;
-    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-}
-.assignment_form textarea {
-    width: 300px;
-    height: 100px;
-    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-}
-
-.search_students {
-    display: flex;
-    align-self: flex-end;
-    background-color: var(--orange);
-    padding: 0.25em 0.25em 0.5em 0.25em;
-    color: black;
-    font-size: 15px;
-    font-family: sans-serif;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.search_students input {
-    width: 270px;
-    margin: 0.5rem 0.5rem 0rem 0.5rem;
-}
-
-.search_students input[type=submit] {
-    margin-right: 4rem;
-}
-
-.search_students a {
-    color: black;
-    display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.75;
-    width: 175px;
-    background-color: var(--red);
-    border-width: 1px;
-    border-color: black;
-    border-radius: 3px;
-}
-
-.search_students a:hover {
-    color: white;
-}
-
-.new_student_all {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 1%;
-}
-
-.new_student_banner {
-    display: inline-block;
-    margin: 0 auto;
-    text-align: center;
-    width: 98%;
-}
-
-.new_student {
-    display: flex;
-    flex-basis: 98%;
-    flex-flow: nowrap;
-    justify-content: center;
-    gap: 2%;
-    margin: 1rem 1rem 1rem 1rem;
-}
-
-.new_student input {
-    width: 325px;
-    font-size: 15px;
-}
-
-.new_student textarea {
-    width: 325px;
-    height: 100px;
-    font-size: 15px;
-}
-
-.new_student :nth-child(4) {
-    margin-top: 0.5rem;
-}
-
-
-.section_small_one {
-    display: flex;
-    flex-flow: row wrap;
-    flex-basis: 95%;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: var(--yellow);
-    padding: 0.25em 0.25em 0.25em 0.25em;
-    color: black;
-    font-family: sans-serif;
-    font-weight: bold;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.section_small_one input,
-.section_small_two input,
-.section_small_one textarea {
-    width: 350px;
-    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-}
-
-.upcoming_table {
-    table-layout: auto;
-    width: 100%;
-    display: flex;
-    font-size: 15px;
-    align-items: flex-start;
-    font-family: sans-serif;
-    font-weight: normal;
-    flex-direction: row;
-    flex-basis: 100%;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    text-align: left;
-    padding: 0 1rem 1rem 1rem;
-}
-
-.section_small_two {
-    display: flex;
-    flex-flow: row wrap;
-    flex-basis: 95%;
-    justify-content: center;
-    background-color: var(--red);
-    color: black;
-    font-family: sans-serif;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    padding: 0.25em 0.25em 0.25em 0.25em;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    align-items: flex-start;
-    align-content: top;
-}
-
-.link_add,
-.upcoming_add {
-    font-family: monospace;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-    width: 100%;
-    height: 87%;
-    font-size: 15px;
-}
-
-.assignment_links {
-    padding: 1rem 0.5rem 1rem 0.5rem;
-    font-size: 13px;
-    font-family: monospace;
-}
-
-.link_add input,
-.upcoming_add input,
-.upcoming_add textarea {
-    width: 355px;
-}
-
-
-.today_table {
-    font-size: 15px;
-    font-weight: normal;
-}
-
-.students_table,
-.messages_table
-{
-font-size: 15px;
-}
-
-.links_table {
-    table-layout: auto;
-    width: 100%;
-    display: flex;
-    font-size: 15px;
-    text-align: left;
-    font-family: sans-serif;
-    font-weight: normal;
-    align-content: top;
-    padding: 0 1rem 1rem 1rem;
-}
-
-.other_box {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 1%;
-    width: 90%;
-    height: 95vh;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: space-evenly;
-    align-content: flex-start;
-    background-image: url('/static/images/kandinsky_1500.jpg');
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
-    color: black;
-    font-weight: bold;
-    font-size: 1.25rem;
-    line-height: 1.5;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-}
-
-.other_box_over {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 1%;
-    width: 100%;
-    height: 75vh;
-    margin: 0;
-    justify-content: space-evenly;
-    align-content: flex-start;
-    background: rgb(231, 195, 53);
-    background: rgb(79, 167, 87);
-    background: radial-gradient(circle, rgba(79, 167, 87, 0.979411833092612) 0%, rgba(231, 195, 53, 1) 42%, rgba(79, 167, 87, 0.8057423653054971) 100%);
-    padding: 0.25rem 0.25rem 0.25rem 0.25rem;
-    color: black;
-    font-weight: bold;
-    font-size: 1.25rem;
-    line-height: 1.5;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-}
-
-.other_box_over2 {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 1%;
-    width: 100%;
-    height: 70vh;
-    margin: 0;
-    justify-content: space-evenly;
-    align-content: flex-start;
-    background: rgb(231, 195, 53);
-    background: rgb(79, 167, 87);
-    background: radial-gradient(circle, rgba(79, 167, 87, 0.979411833092612) 0%, rgba(231, 195, 53, 1) 42%, rgba(79, 167, 87, 0.8057423653054971) 100%);
-    padding: 0.25rem 0.25rem 0.25rem 0.25rem;
-    color: black;
-    padding: 1rem 1rem 1rem 1rem;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-}
-
-
-.note_form_head {
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0.5rem 1.5rem 0.5rem;
-    flex-basis: 90%;
-    background-color: var(--green);
-    padding: 0.5em 0.25em 0.25em 0.25em;
-    color: black;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.note_form {
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem;
-    width: 100%;
-    font-size: 15px;
-}
-
-.note_form input,
-.note_form textarea {
-    width: 325px;
-    font-size: 15px;
-}
-
-.note_form textarea {
-    height: 200px;
-}
-
-.note_form textarea {
-    height: 200px;
-}
-
-.blue_header_short {
-    font-weight: 400;
-    width: 325px;
-    background-color: #1C9ACF;
-    border-radius: 5px;
-    padding: 1rem 1rem 1rem 1rem;
-    font-size: 15px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-}
-
-.messages_table {
-    table-layout: auto;
-    display: flex;
-    flex-basis: 98%;
-    margin: 0 auto;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap:  row wrap;
-    align-items: flex-start;
-    text-align: left;
-    padding: 0 1rem 1rem;
-}
-
-.messages_buttons {
-    display: flex;
-    flex-basis: 97%;
-    background: rgb(227, 111, 51);
-    background: radial-gradient(circle, rgba(227, 111, 51, 0.4780112728685224) 0%, rgba(201, 65, 77, 1) 49%, rgba(251, 255, 0, 0.7301121132046569) 100%);
-    color: black;
-    border-radius: 5px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    background-color: var(--red);
-    padding: 1rem 1rem 1rem 1rem;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    justify-content: center;
-    text-align: center;
-    align-self: flex-end;
-}
-
-.messages_buttons input[type=submit] {
-    margin-top: 05.rem;
-}
-
-.text_area {
-    display: flex;
-    flex-flow: nowrap;
-    width: 550px;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: var(--red);
-    padding: 0.25em 0.25em 0.25em 0.25em;
-    color: black;
-    font-size: 125%;
-    margin-bottom: 1.5rem;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.notes {
-    width: 100%;
-    font-size: 15px;
-    display: flex;
-    flex-flow: row wrap;
-    margin: 0 auto;
-    justify-content: center;
-    align-content: flex-start;
-}
-
-.messages_table_container {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    margin: 0 auto;
-    justify-content: center;
-    align-content: flex-start;
-}
-
-.assignment_links {
-    padding: 1rem 0.5rem 1rem 0.5rem;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0 auto;
-    text-align: center;
-    width: 375px;
-    margin-bottom: 0.5rem;
-
-}
-
-.assignment_links a {
-    font-size: 13px;
-}
-
-.assignments_nav {
-    padding: 0;
-    margin: 0 auto;
-    font-weight: bold;
-    justify-content: space-around;
-    align-content: center;
-    text-align: center;
-}
-
-.assignments_nav ul {
-    list-style-type: none;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: space-between;
-    padding: 0;
-    margin: 0 auto;
-}
-
-.assignments_nav li {
-    width: 200px;
-}
-
-.assignments_nav a {
-    text-decoration: none;
-    font-size: 1.15rem;
-    color: black;
-}
-
-.assignments_nav a:hover {
-    color: white;
-}
-
-.lookup_form {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    justify-content: center;
-    align-content: center;
-    width: 350px;
-    background-color: #1C9ACF;
-    border-radius: 5px;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    text-align: center;
-}
-
-.lookup_form input {
-    width: 325px;
-    font-size: 15px;
-    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-}
-
-.lookup_table,
-.messages_table {
-    width: 95%;
-    background-color: var(--orange);
-    font-size: 10px;
-    border-radius: 5px;
-    margin: 0 auto;
-    margin-top: 1rem;
-    font-style: sans-serif;
-    font-size: 16px;
-}
-
-.lookup_table a
-.messages_table a {
-    color: black;
-}
-
-.lookup_table a:hover
-.messages_table a:hover {
-    color: white;
-}
-
-.messages_buttons {
-    margin-top: 0.5rem;
-    padding: 0.5rem 0.5rem 1rem 0.5rem;
-}
-
-.messages_buttons input {
-    width: 110px;
-    font-size: 11px;
-}
-
-.notes_table {
-    font-size: 12px;
-    width: 95%;
-}
-
-.note_form_head,
-.note_form {
-font-size: 15px;
-}
-
-.error_section {
-    display: flex;
-    flex-flow: row;
-    width: 375px;
-    min-height: 350px;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-content: center;
-    font-style: monospace;
-    font-size: 18px;
-    font-weight: 700;
-    margin: 5rem 1rem 5rem 1rem;
-    background-color: var(--red);
-    border-radius: 5px;
-    padding: 1rem 1rem 1rem 1rem;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
-
-.error {
-    flex-basis: 100%;
-}
-
-.error_message {
-    flex-basis: 100%;
-}
-
-/* *************************************************** */
-@media (min-width: 600px) {
-
-    h1 {
-        text-align: center;
-        margin: 0 auto;
-        width: 300px;
-    }
-
-    .welcome img {
-        width: 300px;
-    }
-
-    nav ul {
-        justify-content: center;
-        gap: 1.2em;
-        flex-flow: row wrap;
-    }
-
-    nav li {
-        text-align: center;
-        flex-basis: auto;
-        margin-bottom: 0;
-    }
-
-    nav a {
-        text-decoration: none;
-        font-size: 1.2rem;
-        background-color: var(--blue);
-        display: block;
-        width: 110px;
-        height: 100%;
-        padding: 0.5rem;
-        border-radius: 5px;
-        text-align: center;
-    }
-
-    nav li:first-child a {
-        background-color: transparent;
-        width: 100%;
-    }
-
-    nav a:hover {
-        background-color: var(--yellow);
-        color: var(--color5);
-    }
-}
-
-/* ******************************************************************* */
-
-@media (min-width: 800px) {
-
-    .welcome img {
-        width: 228px;
-    }
-
-    nav ul {
-        flex-flow: row wrap;
-    }
-
-    .lookup_form {
-        width: 95%;
-    }
-
-    .lookup_form input {
-        font-size: 18px;
-        width: 250px;
-
-    }
-
-    .messages_buttons input {
-        width: 175px;
-        font-size: 16px;
-    }
-
-    .notes_table {
-        font-size: 16px;
-    }
-
-    .mininav a {
-        font-size: 1.5rem;
-    }
-
-    .link_add,
-    .upcoming_add {
-        font-size: 18px;
-    }
-
-    .assignment_links {
-        padding: 1rem 0.5rem 1rem 0.5rem;
-        width: 600px;
-        align-self: center;
-
-    }
-
-    .assignment_links a {
-        font-size: 18px;
-    }
-
-
-
-    .link_add input,
-    .upcoming_add input,
-    .upcoming_add textarea {
-        width: 450px;
-    }
-
-    .today_table {
-        font-size: 15px;
-        font-weight: normal;
-    }
-
-    .students_table,
-    .upcoming_table,
-    .links_table,
-    .messages_table {
-        font-size: 18px;
-    }
-
-    .messages_table {
-        font-size: 18px;
-    }
-
-.note_form_head {
-    font-weight: 400;
-    flex-basis: 500px;
-    width: 500px;
-}
-
-    .note_form,
-    .notes {
-        font-size: 18px;
-    }
-
-    .note_form input,
-    .note_form textarea {
-        width: 500px;
-        font-size: 18px;
-    }
-    
-    .note_form textarea {
-        height: 200px;
-    }
-
-    .blue_header_short {
-        font-size: 18px;
-        width: 500px;
-        font-weight: 300;
-    }
-
-
-    .other_box {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 1%;
-        width: 90%;
-        height: 95vh;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-        margin-left: auto;
-        margin-right: auto;
-        justify-content: space-evenly;
-        align-content: flex-start;
+    .index_background_image {
         background-image: url('/static/images/kandinsky_1500.jpg');
-        padding: 1.5rem 1.5rem 1.5rem 1.5rem;
-        color: black;
-        font-weight: bold;
-        font-size: 1.25rem;
-        line-height: 1.5;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    }
-    
-    .other_box_over {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 1%;
-        width: 100%;
-        height: 75vh;
-        margin: 0;
-        justify-content: space-evenly;
-        align-content: flex-start;
-        background: rgb(231, 195, 53);
-        background: rgb(79, 167, 87);
-        background: radial-gradient(circle, rgba(79, 167, 87, 0.979411833092612) 0%, rgba(231, 195, 53, 1) 42%, rgba(79, 167, 87, 0.8057423653054971) 100%);
-        padding: 0.25rem 0.25rem 0.25rem 0.25rem;
-        color: black;
-        font-weight: bold;
-        font-size: 1.25rem;
-        line-height: 1.5;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    }
-    
-    .other_box_over2 {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 1%;
-        width: 100%;
-        height: 70vh;
-        margin: 0;
-        justify-content: space-evenly;
-        align-content: flex-start;
-        background: rgb(231, 195, 53);
-        background: rgb(79, 167, 87);
-        background: radial-gradient(circle, rgba(79, 167, 87, 0.979411833092612) 0%, rgba(231, 195, 53, 1) 42%, rgba(79, 167, 87, 0.8057423653054971) 100%);
-        padding: 0.25rem 0.25rem 0.25rem 0.25rem;
-        color: black;
-        padding: 1rem 1rem 1rem 1rem;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    }
-
-
-    .new_student_banner {
-        display: inline-block;
-        margin: 0 auto;
+        margin: 1rem 1rem 1rem 1rem;
         width: 98%;
-        font-size: 150%;
+        min-height: 100vh;
+    }
+
+    .index_container_main {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0 auto;
+        margin-top: 2rem;
+        gap: 10px;
+        padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+        justify-content: center;
+        background: rgb(255, 0, 0);
+        background: linear-gradient(90deg, rgba(255, 0, 0, 0.8281513288909313) 17%, rgba(246, 242, 61, 0.8085434857536764) 49%, rgba(61, 79, 246, 0.783333401720063) 89%);
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .index_item01 {
+        background: rgb(232, 14, 34);
+        background: radial-gradient(circle, rgba(232, 14, 34, 1) 24%, rgba(231, 195, 53, 0.5676471272102591) 58%, rgba(231, 195, 53, 0.44439782749037116) 100%);
+        flex-basis: 100%;
+        justify-content: center;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .index_banner_image {
+        justify-content: center;
+        align-content: center;
+    }
+
+    .index_banner_image img {
+        max-width: 350px;
+        align-self: center;
+    }
+
+    .student_navbar {
+        display: flex;
+        flex-basis: 90%;
+        align-self: flex-start;
+        justify-content: flex-start;
+    }
+
+    .student_navbar ul {
+        display: flex;
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .student_navbar a {
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+    }
+
+    .index_item02 {
+        flex-basis: 100%;
+        background: var(--blue_grad);
+    }
+
+    .index_item03 {
+        flex-basis: 100%;
+        background: var(--orange_grad);
+    }
+
+    .index_item04 {
+        flex-basis: 100%;
+        background: var(--purple_grad);
+    }
+
+    .index_item01 {
+        padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        margin: 0 auto;
+        max-height: 100px;
+        width: 98%;
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .index_item02,
+    .index_item03,
+    .index_item04 {
+        flex-basis: 100%;
+        padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        border-radius: 5px;
+        font-family: monospace;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+
+    .student_table_label_template {
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .student_today_table_nav {
+        justify-content: right;
+        margin-bottom: 1rem;
+        font-size: 16px;
+    }
+
+    .student_today_table,
+    .student_upcoming_table,
+    .student_link_table {
+        flex-basis: 98%;
+        font-size: 12px;
+        font-style: var(--monospace);
+        text-align: left;
+    }
+
+
+
+    footer {
+        
+        font-size: small;
+        text-align: center;
+    }
+
+    /* ........................ TEACHER PORTAL MOBILE ........................ */
+
+    .tp_background_image {
+        background-image: url('/static/images/kandinsky_1500.jpg');
+        margin: 1rem 1rem 1rem 1rem;
+        width: 98%;
+        min-height: 90vh;
+    }
+
+    .tp_container_main {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        min-height: 90vh;
+        margin: 0 auto;
+        margin-top: 1rem;
+        gap: 10px;
+        justify-content: center;
+        background: rgb(255, 0, 0);
+        background: linear-gradient(90deg, rgba(255, 0, 0, 0.8281513288909313) 17%, rgba(246, 242, 61, 0.8085434857536764) 49%, rgba(61, 79, 246, 0.783333401720063) 89%);
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .tp_item01 {
+        grid-row: 1/3;
+        grid-column: 1/11;
+        background: rgb(232, 14, 34);
+        background: radial-gradient(circle, rgba(232, 14, 34, 1) 24%, rgba(231, 195, 53, 0.5676471272102591) 58%, rgba(231, 195, 53, 0.44439782749037116) 100%);
+        margin: 0;
+        padding: 0;
+        justify-content: right;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .teacher_portal_banner {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .teacher_portal_banner_image {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+
+    .teacher_portal_banner_image img {
+        max-width: 395px;
+    }
+
+    .teacher_navbar {
+        display: flex;
+        flex-basis: 100%;
+        align-self: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .teacher_navbar ul {
+        display: flex;
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .teacher_navbar a {
+        text-decoration: none;
+        font-size: 35px;
+        display: block;
+    }
+
+    .tp_item02 {
+        background: var(--orange_grad);
+        margin: 0;
+        padding: 0;
+    }
+
+    .tp_item02_button {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .tp_item03 {
+        background: var(--yellow_grad);
+        margin: 0;
+        padding: 0;
+    }
+
+    .tp_item04 {
+        background: var(--green_grad);
+        margin: 0;
+        padding: 0;
+    }
+
+    .tp_item05 {
+        background: var(--blue_grad);
+        margin: 0;
+        padding: 0;
+    }
+
+    .tp_item06 {
+        background: var(--purple_grad);
+        margin: 0;
+        padding: 0;
+    }
+
+    .tp_item01,
+    .tp_item02,
+    .tp_item03,
+    .tp_item04,
+    .tp_item05,
+    .tp_item06 {
+        padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+        text-align: center;
+        margin: 0 auto;
+        width: 95%;
+        border-radius: 5px;
+        font-family: monospace;
+        font-size: 14px;
+        text-align: left;
+        padding: 0rem 0.5rem 0rem 0.5rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .tp_item01 {
+        text-align: right;
+    }
+
+    .tp_item03 input,
+    .tp_item04 input,
+    .tp_item05 input,
+    .tp_item06 input {
+        margin: 0 auto;
+        width: 180px;
+    }
+
+    .tp_item03 textarea,
+    .tp_item05 textarea {
+        height: 100px;
+        width: 180px;
+        margin: 0 auto;
+    }
+
+
+    .students_table_label {
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0rem 0rem .5rem 0rem;
+    }
+
+    /* ........................................ */
+
+    .tp_item03 form {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(auto-fill);
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: auto;
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem 1rem;
+        gap: 10px;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .add_assignment_label {
+        grid-row: 1/2;
+        grid-column: 1/5;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0rem 0rem 0rem 0rem;
+    }
+
+    .add_assignment_student {
+        grid-row: 2/3;
+        grid-column: 1/3;
+    }
+
+    .add_assignment_day {
+        grid-row: 3/4;
+        grid-column: 1/3;
+    }
+
+    .add_assignment_class {
+        grid-row: 4/5;
+        grid-column: 1/3;
+    }
+
+    .add_assignment_content {
+        grid-row: 2/5;
+        grid-column: 3/5;
+    }
+
+    .add_assignment_submit {
+        grid-row: 5/6;
+        grid-column: 2/4;
+        margin-top: 1rem;
+        align-self: left;
+    }
+
+    /* ........................................ */
+    .tp_item04 form {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem 1rem;
+        gap: 5px;
+        justify-content: center;
+    }
+
+    .search_assignments_label {
+        flex-basis: 95%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0rem 0rem 0rem 0rem;
+    }
+
+    .search_assignments_submit {
+        height: 20px;
+    }
+
+    /* ........................................ */
+    .tp_item05 form {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        gap: 5px;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .add_upcoming_label {
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0rem 0rem 0rem 0rem;
+    }
+
+    /* ........................................ */
+    .tp_item06 form {
+        display: grid;
+        grid-template-columns: repeat(auto-fill);
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: auto;
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem 1rem;
+        gap: 10px;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .add_link_label {
+        grid-row: 1/2;
+        grid-column: 1/10;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0rem 0rem 0rem 0rem;
+    }
+
+    .add_link_student {
+        grid-row: 2/3;
+        grid-column: 2/5;
+    }
+
+    .add_link_url {
+        grid-row: 3/4;
+        grid-column: 2/5;
+    }
+
+    .add_link_description {
+        grid-row: 2/3;
+        grid-column: 6/10;
+    }
+
+    .add_link_submit {
+        grid-row: 3/4;
+        grid-column: 6/10;
+    }
+
+
+    /* ...................... OTHER PAGES MOBILE............................. */
+
+    .assignment_background_image {
+        background-image: url('/static/images/kandinsky_1500.jpg');
+        margin: 1rem 1rem 1rem 1rem;
+        width: 98%;
+        min-height: 100vh;
+    }
+
+    .general_container {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0 auto;
+        margin-top: 1rem;
+        gap: 10px;
+        padding: 1rem 0.25rem 0.25rem 0.25rem;
+        justify-content: center;
+        align-content: flex-start;
+        background: rgb(255, 0, 0);
+        background: linear-gradient(90deg, rgba(255, 0, 0, 0.8281513288909313) 17%, rgba(246, 242, 61, 0.8085434857536764) 49%, rgba(61, 79, 246, 0.783333401720063) 89%);
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .general_banner {
+        width: 90%;
+        max-height: 150px;
+        font-size: 44px;
+        background: var(--green_grad);
+        border-radius: 5px;
+        margin-top: 1rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .general_heading_banner {
+        flex-basis: 60%;
+        background: var(--purple_grad);
+        border-radius: 5px;
+        justify-content: center;
+        text-align: center;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    h2 {
+        font-size: 100%;
+    }
+
+    .general_large_box {
+        display: flex;
+        flex-flow: row wrap;
+        width: 95%;
+        min-height: 40vh;
+        background: var(--yellow_grad);
+        border-radius: 5px;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .general_table_container {
+        flex-basis: 98%;
+        min-height: 25vh;
+        background: var(--red_grad);
+        border-radius: 5px;
+        font-size: 13px;
+        font-family: monospace;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .general_banner {
+        background: rgb(232, 14, 34);
+        background: radial-gradient(circle, rgba(232, 14, 34, 1) 24%, rgba(231, 195, 53, 0.5676471272102591) 58%, rgba(231, 195, 53, 0.44439782749037116) 100%);
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: right;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .general_heading_banner_image {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .general_heading_banner_image img {
+        max-width: 375px;
+    }
+
+    .general_navbar {
+        display: flex;
+        flex-basis: 100%;
+        align-self: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .general_navbar ul {
+        display: flex;
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .general_navbar a {
+        text-decoration: none;
+        font-size: 28px;
+        display: block;
     }
 
     .new_student {
-        flex-flow: row wrap;
+        flex-basis: 60%;
+        margin: 0 auto;
+        margin-top: 1rem;
+        padding: 1rem 1rem 1rem 1rem;
         justify-content: center;
-        gap: 2%;
-        margin: 1rem 1rem 1rem 1rem;
+        font-size: 13px;
+        font-family: monospace;
     }
 
-    .new_student input {
-        width: 425px;
-        font-size: 18px;
+    .new_student input,
+    .new_student textarea {
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        width: 250px;
     }
 
     .new_student textarea {
-        width: 425px;
-        height: 150px;
-        font-size: 18px;
+        height: 100px;
     }
-
-    .new_student :nth-child(1) {
-        margin-top: 0.5rem;
-    }
-
-    .new_student :nth-child(2) {
-        margin-top: 0.5rem;
-    }
-
-    .new_student :nth-child(3) {
-        margin-top: 0.5rem;
-    }
-
-    .new_student :nth-child(4) {
-        margin-top: 0.5rem;
-    }
-
-    .assignment_form {
-        display: inline-block;
-        width: 93%;
+    .general_medium_box {
+        display: flex;
+        flex-flow: row wrap;
+        width: 98%;
+        min-height: 40vh;
+        background: var(--yellow_grad);
         border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .update_view_assignment {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        max-width: 500px;
         margin: 0 auto;
-        background-color: var(--yellow);
+        margin-top: 1rem;
+        padding: 1rem 1rem 1rem 1rem;
+        font-size: 13px;
+        font-family: monospace;
+    }
+
+    #update_assignments {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin-right: 1rem;
+    }
+
+    .update_view_assignment input,
+    .update_view_assignment textarea {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .update_view_assignment textarea {
+        height: 100px;
+    }
+
+    .remove_button {
+        flex-basis: 60%;
+        margin: 0 auto;
+    }
+    .view_assignment {
+        display: flex;
+        width: 375px;
+        flex-flow: no wrap;
+        text-align: left;
+        font-size: 18px;
+        line-height: 2;
+        font-family: monospace;
+        margin-bottom: 2rem;
+    }
+}
+
+/* ****************************** MIN 800 PIXELS (TABLET) *************************************** */
+@media (min-width: 800px) {
+
+    .index_background_image {
+        background-image: url('/static/images/kandinsky_1500.jpg');
+        margin: 1rem 1rem 1rem 1rem;
+        width: 98%;
+        min-height: 100vh;
+    }
+
+    .index_container_main {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0 auto;
+        margin-top: 2rem;
+        gap: 10px;
+        padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+        justify-content: center;
+        background: rgb(255, 0, 0);
+        background: linear-gradient(90deg, rgba(255, 0, 0, 0.8281513288909313) 17%, rgba(246, 242, 61, 0.8085434857536764) 49%, rgba(61, 79, 246, 0.783333401720063) 89%);
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .index_item01 {
+        background: rgb(232, 14, 34);
+        background: radial-gradient(circle, rgba(232, 14, 34, 1) 24%, rgba(231, 195, 53, 0.5676471272102591) 58%, rgba(231, 195, 53, 0.44439782749037116) 100%);
+        flex-basis: 100%;
+        justify-content: center;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .index_banner_image {
+        justify-content: center;
+        align-content: center;
+    }
+
+    .index_banner_image img {
+        max-width: 500px;
+        align-self: center;
+    }
+
+    .student_navbar {
+        display: flex;
+        flex-basis: 90%;
+        align-self: flex-start;
+        justify-content: flex-start;
+    }
+
+    .student_navbar ul {
+        display: flex;
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .student_navbar a {
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+    }
+
+    .index_item02 {
+        flex-basis: 100%;
+        background: var(--blue_grad);
+    }
+
+    .index_item03 {
+        flex-basis: 100%;
+        background: var(--orange_grad);
+        align-content: center;
+    }
+
+    .index_item04 {
+        flex-basis: 100%;
+        background: var(--purple_grad);
+    }
+
+    .index_item01 {
+        padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        margin: 0 auto;
+        max-height: 120px;
+        width: 98%;
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .index_item02,
+    .index_item03,
+    .index_item04 {
+        flex-basis: 100%;
+        padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        margin: 1rem 1rem 1rem 1rem;
+        border-radius: 5px;
+        font-family: monospace;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+
+    .student_table_label_template {
+        text-align: center;
+        font-weight: bold;
         font-size: 16px;
     }
 
-    .assignment_form h3 {
-        margin: 0 auto;
-        margin-bottom: 0;
+    .student_today_table_nav {
+        justify-content: right;
+        margin-bottom: 1rem;
+        font-size: 16px;
     }
 
-    .assignment_form input {
-        width: 250px;
-        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    .student_today_table,
+    .student_upcoming_table,
+    .student_link_table {
+        flex-basis: 98%;
+        font-size: 15px;
+        font-style: var(--monospace);
+        text-align: left;
     }
-    .assignment_form textarea {
-        width: 550px;
+   
+    footer {
+        
+        font-size: small;
+        text-align: center;
+    }
+
+
+    /* ........................ TEACHER PORTAL (TABLET) ........................ */
+
+    .tp_background_image {
+        background-image: url('/static/images/kandinsky_1500.jpg');
+        margin: 1rem 1rem 1rem 1rem;
+        width: 98%;
+        min-height: 100vh;
+    }
+
+    .tp_container_main {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0 auto;
+        margin-top: 1rem;
+        gap: 10px;
+        justify-content: center;
+        background: rgb(255, 0, 0);
+        background: linear-gradient(90deg, rgba(255, 0, 0, 0.8281513288909313) 17%, rgba(246, 242, 61, 0.8085434857536764) 49%, rgba(61, 79, 246, 0.783333401720063) 89%);
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .tp_item01 {
+        grid-row: 1/3;
+        grid-column: 1/11;
+        background: rgb(232, 14, 34);
+        background: radial-gradient(circle, rgba(232, 14, 34, 1) 24%, rgba(231, 195, 53, 0.5676471272102591) 58%, rgba(231, 195, 53, 0.44439782749037116) 100%);
+        margin: 0;
+        margin-top: 0.5rem;
+        padding: 0;
+        justify-content: right;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .teacher_portal_banner {
+        display: flex;
+        flex-flow: no wrap;
+        width: 94%;
+        justify-content: right;
+    }
+
+    .teacher_portal_banner_image {
+        max-width: 500px;
+        flex-basis: 75%;
+    }
+
+    .teacher_navbar {
+        display: flex;
+        flex-basis: 23%;
+        align-self: flex-end;
+        justify-content: flex-end;
+
+    }
+
+    .teacher_navbar ul {
+        display: flex;
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .teacher_navbar a {
+        text-decoration: none;
+        font-size: 28px;
+        display: block;
+    }
+
+    .tp_item02 {
+        background: var(--orange_grad);
+        margin: 0;
+        padding: 0;
+    }
+
+    .tp_item03 {
+        background: var(--yellow_grad);
+        margin: 0;
+        padding: 0;
+    }
+
+    .tp_item04 {
+        background: var(--green_grad);
+        margin: 0;
+        padding: 0;
+    }
+
+    .tp_item05 {
+        background: var(--blue_grad);
+        margin: 0;
+        padding: 0;
+    }
+
+    .tp_item06 {
+        background: var(--purple_grad);
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .tp_item01,
+    .tp_item02,
+    .tp_item03,
+    .tp_item04,
+    .tp_item05,
+    .tp_item06 {
+        padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+        text-align: center;
+        margin: 0 auto;
+        width: 95%;
+        border-radius: 5px;
+        font-family: monospace;
+        font-size: 15px;
+        text-align: left;
+        align-content: center;
+        padding: 0rem 0.5rem 0rem 0.5rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .tp_item01 {
+        text-align: right;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .tp_item03 input,
+    .tp_item04 input,
+    .tp_item05 input,
+    .tp_item06 input {
+        margin: 0 auto;
+        width: 200px;
+    }
+
+    .tp_item03 textarea,
+    .tp_item05 textarea {
         height: 100px;
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .students_table_label {
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0rem 0rem .5rem 0rem;
+    }
+
+    /* ........................................ */
+
+    .tp_item03 form {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(auto-fill);
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: auto;
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem 1rem;
+        gap: 10px;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .add_assignment_label {
+        grid-row: 1/2;
+        grid-column: 1/5;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0rem 0rem 0rem 0rem;
+    }
+
+    .add_assignment_student {
+        grid-row: 2/3;
+        grid-column: 1/3;
+    }
+
+    .add_assignment_day {
+        grid-row: 3/4;
+        grid-column: 1/3;
+    }
+
+    .add_assignment_class {
+        grid-row: 4/5;
+        grid-column: 1/3;
+    }
+
+    .add_assignment_content {
+        grid-row: 2/5;
+        grid-column: 3/5;
+    }
+
+    .add_assignment_submit {
+        grid-row: 5/6;
+        grid-column: 2/4;
+        margin-top: 1rem;
+        justify-content: left;
+    }
+
+    /* ........................................ */
+    .tp_item04 form {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(auto-fill);
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: auto;
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem 1rem;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .search_assignments_label {
+        grid-row: 1/2;
+        grid-column: 1/10;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0rem 0rem 0rem 0rem;
+    }
+
+    .search_assignments_student {
+        grid-row: 2/3;
+        grid-column: 1/4;
+    }
+
+    .search_assignments_day {
+        grid-row: 2/3;
+        grid-column: 4/7;
+    }
+
+    .search_assignments_class {
+        grid-row: 2/3;
+        grid-column: 7/10;
+    }
+
+    .search_assignments_keyword {
+        grid-row: 3/4;
+        grid-column: 1/4;
+    }
+
+    .search_assignments_submit {
+        grid-row: 3/4;
+        grid-column: 5/8;
+        height: 20px;
+    }
+
+    /* ........................................ */
+    .tp_item05 form {
+        display: grid;
+        grid-template-columns: repeat(auto-fill);
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: auto;
+
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem 1rem;
+        gap: 10px;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .add_upcoming_label {
+        grid-row: 1/2;
+        grid-column: 1/10;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0rem 0rem 0rem 0rem;
+    }
+
+    .add_upcoming_student {
+        grid-row: 2/3;
+        grid-column: 1/3;
+    }
+
+    .add_upcoming_day {
+        grid-row: 3/4;
+        grid-column: 1/3;
+    }
+
+    .add_upcoming_content {
+        grid-row: 2/5;
+        grid-column: 4/6;
+    }
+
+    .add_upcoming_submit {
+        grid-row: 3/4;
+        grid-column: 7/9;
+        text-align: center;
+    }
+
+
+    /* ........................................ */
+    .tp_item06 form {
+        display: grid;
+        grid-template-columns: repeat(auto-fill);
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: auto;
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem 1rem;
+        gap: 10px;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .add_link_label {
+        grid-row: 1/2;
+        grid-column: 1/10;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0rem 0rem 0rem 0rem;
+    }
+
+    .add_link_student {
+        grid-row: 2/3;
+        grid-column: 2/5;
+    }
+
+    .add_link_url {
+        grid-row: 3/4;
+        grid-column: 2/5;
+    }
+
+    .add_link_description {
+        grid-row: 2/3;
+        grid-column: 6/10;
+    }
+
+    .add_link_submit {
+        grid-row: 3/4;
+        grid-column: 6/10;
+    }
+
+    /* ....................... OTHER PAGES TABLET ......................... */
+
+    .general_table_container {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 110%;
+    }
+
+    .new_student {
+        flex-basis: 60%;
+        margin: 0 auto;
+        margin-top: 1rem;
+        padding: 1rem 1rem 1rem 1rem;
+        justify-content: center;
+        font-size: 15px;
+        font-family: monospace;
+    }
+
+    .new_student input,
+    .new_student textarea {
         margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        width: 250px;
+    }
+
+    .new_student textarea {
+        height: 100px;
+    }
+
+    .general_medium_box {
+        display: flex;
+        flex-flow: row wrap;
+        width: 70%;
+        min-height: 40vh;
+        background: var(--yellow_grad);
+        border-radius: 5px;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .update_view_assignment {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        max-width: 500px;
+        margin: 0 auto;
+        margin-top: 1rem;
+        padding: 1rem 1rem 1rem 1rem;
+        font-size: 16px;
+        font-family: monospace;
+    }
+
+    #update_assignments {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: right;
+        margin-right: 1rem;
+    }
+
+    .update_view_assignment input,
+    .update_view_assignment textarea {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .update_view_assignment textarea {
+        height: 100px;
+    }
+
+    .remove_button {
+        flex-basis: 60%;
+        margin: 0 auto;
+    }
+
+    .view_assignment {
+        display: flex;
+        width: 500px;
+        flex-flow: no wrap;
+        text-align: left;
+        font-size: 22px;
+        line-height: 2;
+        font-family: monospace;
+        margin-bottom: 2rem;
     }
 }
 
+/* ************************** MIN 1200 PIXELS *************************************** */
+/* ....................... STUDENT INDEX DESKTOP......................... */
+@media (min-width: 1200px) {
+
+    .index_background_image {
+        background-image: url('/static/images/kandinsky_1500.jpg');
+        margin: 1rem 1rem 1rem 1rem;
+        width: 98%;
+        min-height: 100vh;
+    }
+
+    .index_container_main {
+        display: grid;
+        width: 100%;
+        min-height: 100vh;
+        grid-template-columns: repeat(auto-fill);
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: 98px;
+        /*grid-template-rows: repeat(10, 1fr);
+        grid-template-columns: repeat(10, 1fr);*/
+        gap: 20px;
+        padding: 1rem 1rem 1rem 1rem;
+        justify-content: center;
+        background: rgb(255, 0, 0);
+        background: linear-gradient(90deg, rgba(255, 0, 0, 0.8281513288909313) 17%, rgba(246, 242, 61, 0.8085434857536764) 49%, rgba(61, 79, 246, 0.783333401720063) 89%);
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .index_item01 {
+        grid-row: 1/3;
+        grid-column: 1/11;
+        background: rgb(232, 14, 34);
+        background: radial-gradient(circle, rgba(232, 14, 34, 1) 24%, rgba(231, 195, 53, 0.5676471272102591) 58%, rgba(231, 195, 53, 0.44439782749037116) 100%);
+        max-height: 105px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .index_banner_image {
+        justify-content: center;
+        align-content: center;
+    }
+
+    .index_banner_image img {
+        min-width: 500px;
+    }
+
+    .student_navbar {
+        display: flex;
+        flex-basis: 90%;
+        align-self: flex-start;
+        justify-content: flex-start;
+    }
+
+    .student_navbar ul {
+        display: flex;
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .student_navbar a {
+        text-decoration: none;
+        font-size: 20px;
+        display: block;
+    }
+
+    .index_item02 {
+        grid-row: 3/11;
+        grid-column: 1/7;
+        background: var(--blue_grad);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .index_item03 {
+        grid-row: 3/6;
+        grid-column: 7/11;
+        background: var(--orange_grad);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .index_item04 {
+        grid-row: 6/11;
+        grid-column: 7/11;
+        background: var(--purple_grad);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .index_item01 {
+        padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        margin: 0 auto;
+        max-height: 120px;
+        width: 98%;
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .index_item02,
+    .index_item03,
+    .index_item04 {
+        padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        margin: 1rem 1rem 1rem 1rem;
+        min-width: 500px;
+        border-radius: 5px;
+        font-family: monospace;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .index_item02 {
+        min-width: 600px;
+    }
+
+    .student_table_label_template {
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .student_today_table_nav {
+        justify-content: right;
+        margin-bottom: 1rem;
+        font-size: 19px;
+    }
+
+    .student_today_table,
+    .student_upcoming_table,
+    .student_link_table {
+        font-size: 17px;
+        font-style: var(--monospace);
+        text-align: left;
+    }
+
+    .student_today_table {
+        min-width: 575px;
+    }
+
+    .student_upcoming_table,
+    .student_link_table {
+        min-width: 400px;
+    }
+
+    footer {
+        
+        font-size: small;
+        text-align: center;
+    }
+
+    /* ........................ TEACHER PORTAL ........................ */
+
+    .tp_background_image {
+        background-image: url('/static/images/kandinsky_1500.jpg');
+        margin: 1rem 1rem 1rem 1rem;
+        width: 98%;
+        min-height: 90vh;
+    }
+
+    .tp_container_main {
+        display: grid;
+        width: 100%;
+        min-height: 90vh;
+        grid-template-columns: repeat(auto-fill);
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: auto;
+        /*grid-template-rows: repeat(10, 1fr);
+        grid-template-columns: repeat(10, 1fr);*/
+        gap: 15px;
+        padding: 1rem 1rem 1rem 1rem;
+        justify-content: center;
+        background: rgb(255, 0, 0);
+        background: linear-gradient(90deg, rgba(255, 0, 0, 0.8281513288909313) 17%, rgba(246, 242, 61, 0.8085434857536764) 49%, rgba(61, 79, 246, 0.783333401720063) 89%);
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .tp_item01 {
+        grid-row: 1/3;
+        grid-column: 1/11;
+        background: rgb(232, 14, 34);
+        background: radial-gradient(circle, rgba(232, 14, 34, 1) 24%, rgba(231, 195, 53, 0.5676471272102591) 58%, rgba(231, 195, 53, 0.44439782749037116) 100%);
+        margin: 0;
+        margin-top: 0.5rem;
+        padding: 0;
+        justify-content: right;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .teacher_portal_banner {
+        display: flex;
+        flex-flow: no wrap;
+        width: 94%;
+        justify-content: right;
+    }
+
+    .teacher_portal_banner_image {
+        max-width: 800px;
+        flex-basis: 75%;
+    }
+
+    .teacher_navbar {
+        display: flex;
+        flex-basis: 23%;
+        align-self: flex-end;
+        justify-content: flex-end;
+
+    }
+
+    .teacher_navbar ul {
+        display: flex;
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .teacher_navbar a {
+        text-decoration: none;
+        font-size: 33px;
+        display: block;
+    }
+
+    .tp_item02 {
+        grid-row: 3/7;
+        grid-column: 1/5;
+        background: var(--orange_grad);
+        margin: 0;
+        padding: 0;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .tp_item03 {
+        grid-row: 7/11;
+        grid-column: 1/5;
+        background: var(--yellow_grad);
+        align-content: center;
+        margin: 0;
+        padding: 0;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .tp_item04 {
+        grid-row: 3/6;
+        grid-column: 5/11;
+        background: var(--green_grad);
+        margin: 0;
+        padding: 0;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .tp_item05 {
+        grid-row: 6/9;
+        grid-column: 5/11;
+        background: var(--blue_grad);
+        margin: 0;
+        padding: 0;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .tp_item06 {
+        grid-row: 9/11;
+        grid-column: 5/11;
+        background: var(--purple_grad);
+        margin: 0;
+        padding: 0;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .tp_item01,
+    .tp_item02,
+    .tp_item03,
+    .tp_item04,
+    .tp_item05,
+    .tp_item06 {
+        padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+        text-align: center;
+        margin: 0 auto;
+        width: 95%;
+        border-radius: 5px;
+        font-family: monospace;
+        font-size: 15px;
+        text-align: left;
+        align-content: center;
+        padding: 0rem 0.5rem 0rem 0.5rem;
+    }
+
+    .tp_item01 {
+        text-align: right;
+    }
+
+    .tp_item03 input,
+    .tp_item04 input,
+    .tp_item05 input,
+    .tp_item06 input {
+        margin: 0 auto;
+        width: 200px;
+    }
+
+    .tp_item03 textarea,
+    .tp_item05 textarea {
+        height: 100px;
+        width: 200px;
+        margin: 0 auto;
+    }
 
 
+    .students_table_label {
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0rem 0rem .5rem 0rem;
+    }
 
-/* ******************************************************************* */
+    /* ........................................ */
 
-@media (min-width: 1000px) {
+    .tp_item03 form {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(auto-fill);
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: auto;
+        /*grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);*/
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem 1rem;
+        gap: 10px;
+        justify-content: center;
+        align-content: center;
+    }
 
-    .welcome img {
+    .add_assignment_label {
+        grid-row: 1/2;
+        grid-column: 1/5;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0rem 0rem 0.5rem 0rem;
+    }
+
+    .add_assignment_student {
+        grid-row: 2/3;
+        grid-column: 1/3;
+    }
+
+    .add_assignment_day {
+        grid-row: 3/4;
+        grid-column: 1/3;
+    }
+
+    .add_assignment_class {
+        grid-row: 4/5;
+        grid-column: 1/3;
+    }
+
+    .add_assignment_content {
+        grid-row: 2/5;
+        grid-column: 3/5;
+    }
+
+    .add_assignment_submit {
+        grid-row: 5/6;
+        grid-column: 2/4;
+        margin-top: 1rem;
+        justify-content: left;
+    }
+
+    /* ........................................ */
+    .tp_item04 form {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(auto-fill);
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: auto;
+        /*grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(9, 1fr);*/
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem 1rem;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .search_assignments_label {
+        grid-row: 1/2;
+        grid-column: 1/10;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0rem 0rem 0.5rem 0rem;
+    }
+
+    .search_assignments_student {
+        grid-row: 2/3;
+        grid-column: 1/4;
+    }
+
+    .search_assignments_day {
+        grid-row: 2/3;
+        grid-column: 4/7;
+    }
+
+    .search_assignments_class {
+        grid-row: 2/3;
+        grid-column: 7/10;
+    }
+
+    .search_assignments_keyword {
+        grid-row: 3/4;
+        grid-column: 1/4;
+    }
+
+    .search_assignments_submit {
+        grid-row: 3/4;
+        grid-column: 5/8;
+        height: 20px;
+    }
+
+    /* ........................................ */
+    .tp_item05 form {
+        display: grid;
+        grid-template-columns: repeat(auto-fill);
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: auto;
+        /*grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(9, 1fr);*/
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem 1rem;
+        gap: 10px;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .add_upcoming_label {
+        grid-row: 1/2;
+        grid-column: 1/10;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0rem 0rem 0.5rem 0rem;
+    }
+
+    .add_upcoming_student {
+        grid-row: 2/3;
+        grid-column: 1/3;
+    }
+
+    .add_upcoming_day {
+        grid-row: 3/4;
+        grid-column: 1/3;
+    }
+
+    .add_upcoming_content {
+        grid-row: 2/5;
+        grid-column: 4/6;
+    }
+
+    .add_upcoming_submit {
+        grid-row: 3/4;
+        grid-column: 7/9;
+        text-align: center;
+    }
+
+
+    /* ........................................ */
+    .tp_item06 form {
+        display: grid;
+        grid-template-columns: repeat(auto-fill);
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: auto;
+        /*grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(9, 1fr);*/
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem 1rem;
+        gap: 10px;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .add_link_label {
+        grid-row: 1/2;
+        grid-column: 1/10;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0rem 0rem 0.5rem 0rem;
+    }
+
+    .add_link_student {
+        grid-row: 2/3;
+        grid-column: 2/5;
+    }
+
+    .add_link_url {
+        grid-row: 3/4;
+        grid-column: 2/5;
+    }
+
+    .add_link_description {
+        grid-row: 2/3;
+        grid-column: 6/10;
+    }
+
+    .add_link_submit {
+        grid-row: 3/4;
+        grid-column: 6/10;
+    }
+
+    /* ...................... OTHER PAGES DESKTOP ............................. */
+
+    .assignment_background_image {
+        background-image: url('/static/images/kandinsky_1500.jpg');
+        margin: 1rem 1rem 1rem 1rem;
+        width: 98%;
+        min-height: 100vh;
+    }
+
+    .general_container {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0 auto;
+        margin-top: 1rem;
+        gap: 10px;
+        padding: 1rem 0.25rem 0.25rem 0.25rem;
+        justify-content: center;
+        align-content: flex-start;
+        background: rgb(255, 0, 0);
+        background: linear-gradient(90deg, rgba(255, 0, 0, 0.8281513288909313) 17%, rgba(246, 242, 61, 0.8085434857536764) 49%, rgba(61, 79, 246, 0.783333401720063) 89%);
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .general_banner {
+        width: 90%;
+        max-height: 150px;
+        font-size: 44px;
+        background: var(--green_grad);
+        border-radius: 5px;
+        margin-top: 1rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .general_heading_banner {
+        flex-basis: 50%;
+        max-height: 70px;
+        background: var(--purple_grad);
+        border-radius: 5px;
+        justify-content: center;
+        text-align: center;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    h2 {
+        font-size: 125%;
+    }
+
+    .general_large_box {
+        display: flex;
+        flex-flow: row wrap;
+        width: 95%;
+        min-height: 40vh;
+        background: var(--yellow_grad);
+        border-radius: 5px;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .general_table_container {
+        flex-basis: 98%;
+        min-height: 25vh;
+        background: var(--red_grad);
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: monospace;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .general_banner {
+        background: rgb(232, 14, 34);
+        background: radial-gradient(circle, rgba(232, 14, 34, 1) 24%, rgba(231, 195, 53, 0.5676471272102591) 58%, rgba(231, 195, 53, 0.44439782749037116) 100%);
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: right;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .general_banner_image {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .general_banner_image img {
+        max-width: 395px;
+    }
+
+    .general_navbar {
+        display: flex;
+        flex-basis: 100%;
+        align-self: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .general_navbar ul {
+        display: flex;
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .general_navbar a {
+        text-decoration: none;
+        font-size: 35px;
+        display: block;
+    }
+
+    .new_student {
+        flex-basis: 60%;
+        margin: 0 auto;
+        margin-top: 1rem;
+        padding: 1rem 1rem 1rem 1rem;
+        justify-content: center;
+        font-size: 18px;
+        font-family: monospace;
+    }
+
+    .new_student input,
+    .new_student textarea {
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
         width: 300px;
     }
 
-    nav ul {
-        flex-flow: nowrap;
-        align-items: flex-end;
+    .new_student textarea {
+        height: 100px;
     }
 
-    nav li:first-child {
-        flex-basis: auto;
-        margin: 0 auto;
-        order: 2;
-    }
-
-    nav li:nth-child(2),
-    nav li:nth-child(3) {
-        order: 1;
-    }
-
-    nav li:nth-child(4),
-    nav li:nth-child(5) {
-        order: 3;
-    }
-
-    .lookup_table {
-        font-size: 14px;
-    }
-
-    .note_form_head h3 {
-        font-size: 150%;
-        font-weight: bold;
-    }
-
-    .note_form_head h4 {
-        font-weight: bold;
-    }
-
-
-/* ******************************************************************** */
-@media (min-width: 1150px) {
-
-    
-    h1 {
-        text-align: center;
-        margin: 0 auto;
-        width: 800px;
-    }
-
-    .welcome img {
-        width: 325x;
-    }
-
-    nav ul {
-        justify-content: space-evenly;
-        align-items: flex-end;
-    }
-
-    nav li:first-child {
-        flex-basis: auto;
-        margin: 0 auto;
-        order: 2;
-    }
-
-    nav li:nth-child(2),
-    nav li:nth-child(3) {
-        order: 1;
-    }
-
-    nav li:nth-child(4),
-    nav li:nth-child(5) {
-        order: 3;
-    }
-
-    nav a {
-        text-decoration: none;
-        font-size: 100%;
-        background-color: var(--blue);
-        display: block;
-        width: 115px;
-        height: 100%;
-        padding: 0.5rem;
-        border-radius: 5px;
-        text-align: center;
-        flex-flow: nowrap;
-    }
-
-    nav li:first-child a {
-        background-color: transparent;
-        width: 100%;
-    }
-
-    nav a:hover {
-        background-color: var(--yellow);
-        color: var(--color5);
-    }
-
-    .section_large {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1rem;
-        grid-template-rows: 1fr 1fr 0.15fr;
-    }
-
-    .teacher_portal_link {
-        grid-column: 1 / 6;
-        grid-row-start: 3;
-        margin: 0 auto;
-        align-content: flex-start;
-    }
-
-    .teacher_portal_link a {
-        color: black;
-    }
-
-    .section_medium {
-        grid-column: 1 / 4;
-        grid-row-start: span 2;
-        margin-bottom: 0.5rem;
-        align-content: flex-start;
-    }
-
-    .section_medium a,
-    .section_medium_teacher a {
-        color: black;
-    }
-
-    .section_medium a:hover,
-    .section_medium_teacher a:hover {
-        color: white;
-    }
-
-    .section_medium_teacher {
+    .general_medium_box {
         display: flex;
-        justify-content: center;
-        text-align: center;
-        background-color: var(--blue);
-        padding: 0.5em 0.5em 0.5em 0.5em;
-        color: black;
-        grid-column: 1 / 4;
-        grid-row-start: span 2;
-        margin-bottom: 0.5rem;
-        align-content: space-between;
-    }
-
-
-    .student_table_top {
-        display: flex;
-        width: 100%;
-        align-content: flex-start;
-        flex-direction: row;
         flex-flow: row wrap;
+        width: 70%;
+        min-height: 40vh;
+        background: var(--yellow_grad);
+        border-radius: 5px;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .update_view_assignment {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        max-width: 500px;
+        margin: 0 auto;
+        margin-top: 1rem;
+        padding: 1rem 1rem 1rem 1rem;
+        font-size: 18px;
+        font-family: monospace;
+    }
+
+    #update_assignments {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: right;
+        margin-right: 1rem;
+    }
+
+    .update_view_assignment input,
+    .update_view_assignment textarea {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .update_view_assignment textarea {
+        height: 100px;
+    }
+
+    .remove_button {
+        flex-basis: 60%;
+        margin: 0 auto;
+    }
+
+    .view_assignment {
+        display: flex;
+        width: 500px;
+        flex-flow: no wrap;
+        text-align: left;
+        font-size: 22px;
+        line-height: 2;
+        font-family: monospace;
         margin-bottom: 2rem;
     }
-
-    .section_small_one {
-        grid-column: 4 / 6;
-        grid-row: 1 / 2;
-        margin-bottom: 0;
-        align-content: flex-start;
-    }
-
-    .section_small_two {
-        grid-column: 4 / 6;
-        grid-row: 2 / 3;
-        margin-bottom: 0.5rem;
-        align-content: flex-start;
-    }
-
-    .section_small_two a {
-        color: black;
-    }
-
-    .section_small_two a:hover {
-        color: white;
-    }
-
-    .assignments_nav {
-        padding: 0;
-        margin: 0 auto;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    .assignments_nav ul {
-        list-style-type: none;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        align-items: space-between;
-        text-align: center;
-        padding: 0;
-        margin: 0 auto;
-    }
-
-    .assignments_nav li {
-        width: 70px;
-        text-align: center;
-        margin: 0.25rem 1rem 0.25rem 1rem;
-    }
-
-    .assignments_nav a {
-        text-decoration: none;
-        font-size: 1.25rem;
-        color: black;
-    }
-
-    .assignments_nav a:hover {
-        color: white;
-    }
-
-
-
-    .lookup_form {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        margin-top: 1rem;
-        width: 95%;
-        height: 120px;
-        background-color: #1C9ACF;
-        border-radius: 5px;
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-        text-align: center;
-    }
-
-    .lookup_form input {
-        width: 250px;
-        margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-    }
-
-    .lookup_table,
-    .notes_table {
-        font-size: 18px;
-    }
-
-    .mininav a {
-        font-size: 1.6rem;
-    }
-
-
-    .link_add input,
-    .upcoming_add input,
-    .upcoming_add textarea {
-        width: 375px;
-    }
-
-
 }
-
-
-    /* ******************************************************************** */
-
-
-    @media (min-width: 1300px) {
-
-
-        nav ul {
-            flex-flow: nowrap;
-        }
-    }
