@@ -4,7 +4,7 @@
 
 #### Video Demo:  <http://www.YouTube.com>
 
-#### TECHNOLOGIES USED: Python, Flask, Flask Security, SQLAlchemy, Jinja, HTML, CSS, and CSS Grid.
+#### TECHNOLOGIES USED: Python, flask, flask_security, SQLAlchemy, Jinja, HTML, CSS, and CSS Grid.
 
 #### Description:
 # -- BACKSTORY ------------------------
@@ -15,7 +15,7 @@ So this app was born out of necessity. It will give my children, my dear student
 Homeschool Today! is a fully responsive site, each page and aspect designed to be fully functional and to look great on everything from small mobile device dimensions to full desktop.
 
 # -- PURPOSE and FUNCTIONALITY -----------------------
-The first aspect a user experiences when they visit Homeschool Today! is the smooth, user-friendly Flask security interface. It makes registering, logging in, changing passwords, and the various other security measures easy and worry-free.
+The first aspect a user experiences when they visit Homeschool Today! is the smooth, user-friendly flask_security interface. It makes registering, logging in, changing passwords, and the various other security measures easy and worry-free.
 
 When the user is logged in, their user-id is given a role of either student or teacher, which makes their homepage, their portal, either the student portal or the teacher portal. Students will only ever see the student portal, which is the index page of the app, as well as the page where they can view their assignments in more detail, including notes their teacher has made to each assignment. Homeschool Today! is streamlined, in that both students and teachers have their main portal from which they can do most of their work. The only navigation items necessary are "home", "password", and "logout". For the student, they will remain on their portal page, except for when they are viewing the details of an assignment. The teacher portal has a few extra parts for administrative purposes. 
 
@@ -50,7 +50,7 @@ And finally, the Add Link portion of the teacher portal allows the teacher to ad
 * Models.py - defines the database tables. SQLAlchemy is implemented, and flask_security provides a user datastore that is integrated into the database. 
 * db.api.py - the interface to the database. In order to protect access to the database, the web routes make no calls directly to the models but rather use the functions here.
 * routes.py - the flask routes file that links to the makes db.api calls and produces the web pages.
-* utils.py - tools that are mainly used for importing an existing lessons plan in CSV format.
+* utils.py - tools that are mainly used for importing an existing lesson plan in CSV format.
 * __init.py - the init file in the homeschool directory. This is where everything gets started, the flask app, as well as the database and the user datastore routes and models. 
 * style.css - the style page for the entire web app aside from the security features, which used security_styles.css. The entire site is designed to be responsive at min-1200px, min-800px and min-400px. The teacher portal is a grid within grid network, thus taking up so very much space. The design is as thorough and precise as I could get it and still create a visibly attractive, exciting, and dynamic user experience.
 * security_styles.css - This contains the simple styles for the security pages of the site, including the login, register, change password, verification, and other pages.
@@ -62,7 +62,7 @@ And finally, the Add Link portion of the teacher portal allows the teacher to ad
 * update_student.html - the page a teacher goes to when they click on the update icon beside a student on their student table, where they can update student information.
 * view_assignments.html - the uneditable page students and teachers are taken to when they click on the binoculars icon on a student's daily assignments table or on the lookup assignments, where they can find the full details of each assignment.
 * error.html - for when things go awry.
-* login_user.html, register_user.html, change_password.html, and other flask security pages - all customized and stylized versions of the Flask Security feature of this app. 
+* login_user.html, register_user.html, change_password.html, and other flask_security pages - all customized and stylized versions of the flask_security feature of this app. 
 
 # -- THE ART -----------------------
 Homeschool Today! features art by my ten-year-old daughter, Emma. She designed and created Sundae, the Homeschool Today mascot, who appears on the login, register, password change, and other security pages. She also designed the Homeschool Today! logo. This site also features a well-loved and popular painting by Wassily Kandinsky in a subdued fashion as the backdrop of all of the app pages.

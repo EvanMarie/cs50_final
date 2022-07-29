@@ -344,7 +344,7 @@ def complete_assignment():
     assignment = get_assignment_by_id(assignment_id)
     logger.info(f'new assignment completed: {assignment.completed}')
     
-    return redirect(url_for('home'))  
+    return redirect(url_for('home', student_id = assignment.assigned_to.id))  
 
 @app.route("/view_assignment", methods = ['GET'])
 @auth_required()

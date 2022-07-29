@@ -51,7 +51,17 @@ body a:hover {
 }
 
 /* ***************************** STUDENT MOBILE DIMENSIONS ******************************************* */
-@media (min-width: 350px) {
+@media (min-width: 300px) {
+
+    .mobile_background {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0 auto;
+        gap: 10px;
+        justify-content: center;
+    }
 
     .index_background_image {
         background-image: url('/static/images/kandinsky_1500.jpg');
@@ -66,7 +76,7 @@ body a:hover {
         width: 100%;
         min-height: 100vh;
         margin: 0 auto;
-        margin-top: 0.5rem;
+        margin: 0.25rem 1rem 1rem 1rem;
         gap: 10px;
         padding: 0.25rem 0.25rem 0.25rem 0.25rem;
         justify-content: center;
@@ -74,7 +84,7 @@ body a:hover {
         background: linear-gradient(90deg, rgba(255, 0, 0, 0.8281513288909313) 17%, rgba(246, 242, 61, 0.8085434857536764) 49%, rgba(61, 79, 246, 0.783333401720063) 89%);
         border-radius: 5px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    }
+    } 
 
     .index_item01 {
         background: rgb(232, 14, 34);
@@ -191,7 +201,7 @@ body a:hover {
 
     /* ........................ TEACHER PORTAL MOBILE ........................ */
 
-    .tp_background_image {
+       .tp_background_image {
         background-image: url('/static/images/kandinsky_1500.jpg');
         margin: 1rem 1rem 1rem 1rem;
         width: 98%;
@@ -211,7 +221,7 @@ body a:hover {
         background: linear-gradient(90deg, rgba(255, 0, 0, 0.8281513288909313) 17%, rgba(246, 242, 61, 0.8085434857536764) 49%, rgba(61, 79, 246, 0.783333401720063) 89%);
         border-radius: 5px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    }
+    } 
 
     .tp_item01 {
         grid-row: 1/3;
@@ -506,7 +516,7 @@ body a:hover {
         background: linear-gradient(90deg, rgba(255, 0, 0, 0.8281513288909313) 17%, rgba(246, 242, 61, 0.8085434857536764) 49%, rgba(61, 79, 246, 0.783333401720063) 89%);
         border-radius: 5px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    }
+    } 
 
     .general_banner {
         width: 90%;
@@ -643,7 +653,7 @@ body a:hover {
 
     .update_view_assignment {
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: wrap;
         justify-content: center;
         max-width: 500px;
         margin: 0 auto;
@@ -676,14 +686,26 @@ body a:hover {
     }
     .view_assignment {
         display: flex;
+        flex-flow: row;
+        width: 100%;
         width: 375px;
-        flex-flow: no wrap;
+        gap: 5px;
+        flex-flow: row wrap;
         text-align: left;
-        font-size: 18px;
-        line-height: 2;
+        font-size: 15px;
+        line-height: 1.5;
         font-family: monospace;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
+        margin-top: 1rem;
     }
+
+    .view_assignment_student,
+    .view_assignment_day,
+    .view_assignment_subject,
+    .view_assignment_note {
+        width: 100%;
+    }
+
 }
 
 /* ****************************** MIN 800 PIXELS (TABLET) *************************************** */

@@ -27,15 +27,15 @@ View an Assignment
                 <div class="update_view_assignment">
                     <div class="view_assignment">
         
-                        Student: {{assignment.assigned_to.first_name}} {{assignment.assigned_to.last_name}}
-                        <br>
-                        School Day: {{assignment.school_day}}
-                        <br>
-                        Subject: {{assignment.subject}}
-                        <br>
-                       Assignment: {{assignment.content | safe}} 
-                       <br>
-                       Note: {{assignment.note }} 
+                        <div class = "view_assignment_student">Student: {{assignment.assigned_to.first_name}} {{assignment.assigned_to.last_name}} </div>
+                        
+                            <div class = "view_assignment_day">School Day: {{assignment.school_day}}</div>
+                       
+                                <div class = "view_assignment_subject">Subject: {{assignment.subject}}</div>
+                      
+                                    <div class = "view_assignment_content">Assignment: {{assignment.content | convert_links | safe}} </div>
+                       
+                                        <div class = "view_assignment_note">Note: {{assignment.note | convert_links | safe }} </div>
                    
                 </div>
             
