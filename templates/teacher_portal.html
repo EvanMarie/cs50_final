@@ -20,7 +20,9 @@
 		</div>
 		<!-- TEACHER: TABLE OF STUDENTS -->
 		<div class="tp_item02">
-			<div class="students_table_label"> Today is day number {{day_number}}.</div>
+			<div class="students_table_label"> Today is day number <div class = "day_number">{{day_number}}</div> 
+				<a href = "{{url_for('teacher_portal', increment = True)}}" <i class="bi bi-caret-up-square"></i></a>&emsp;
+				<a href = "{{url_for('teacher_portal', decrement = True)}}" <i class="bi bi-caret-down-square"></i></a></div>
 			<table class="table table-sm">
 				<thead>
 					<tr>
@@ -43,13 +45,13 @@
 			<form action="{{url_for('add_assignment')}}" id="add_assignment" method="POST">
 				<div class="add_assignment_label"> Add a Student Assignment</div>
 				<div class="add_assignment_student">
-					<input name="add_assignment_student" id="add_assignment_student" placeholder="Student" type="text"> </div>
+					<input name="add_assignment_student" id="add_assignment_student" placeholder="Student" type="text" required> </div>
 				<div class="add_assignment_day">
-					<input name="add_assignment_day" id="add_assignment_day" placeholder="School Day Number" type="number" min="1" max="180"> </div>
+					<input name="add_assignment_day" id="add_assignment_day" placeholder="School Day Number" type="number" min="1" max="180" required> </div>
 				<div class="add_assignment_class">
-					<input name="add_assignment_class" id="add_assignment_class" placeholder="Class Name" type="text"> </div>
+					<input name="add_assignment_class" id="add_assignment_class" placeholder="Class Name" type="text" required> </div>
 				<div class="add_assignment_content">
-					<textarea placeholder="Assignment to Add" name="assignment"></textarea>
+					<textarea placeholder="Assignment to Add" name="assignment" required></textarea>
 				</div>
 				<div class="add_assignment_submit">
 					<input class="btn btn-primary btn-sm" type="submit" value="Add Assignment"> </div>
@@ -77,12 +79,12 @@
 			<form action="{{url_for("teacher_portal", post_type='upcoming')}}" id="upcoming_add" method="POST">
 				<div class="add_upcoming_label"> Add Upcoming for Student</div>
 				<div class="add_upcoming_student">
-					<input name="student_upcoming" id="student_upcoming" placeholder="Student" type="text"> </div>
+					<input name="student_upcoming" id="student_upcoming" placeholder="Student" type="text" required> </div>
 				<div class="add_upcoming_day">
-					<input name="day_upcoming" id="day_upcoming" placeholder="School Day Number" type= "number" min = "1" max = "180">
+					<input name="day_upcoming" id="day_upcoming" placeholder="School Day Number" type= "number" min = "1" max = "180" required>
 					</div>
 					<div class="add_upcoming_content">
-						<textarea placeholder="Upcoming Task" name="assignment_upcoming"></textarea>
+						<textarea placeholder="Upcoming Task" name="assignment_upcoming" required></textarea>
 					</div>
 					<div class="add_upcoming_submit">
 						<input class="btn btn-primary btn-sm" type="submit" value="Add Upcoming" >
@@ -94,13 +96,13 @@
 				<form action="{{url_for("teacher_portal", post_type='link' )}} " id="link_add" method="POST">
                     <div class="add_link_label"> Add a Student Link</div>
                     <div class="add_link_student">
-						<input name="student_link" id="student_link" placeholder="Student" type="text">
+						<input name="student_link" id="student_link" placeholder="Student" type="text" required>
 					</div>
 					<div class="add_link_url">
-						<input name="link_url" id="link_url" placeholder="Link URL" type="text">
+						<input name="link_url" id="link_url" placeholder="Link URL" type="text" required>
 					</div>
 					<div class="add_link_description">
-						<input name="link_description" id="link_description" placeholder="Description" type="text">
+						<input name="link_description" id="link_description" placeholder="Description" type="text" required>
 					</div>
 					<div class="add_link_submit ">
 						<input class="btn btn-primary btn-sm" type="submit" value="Add Link">

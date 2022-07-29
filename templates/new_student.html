@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Add Student
+Add a Student
 {% endblock %}
 
 {% block main %}
@@ -27,11 +27,11 @@ Add Student
                 <div class="new_student">
                     <form action="/new_student" id="new_student" method="POST" width="100%">
                         <div class="new_student_firstname"><input name="new_student_firstname"
-                                id="new_student_firstname" placeholder="New Student First Name" type="text"></div>
+                                id="new_student_firstname" placeholder="New Student First Name" type="text"  required></div>
                         <div class="new_student_lastname"><input name="new_student_lastname" id="new_student_lastname"
-                                placeholder="New Student Last Name" type="text"></div>
+                                placeholder="New Student Last Name" type="text"  required></div>
                             <div class="new_student_email"><input name="new_student_email" id="new_student_email"
-                                    placeholder="New Student Email" type="text"></div>
+                                    placeholder="New Student Email" type="text"  required></div>
                                 <div class="new_student_note"><textarea placeholder="New Student Note"
                                         name="new_student_note"></textarea> </div>
                                     <div class="new_student_submit"><input class="btn btn-primary" type="submit" value="Add Student"></div>

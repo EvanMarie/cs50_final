@@ -46,12 +46,16 @@ body a:hover {
     color: white;
 }
 
+.error_message {
+    margin-top: 4rem;
+}
+
 /* ***************************** STUDENT MOBILE DIMENSIONS ******************************************* */
 @media (min-width: 350px) {
 
     .index_background_image {
         background-image: url('/static/images/kandinsky_1500.jpg');
-        margin: 1rem 1rem 1rem 1rem;
+        margin: 0.25rem 1rem 1rem 1rem;
         width: 98%;
         min-height: 100vh;
     }
@@ -62,7 +66,7 @@ body a:hover {
         width: 100%;
         min-height: 100vh;
         margin: 0 auto;
-        margin-top: 2rem;
+        margin-top: 0.5rem;
         gap: 10px;
         padding: 0.25rem 0.25rem 0.25rem 0.25rem;
         justify-content: center;
@@ -687,7 +691,7 @@ body a:hover {
 
     .index_background_image {
         background-image: url('/static/images/kandinsky_1500.jpg');
-        margin: 1rem 1rem 1rem 1rem;
+        margin: 0.25rem 1rem 1rem 1rem;
         width: 98%;
         min-height: 100vh;
     }
@@ -1254,9 +1258,13 @@ body a:hover {
 /* ....................... STUDENT INDEX DESKTOP......................... */
 @media (min-width: 1200px) {
 
+    .day_number {
+        font-size: 125%;
+    }
+    
     .index_background_image {
         background-image: url('/static/images/kandinsky_1500.jpg');
-        margin: 1rem 1rem 1rem 1rem;
+        margin: 0.25rem 1rem 1rem 1rem;
         width: 98%;
         min-height: 100vh;
     }
@@ -1382,10 +1390,13 @@ body a:hover {
     .student_today_table_nav {
         justify-content: right;
         margin-bottom: 1rem;
-        font-size: 19px;
+        font-size: 22px;
     }
 
-    .student_today_table,
+    .student_today_table {
+        font-size: 15px;
+    }
+    
     .student_upcoming_table,
     .student_link_table {
         font-size: 17px;

@@ -13,8 +13,8 @@
         </div>
 		<!-- STUDENT: TODAY'S ASSIGNMENTS TABLE -->
 		<div class="index_item02">
-			<div class="student_today_table_nav"> <div class="student_navbar">Today is school day number: ___. 
-                &emsp;&emsp;&emsp;&emsp;
+			<div class="student_today_table_nav"> <div class="student_navbar">Today is school day number: &emsp; <div class = "day_number">{{day_number}} </div>
+                &emsp;&emsp;&emsp;
                 <ul>
                     <li><a href={{ url_for('home') }}><i class="bi bi-house-fill"></i> </a></li>
                     &emsp;<li><a href={{ url_for_security('change_password') }}><i class="bi bi-lock"></i></a></li>
@@ -38,7 +38,7 @@
 							<td>
 								<div class="form-check"> <a href="{{url_for('complete_assignment', assignment_id=assignment.id)}}">{{_input | safe}}</a></div>
 							</td>
-							<td><a href="{{url_for('view_assignment', assignment_id = assignment.id)}}"><i class="bi bi-binoculars"></i></a></td>
+							<td><a href="{{url_for('view_assignment', assignment_id = assignment.id)}}" target = "_blank"><i class="bi bi-binoculars"></i></a></td>
 						</tr> {% endfor %} </tbody>
 				</table>
 			</div>

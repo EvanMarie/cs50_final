@@ -7,17 +7,21 @@ Homeschool Planner - Home!
 {% block main %}
 
 <body>
-    <div class="other_box">
-        <div class="other_box_over">
-            <div class ="error_section">
-            <p>
+    <div class = "tp_background_image">
+        <div class="tp_container_main">
+            <!-- BANNER -->
+            <div class ="index_item02">
+                <div class="teacher_portal_banner">
+                    <div class="teacher_portal_banner_image"> <img src="/static/images/homeschool_banner_sized.png"> </div>
+                    <!-- NAVBAR -->
+                </div>
+<div class = "error_message"
             <div class = "error"><h3>An error has occurred.</h3></div>
-            </p>
-            <p> 
+       <br>
                 <div class = "error_message"><h3>{{ error_code }}: {{ message }}</h3></div></p>
-
+            </div>
         </div>
     </div>
-    </div>
+</div>
 </body>
 {% endblock %}

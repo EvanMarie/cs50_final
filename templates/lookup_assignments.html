@@ -31,9 +31,9 @@ Search Assignments
                             <th scope="col">School Day</th>
                             <th scope="col">Student</th>
                             <th scope="col">Class</th>
-                            <th scope="col">Task / Assignment</th>
+                            <th scope="col">Assignment</th>
+                            <th scope="col">Details</th>
                             <th scope="col">Update</th>
-                            <th scope="col">Delete</th>
         
                         </tr>
                     </thead>
@@ -44,9 +44,9 @@ Search Assignments
                            <td>{{record.Student.first_name}}</td>
                            <td>{{record.Assignment.subject}}</td>
                            <td>{{record.Assignment.content | convert_links | safe}}</td>
-                           <td><a href = "{{url_for('update_assignment', assignment = record.Assignment.id, student = record.Student.id)}}"<i class="bi bi-pencil-square"></i> </td>
-                           <td><i class="bi bi-trash"></i></td>
-                           {% endfor %} 
+                           <td><a href="{{url_for('view_assignment', assignment_id = record.Assignment.id)}}" target = "_blank"><i class="bi bi-binoculars"></i></a></td>
+                           <td><a href = "{{url_for('update_assignment', assignment = record.Assignment.id, student = record.Student.id)}}"<i class="bi bi-pencil-square"></i> </td>            
+                            {% endfor %} 
 
 
                         </tr>

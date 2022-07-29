@@ -1,14 +1,16 @@
 import os
 
+from click import get_current_context
+
 from homeschool import db, app
 from flask import Flask, request, flash, redirect, render_template, request, url_for, render_template_string, session
 from flask_security import auth_required, roles_required, hash_password
 from flask_login import current_user
 from datetime import datetime, date, time
 from tempfile import mkdtemp
-from homeschool.db_api import add_link, add_upcoming, assign_user_to_student, create_user_for_student, delete_assignment, delete_link, delete_student, delete_upcoming, edit_assignment, edit_student, get_all_students, get_assignment_by_id,\
-    get_assignments, get_links, get_upcoming, get_user_by_email, \
-    add_new_student, get_student, add_user, new_assignment, search_assignments, search_students
+from homeschool.db_api import add_link, add_upcoming, app_state, assign_user_to_student, create_user_for_student, decrement_school_day, delete_assignment, delete_link, delete_student, delete_upcoming, edit_assignment, edit_student, get_all_students, get_assignment_by_id,\
+    get_assignments, get_current_school_day, get_links, get_upcoming, get_user_by_email, \
+    add_new_student, get_student, add_user, increment_school_day, new_assignment, search_assignments, search_students
 from sqlalchemy.exc import NoResultFound, IntegrityError
 
 from homeschool.models import Assignment, Link
@@ -30,6 +32,8 @@ def application_error(error):
 def home():
     if request.method == 'GET':
 
+        current_day = get_current_school_day()
+        
         student_id = request.args.get('student_id')
         logger.info(f'loading index page for student: {student_id}')
         if student_id:
@@ -40,13 +44,12 @@ def home():
             except NoResultFound:
                 return redirect(url_for('teacher_portal'))
 
-        day_number = 1
         logger.info('getting assigments')
-        day_assignments = get_assignments(day_number, student.id)
+        day_assignments = get_assignments(current_day, student.id)
         logger.info('got assignments')
-        upcoming = get_upcoming(student.id, day_number)
+        upcoming = get_upcoming(student.id, current_day)
         links = get_links(student.id)
-    return render_template("index.html", day_number=day_number,
+    return render_template("index.html", day_number=current_day,
                            day_assignments=day_assignments,
                            upcoming=upcoming,
                            student_id=student_id,
@@ -141,7 +144,19 @@ def teacher_portal():
     logger.info(
         f'User role names {[role.name for role in current_user.roles]}')
     if request.method == 'GET':
-        return render_template('teacher_portal.html', students=get_all_students())
+        increment = request.args.get('increment')
+        if increment:
+            increment_school_day()
+            
+        else:
+            decrement = request.args.get('decrement')
+            if decrement:
+                decrement_school_day()
+            
+        return render_template('teacher_portal.html', 
+                               students=get_all_students(), 
+                               day_number=get_current_school_day())
+
 
     if request.method == 'POST':
         post_type = request.args.get('post_type')

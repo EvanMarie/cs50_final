@@ -1,4 +1,5 @@
 from multiprocessing.sharedctypes import Value
+from sys import get_coroutine_origin_tracking_depth
 from termios import TCOFLUSH
 from homeschool.models import Link, Upcoming, User, Student, SchoolDay, Assignment, Note, AppState
 from homeschool import db, app, user_datastore
@@ -21,21 +22,38 @@ def app_state():
 def set_current_school_day(day_number):
     
     try:
-        app_state = app_state()
-        app_state.current_day = day_number
+        _state = app_state()
+        _state.current_day = day_number
     except:
-        db.Session.add(AppState(current_day = day_number))
+        db.session.add(AppState(current_day = day_number))
+        _state = app_state()
     
     db.session.commit()
+    db.session.refresh(_state)
+    logger.info(f'current day is now {_state.current_day}')
+    logger.info(f'current day is now {get_current_school_day()}')
 
 def get_current_school_day():
     
-    app_state = AppState.query.get(1)
-    return app_state.current_day
+    return app_state().current_day
 
 def increment_school_day():
+    """Increment school day and set the date for the new day.
+    """
+    set_current_school_day(get_current_school_day() + 1)
+    current_day_dbrec = SchoolDay.query.get(get_current_school_day())
+    if current_day_dbrec:
+        current_day_dbrec.calendar_date = date.today()
+    else:
+        db.session.add(SchoolDay(day_number = get_current_school_day(),
+                                 calendar_date = date.today()))
+    db.session.commit()
     
-    set_current_school_day(get_current_school_day + 1)        
+def decrement_school_day():
+    """Oops, you pushed increment too soon?  You can go back now.
+    """
+    set_current_school_day(get_current_school_day() - 1)
+            
 
 ####################### GEN: ROLES & USERS ##############################
     
@@ -134,19 +152,25 @@ def edit_student(student_id, first_name = None, last_name = None, email = None, 
     if last_name:
         student.last_name = last_name
     if email:
-        student.email = email
+        student.user.email = email
     if note:
         student.note = note
     db.session.commit()
 
     ########################### ASSIGNMENTS ##################################
 
-def new_assignment(student_id,
-                   school_day,
+def new_assignment(school_day,
                    subject,
                    content,
                    assigned_by_id,
+                   student_first_name = '',
+                   student_last_name = '',
+                   student_id = None,
                    note=None):
+    
+    if student_first_name:
+        student = search_students(student_first_name + ' ' + student_last_name)
+        student_id = student.id
     
     assignment = Assignment(school_day=school_day,
                             student=student_id,
@@ -232,7 +256,7 @@ def add_upcoming(student, day, content):
     db.session.commit()
 
 def get_upcoming(student, day):
-    return Upcoming.query.filter_by(student = student).where(Upcoming.day >= day)
+    return Upcoming.query.filter_by(student = student).where(Upcoming.day >= day).order_by(Upcoming.day.asc())
 
 def delete_upcoming(upcoming):
     try:

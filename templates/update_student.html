@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Add Student
+Update Student Info
 {% endblock %}
 
 {% block main %}
@@ -22,7 +22,7 @@ Add Student
     </div>
 <div class = "general_medium_box">
         <div class = "general_heading_banner">
-<h2>Add a New Student</h2>
+<h2>Update Student Info</h2>
         </div>
                 <div class="new_student">
                     <form action="{{ url_for('update_student', student_id = student.id) }}"" id="update_student" method="POST">
@@ -32,13 +32,18 @@ Add Student
                                 id="update_student_lastname" value="{{ student.last_name }}" type="text">
                         </div>
                         <div class="new_student_email"><input name="update_student_email" id="update_student_email"
-                            value=" {{ student.user.email }}" type="text">
+                            value="{{ student.user.email }}" type="text">
                         </div>
                         <div class="new_student_note"><textarea placeholder="Update Student Note"
-                                name="update_student_note"> {{ student.note }}</textarea>
+                                name="update_student_note">{{ student.note }}</textarea>
                         </div>
                         <div class="new_student_submit"><input class="btn btn-primary" type="submit" value="Update Student">
                     </form>
+                    <div class = "remove_student_button">
+                        <a href="{{ url_for('remove_student', student_id = student.id)}}" onclick="return confirm('Are you sure you want to permanently delete this student?');"><button type="button" class="btn btn-danger">REMOVE STUDENT!</button></a>
+               </div>
+
+                   </div>
                 </div>
 
 
